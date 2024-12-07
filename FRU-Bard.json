@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard v1207.01",
+  "Name": "FRU-Bard",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -3171,10 +3171,18 @@
                         "Remark": "行吟"
                       },
                       {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[107.00]秒",
-                        "Delay": 107.0,
-                        "GUID": "5202efd5-dea6-473e-9ea6-0ae6426b49dc",
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "绝峰箭",
+                            "Value": false,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "5c984088-07f1-4ea6-b8af-9c0d32917e7d",
                         "Important": false,
                         "Color": {
                           "X": 1.0,
@@ -3183,6 +3191,158 @@
                           "W": 1.0
                         },
                         "Id": 116,
+                        "Enable": true,
+                        "Remark": "关Apex"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "唱歌",
+                            "Value": false,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "b6ce3611-952a-4aeb-97b3-07b977becefd",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 117,
+                        "Enable": true,
+                        "Remark": "锁唱歌"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "爆发",
+                            "Value": false,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "1f0ebfd4-6085-4ac1-b9a1-f778872eba43",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 118,
+                        "Enable": true,
+                        "Remark": "关爆发"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[33.00]秒",
+                        "Delay": 33.0,
+                        "GUID": "96d0fa83-dcfb-43e1-9876-439818aae7d6",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 119,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "唱歌",
+                            "Value": true,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "b6ce3611-952a-4aeb-97b3-07b977becefd",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 120,
+                        "Enable": true,
+                        "Remark": "解锁唱歌"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "爆发",
+                            "Value": true,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "1f0ebfd4-6085-4ac1-b9a1-f778872eba43",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 121,
+                        "Enable": true,
+                        "Remark": "开爆发"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "绝峰箭",
+                            "Value": true,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "5c984088-07f1-4ea6-b8af-9c0d32917e7d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 122,
+                        "Enable": true,
+                        "Remark": "开Apex"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[74.00]秒",
+                        "Delay": 74.0,
+                        "GUID": "5202efd5-dea6-473e-9ea6-0ae6426b49dc",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 123,
                         "Enable": true,
                         "Remark": "44分摊+AOE"
                       },
@@ -3232,7 +3392,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 117,
+                        "Id": 124,
                         "Enable": true,
                         "Remark": "行吟"
                       }
@@ -3267,7 +3427,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 119,
+                        "Id": 126,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -3291,7 +3451,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 120,
+                        "Id": 127,
                         "Enable": true,
                         "Remark": "关Apex"
                       },
@@ -3315,7 +3475,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 121,
+                        "Id": 128,
                         "Enable": true,
                         "Remark": "锁唱歌"
                       },
@@ -3339,7 +3499,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 122,
+                        "Id": 129,
                         "Enable": true,
                         "Remark": "关爆发"
                       },
@@ -3355,7 +3515,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 123,
+                        "Id": 130,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -3379,7 +3539,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 124,
+                        "Id": 131,
                         "Enable": true,
                         "Remark": "解锁唱歌"
                       },
@@ -3403,7 +3563,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 125,
+                        "Id": 132,
                         "Enable": true,
                         "Remark": "开爆发"
                       },
@@ -3427,7 +3587,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 126,
+                        "Id": 133,
                         "Enable": true,
                         "Remark": "开Apex"
                       }
@@ -3440,7 +3600,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 118,
+                    "Id": 125,
                     "Enable": true,
                     "Remark": "p3爆发"
                   },
@@ -3470,7 +3630,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 128,
+                        "Id": 135,
                         "Enable": true,
                         "Remark": "关攒碎心箭"
                       },
@@ -3486,7 +3646,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 129,
+                        "Id": 136,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -3510,7 +3670,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 130,
+                        "Id": 137,
                         "Enable": true,
                         "Remark": "开攒碎心箭"
                       }
@@ -3523,7 +3683,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 127,
+                    "Id": 134,
                     "Enable": true,
                     "Remark": "p3碎心箭"
                   }
@@ -3581,7 +3741,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 132,
+                "Id": 139,
                 "Enable": true,
                 "Remark": "p3天气"
               },
@@ -3597,7 +3757,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 133,
+                "Id": 140,
                 "Enable": true,
                 "Remark": ""
               },
@@ -3616,7 +3776,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 134,
+                "Id": 141,
                 "Enable": true,
                 "Remark": ""
               },
@@ -3710,7 +3870,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 135,
+                "Id": 142,
                 "Enable": true,
                 "Remark": "QT初始化"
               },
@@ -3734,7 +3894,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 136,
+                "Id": 143,
                 "Enable": true,
                 "Remark": "开AOE"
               },
@@ -3782,7 +3942,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 139,
+                        "Id": 146,
                         "Enable": true,
                         "Remark": "死亡轮回"
                       },
@@ -3798,7 +3958,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 140,
+                        "Id": 147,
                         "Enable": true,
                         "Remark": "死亡轮回+无尽顿悟"
                       },
@@ -3848,7 +4008,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 141,
+                        "Id": 148,
                         "Enable": true,
                         "Remark": "行吟"
                       },
@@ -3876,7 +4036,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 142,
+                        "Id": 149,
                         "Enable": true,
                         "Remark": "行吟cd好了"
                       },
@@ -3926,7 +4086,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 143,
+                        "Id": 150,
                         "Enable": true,
                         "Remark": "行吟"
                       }
@@ -3939,7 +4099,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 138,
+                    "Id": 145,
                     "Enable": true,
                     "Remark": "p4减伤"
                   },
@@ -3973,7 +4133,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 145,
+                        "Id": 152,
                         "Enable": true,
                         "Remark": "旅神cd<5"
                       },
@@ -3997,7 +4157,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 146,
+                        "Id": 153,
                         "Enable": true,
                         "Remark": "关Apex"
                       },
@@ -4021,7 +4181,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 147,
+                        "Id": 154,
                         "Enable": true,
                         "Remark": "关唱歌"
                       },
@@ -4045,7 +4205,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 148,
+                        "Id": 155,
                         "Enable": true,
                         "Remark": "关爆发"
                       },
@@ -4073,7 +4233,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 149,
+                        "Id": 156,
                         "Enable": true,
                         "Remark": "战斗之声cd<1"
                       },
@@ -4097,7 +4257,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 150,
+                        "Id": 157,
                         "Enable": true,
                         "Remark": "开唱歌"
                       },
@@ -4121,7 +4281,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 151,
+                        "Id": 158,
                         "Enable": true,
                         "Remark": "开爆发"
                       },
@@ -4145,7 +4305,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 152,
+                        "Id": 159,
                         "Enable": true,
                         "Remark": "开Apex"
                       }
@@ -4158,7 +4318,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 144,
+                    "Id": 151,
                     "Enable": true,
                     "Remark": "p4输出 爆发延后2GCD"
                   }
@@ -4171,7 +4331,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 137,
+                "Id": 144,
                 "Enable": true,
                 "Remark": ""
               }
@@ -4184,7 +4344,7 @@
               "Z": 0.4,
               "W": 1.0
             },
-            "Id": 131,
+            "Id": 138,
             "Enable": true,
             "Remark": "p4"
           },
@@ -4216,7 +4376,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 154,
+                "Id": 161,
                 "Enable": true,
                 "Remark": "p5天气"
               },
@@ -4235,7 +4395,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 155,
+                "Id": 162,
                 "Enable": true,
                 "Remark": ""
               },
@@ -4252,7 +4412,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 156,
+                "Id": 163,
                 "Enable": true,
                 "Remark": "选择3G起手"
               },
@@ -4274,7 +4434,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 157,
+                "Id": 164,
                 "Enable": true,
                 "Remark": "重新使用起手"
               },
@@ -4368,7 +4528,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 158,
+                "Id": 165,
                 "Enable": true,
                 "Remark": "QT初始化"
               },
@@ -4392,7 +4552,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 159,
+                "Id": 166,
                 "Enable": true,
                 "Remark": "开启强对齐"
               },
@@ -4454,7 +4614,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 162,
+                        "Id": 169,
                         "Enable": true,
                         "Remark": "落地第1G"
                       },
@@ -4470,7 +4630,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 163,
+                        "Id": 170,
                         "Enable": true,
                         "Remark": "光暗直线挡枪"
                       },
@@ -4520,7 +4680,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 164,
+                        "Id": 171,
                         "Enable": true,
                         "Remark": "行吟"
                       },
@@ -4536,7 +4696,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 165,
+                        "Id": 172,
                         "Enable": true,
                         "Remark": "光暗直线挡枪"
                       },
@@ -4586,7 +4746,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 166,
+                        "Id": 173,
                         "Enable": true,
                         "Remark": "行吟"
                       }
@@ -4599,7 +4759,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 161,
+                    "Id": 168,
                     "Enable": true,
                     "Remark": "p5减伤"
                   }
@@ -4612,7 +4772,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 160,
+                "Id": 167,
                 "Enable": true,
                 "Remark": ""
               }
@@ -4625,7 +4785,7 @@
               "Z": 0.4,
               "W": 1.0
             },
-            "Id": 153,
+            "Id": 160,
             "Enable": true,
             "Remark": "p5"
           }
@@ -4658,7 +4818,7 @@
   "ExposedVars": [],
   "ExposedVarDesc": "",
   "OpenerScript": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Module;\nusing AEAssist.CombatRoutine.Module.Opener;\nusing AEAssist.Helper;\nusing AEAssist.JobApi;\nusing AEAssist.MemoryApi;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class OpenerTest : IOpener\n{\n    // 留空代表使用ACR提供的起手\n    public List<Action<Slot>> Sequence { get; } = new();\n\n    // 处理倒计时期间的行为\n    public void InitCountDown(CountDownHandler countDownHandler)\n    {\n        //起手\n        Wotou.Bard.Setting.BardSettings.Instance.Opener = 2;\n        if (Wotou.Bard.BardRotationEntry.QT.GetQt(\"爆发药\") && Wotou.Bard.Setting.BardSettings.Instance.UsePotionInOpener)\n               countDownHandler.AddAction(1000, Spell.CreatePotion);\n    }\n}",
-  "Note": "P1-P5粗版完成，p4爆发延后到双目标，如果不需要延后，请取消勾选第142号节点，修复p3减伤和爆发，修复p2第三根apex，修复p4判断条件，添加p2自动净化",
+  "Note": "P1-P5粗版完成",
   "TerritoryTypeId": 1238,
   "TerritoryWeatherId": 0,
   "TargetAcrAuthor": "Wotou",
