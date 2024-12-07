@@ -74,13 +74,6 @@
               },
               {
                 "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                "Key": "大地神",
-                "Value": true,
-                "DisplayName": "Bard/QT",
-                "Remark": null
-              },
-              {
-                "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
                 "Key": "九天",
                 "Value": true,
                 "DisplayName": "Bard/QT",
@@ -1840,13 +1833,6 @@
                   },
                   {
                     "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                    "Key": "大地神",
-                    "Value": true,
-                    "DisplayName": "Bard/QT",
-                    "Remark": null
-                  },
-                  {
-                    "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
                     "Key": "九天",
                     "Value": true,
                     "DisplayName": "Bard/QT",
@@ -3035,13 +3021,6 @@
                   },
                   {
                     "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                    "Key": "大地神",
-                    "Value": true,
-                    "DisplayName": "Bard/QT",
-                    "Remark": null
-                  },
-                  {
-                    "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
                     "Key": "九天",
                     "Value": true,
                     "DisplayName": "Bard/QT",
@@ -3841,13 +3820,6 @@
                   },
                   {
                     "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                    "Key": "大地神",
-                    "Value": true,
-                    "DisplayName": "Bard/QT",
-                    "Remark": null
-                  },
-                  {
-                    "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
                     "Key": "九天",
                     "Value": true,
                     "DisplayName": "Bard/QT",
@@ -4493,13 +4465,6 @@
                   {
                     "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
                     "Key": "唱歌",
-                    "Value": true,
-                    "DisplayName": "Bard/QT",
-                    "Remark": null
-                  },
-                  {
-                    "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                    "Key": "大地神",
                     "Value": true,
                     "DisplayName": "Bard/QT",
                     "Remark": null
