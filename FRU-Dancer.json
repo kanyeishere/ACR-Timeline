@@ -1262,7 +1262,7 @@
                           {
                             "$type": "Wotou.Dancer.Trigger.DancerTriggerActionQt, Wotou",
                             "Key": "小舞",
-                            "Value": false,
+                            "Value": true,
                             "DisplayName": "Dancer/QT",
                             "Remark": null
                           }
@@ -1548,7 +1548,7 @@
                           {
                             "$type": "Wotou.Dancer.Trigger.DancerTriggerActionQt, Wotou",
                             "Key": "小舞",
-                            "Value": false,
+                            "Value": true,
                             "DisplayName": "Dancer/QT",
                             "Remark": null
                           }
@@ -2543,7 +2543,7 @@
                           {
                             "$type": "Wotou.Dancer.Trigger.DancerTriggerActionQt, Wotou",
                             "Key": "小舞",
-                            "Value": false,
+                            "Value": true,
                             "DisplayName": "Dancer/QT",
                             "Remark": null
                           }
@@ -3217,7 +3217,7 @@
                           {
                             "$type": "Wotou.Dancer.Trigger.DancerTriggerActionQt, Wotou",
                             "Key": "小舞",
-                            "Value": false,
+                            "Value": true,
                             "DisplayName": "Dancer/QT",
                             "Remark": null
                           }
