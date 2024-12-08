@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 38,
   "Author": "詩超絆 & Wotou",
-  "Name": "FRU-Dancer ",
+  "Name": "FRU-Dancer  1208.09",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -2960,7 +2960,7 @@
                         "TriggerConds": [
                           {
                             "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondCheckSpellCd, AEAssist",
-                            "SpellId": 7405,
+                            "SpellId": 16012,
                             "CoolDown": 0,
                             "Larger": false,
                             "Remark": null,
@@ -2978,7 +2978,7 @@
                         },
                         "Id": 109,
                         "Enable": true,
-                        "Remark": "行吟cd好了"
+                        "Remark": "桑巴cd好了"
                       },
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
@@ -3568,32 +3568,26 @@
                           {
                             "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
                             "DisplayName": "General/等待技能释放",
-                            "Remark": "风dot",
-                            "SpellId": 7407
+                            "Remark": "瀑泻",
+                            "SpellId": 15989
                           },
                           {
                             "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
                             "DisplayName": "General/等待技能释放",
-                            "Remark": "Apex",
-                            "SpellId": 16496
+                            "Remark": "喷泉",
+                            "SpellId": 15990
                           },
                           {
                             "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
                             "DisplayName": "General/等待技能释放",
-                            "Remark": "毒dot",
-                            "SpellId": 7406
+                            "Remark": "逆瀑泻",
+                            "SpellId": 15991
                           },
                           {
                             "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
                             "DisplayName": "General/等待技能释放",
-                            "Remark": "爆发射击",
-                            "SpellId": 16495
-                          },
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
-                            "DisplayName": "General/等待技能释放",
-                            "Remark": "辉煌箭",
-                            "SpellId": 7409
+                            "Remark": "坠喷泉",
+                            "SpellId": 15992
                           }
                         ],
                         "DisplayName": "等待条件",
