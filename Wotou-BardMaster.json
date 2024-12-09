@@ -3,6 +3,6 @@
     "Name": "FRU-Bard ",
     "Version": "1210.02",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
-    "UpdateInfo": "绝伊甸诗人；修复6分钟爆发自动目标切换：仅在你当前目标的小光水晶消失（死亡）后，才会选中25米内血量最高的其他小光水晶（如果存在），如果不存在则选中大水晶；p4输出爆发延后到双目标，如不需要延后，请自行取消勾选181节点"
+    "UpdateInfo": "绝伊甸诗人；修复6分钟爆发自动目标切换,仅在你当前目标的小光水晶消失（死亡）后，才会选中25米内血量最高的其他小光水晶（如果存在），如果不存在则选中大水晶；p4输出爆发延后到双目标，如不需要延后，请自行取消勾选181节点 "
   }
 ]
