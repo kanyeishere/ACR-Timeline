@@ -1,8 +1,8 @@
 [
   {
     "Name": "FRU-Bard ",
-    "Version": "1208.05",
+    "Version": "1209.01",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
-    "UpdateInfo": "绝伊甸诗人，精修中；p4爆发延后到双目标，如果不需要延后，请取消勾选第145号节点；大地神QT不再自动重置"
+    "UpdateInfo": "绝伊甸诗人，精修中；添加6分钟水晶爆发，自动目标切换；p4输出爆发延后到双目标，如不需要延后，请自行取消勾选166节点"
   }
 ]
