@@ -3263,7 +3263,7 @@
                                     "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondWaitTarget, AEAssist",
                                     "TargetSelector": {
                                       "Enable": true,
-                                      "Target": 0,
+                                      "Target": 4,
                                       "FilterDatas": [
                                         {
                                           "Filter": 1,
@@ -3339,7 +3339,7 @@
                                     "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondWaitTarget, AEAssist",
                                     "TargetSelector": {
                                       "Enable": true,
-                                      "Target": 0,
+                                      "Target": 4,
                                       "FilterDatas": [
                                         {
                                           "Filter": 1,
