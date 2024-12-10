@@ -3894,9 +3894,9 @@
                                 "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeClearWaitNode, AEAssist",
                                 "OnlyPreNode": false,
                                 "RangeClear": true,
-                                "MinNode": 123,
-                                "MaxNode": 128,
-                                "DisplayName": "清理等待条件[123-128]",
+                                "MinNode": 131,
+                                "MaxNode": 136,
+                                "DisplayName": "清理等待条件[131-136]",
                                 "GUID": "779f46ff-f569-4047-9973-29af77b3cfa2",
                                 "Important": false,
                                 "Color": {
