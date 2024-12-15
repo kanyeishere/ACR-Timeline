@@ -1,8 +1,8 @@
 [
   {
     "Name": "FRU-Bard ",
-    "Version": "1215.01",
+    "Version": "1215.02",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
-    "UpdateInfo": "绝伊甸诗人；p2九天前置；p4爆发延后到双目标，如不需要延后，请自行取消勾选191节点；p4歌轴精修；p5默认3G起手，如需2G起手请自行选择"
+    "UpdateInfo": "绝伊甸诗人；p1起手更新；p2九天前置；p4爆发延后到双目标，如无需延后请取消188节点；p5默认3G起手，如需2G起手请自行选择"
   }
 ]
