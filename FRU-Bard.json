@@ -5746,229 +5746,6 @@
                     "Remark": "p4减伤"
                   },
                   {
-                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
-                    "DisplayName": "序列",
-                    "IgnoreNodeResult": false,
-                    "StopWhenDead": false,
-                    "Childs": [
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
-                        "CondLogicType": 0,
-                        "CheckOnce": false,
-                        "ReverseResult": false,
-                        "TriggerConds": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
-                            "DisplayName": "General/等待技能释放",
-                            "Remark": "",
-                            "SpellId": 25785
-                          }
-                        ],
-                        "DisplayName": "等待条件",
-                        "GUID": "6b586f20-5243-430b-b542-15685be81cf1",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 212,
-                        "Enable": true,
-                        "Remark": "光明神"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[1.00]秒",
-                        "Delay": 1.0,
-                        "GUID": "f501455f-83bd-4949-90c4-88a6988638fb",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 213,
-                        "Enable": true,
-                        "Remark": ""
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
-                        "CondLogicType": 0,
-                        "CheckOnce": false,
-                        "ReverseResult": false,
-                        "TriggerConds": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
-                            "DisplayName": "General/等待技能释放",
-                            "Remark": "",
-                            "SpellId": 114
-                          }
-                        ],
-                        "DisplayName": "等待条件",
-                        "GUID": "aeddf10d-0c63-4617-a1ef-e48ccb7ea83f",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 214,
-                        "Enable": true,
-                        "Remark": "贤者"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[36.00]秒",
-                        "Delay": 36.0,
-                        "GUID": "4bf11af6-32f6-402f-bd1e-95fb3feea60e",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 215,
-                        "Enable": true,
-                        "Remark": ""
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                        "TriggerActions": [
-                          {
-                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                            "Key": "爆发",
-                            "Value": false,
-                            "DisplayName": "Bard/QT",
-                            "Remark": null
-                          }
-                        ],
-                        "DisplayName": "行为",
-                        "GUID": "5c984088-07f1-4ea6-b8af-9c0d32917e7d",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 216,
-                        "Enable": true,
-                        "Remark": "关爆发"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                        "TriggerActions": [
-                          {
-                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                            "Key": "绝峰箭",
-                            "Value": false,
-                            "DisplayName": "Bard/QT",
-                            "Remark": null
-                          }
-                        ],
-                        "DisplayName": "行为",
-                        "GUID": "5c984088-07f1-4ea6-b8af-9c0d32917e7d",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 217,
-                        "Enable": true,
-                        "Remark": "关Apex"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                        "TriggerActions": [
-                          {
-                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                            "Key": "DOT",
-                            "Value": false,
-                            "DisplayName": "Bard/QT",
-                            "Remark": null
-                          }
-                        ],
-                        "DisplayName": "行为",
-                        "GUID": "5c984088-07f1-4ea6-b8af-9c0d32917e7d",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 218,
-                        "Enable": true,
-                        "Remark": "关dot"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                        "TriggerActions": [
-                          {
-                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                            "Key": "攒碎心箭",
-                            "Value": false,
-                            "DisplayName": "Bard/QT",
-                            "Remark": null
-                          }
-                        ],
-                        "DisplayName": "行为",
-                        "GUID": "cc60ac4f-e7ec-40fc-bd37-dc2df4682954",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 219,
-                        "Enable": true,
-                        "Remark": "关攒碎心箭"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                        "TriggerActions": [
-                          {
-                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                            "Key": "唱歌",
-                            "Value": false,
-                            "DisplayName": "Bard/QT",
-                            "Remark": null
-                          }
-                        ],
-                        "DisplayName": "行为",
-                        "GUID": "5c984088-07f1-4ea6-b8af-9c0d32917e7d",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 220,
-                        "Enable": true,
-                        "Remark": "关唱歌"
-                      }
-                    ],
-                    "GUID": "4781c2d0-a6a1-466c-889f-b858e2c0bd6b",
-                    "Important": false,
-                    "Color": {
-                      "X": 1.0,
-                      "Y": 1.0,
-                      "Z": 0.4,
-                      "W": 1.0
-                    },
-                    "Id": 211,
-                    "Enable": true,
-                    "Remark": "p4输出 结尾锁爆发"
-                  },
-                  {
                     "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeParallel, AEAssist",
                     "DisplayName": "并行",
                     "AnyReturn": false,
@@ -6000,7 +5777,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 223,
+                            "Id": 213,
                             "Enable": true,
                             "Remark": "关Apex"
                           },
@@ -6024,7 +5801,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 224,
+                            "Id": 214,
                             "Enable": true,
                             "Remark": "关唱歌"
                           },
@@ -6048,7 +5825,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 225,
+                            "Id": 215,
                             "Enable": true,
                             "Remark": "关爆发"
                           },
@@ -6064,7 +5841,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 226,
+                            "Id": 216,
                             "Enable": true,
                             "Remark": ""
                           },
@@ -6088,7 +5865,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 227,
+                            "Id": 217,
                             "Enable": true,
                             "Remark": "开唱歌"
                           },
@@ -6112,7 +5889,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 228,
+                            "Id": 218,
                             "Enable": true,
                             "Remark": "开爆发"
                           },
@@ -6138,7 +5915,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 229,
+                            "Id": 219,
                             "Enable": true,
                             "Remark": "光明神"
                           },
@@ -6162,7 +5939,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 230,
+                            "Id": 220,
                             "Enable": true,
                             "Remark": "开Apex"
                           }
@@ -6175,7 +5952,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 222,
+                        "Id": 212,
                         "Enable": true,
                         "Remark": "p4输出 爆发延后到双目标"
                       },
@@ -6207,7 +5984,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 232,
+                            "Id": 222,
                             "Enable": true,
                             "Remark": "旅神释放"
                           },
@@ -6257,7 +6034,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 233,
+                            "Id": 223,
                             "Enable": true,
                             "Remark": "旅神后1G"
                           },
@@ -6285,7 +6062,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 234,
+                            "Id": 224,
                             "Enable": true,
                             "Remark": "if 九天cd<1s"
                           },
@@ -6334,7 +6111,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 235,
+                            "Id": 225,
                             "Enable": true,
                             "Remark": "九天"
                           }
@@ -6347,7 +6124,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 231,
+                        "Id": 221,
                         "Enable": true,
                         "Remark": "p4 九天"
                       }
@@ -6360,9 +6137,232 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 221,
+                    "Id": 211,
                     "Enable": true,
                     "Remark": "p4输出 爆发延后到双目标"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 0,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
+                            "DisplayName": "General/等待技能释放",
+                            "Remark": "",
+                            "SpellId": 25785
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "6b586f20-5243-430b-b542-15685be81cf1",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 227,
+                        "Enable": true,
+                        "Remark": "光明神"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[1.00]秒",
+                        "Delay": 1.0,
+                        "GUID": "f501455f-83bd-4949-90c4-88a6988638fb",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 228,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 0,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
+                            "DisplayName": "General/等待技能释放",
+                            "Remark": "",
+                            "SpellId": 114
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "aeddf10d-0c63-4617-a1ef-e48ccb7ea83f",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 229,
+                        "Enable": true,
+                        "Remark": "贤者"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[36.00]秒",
+                        "Delay": 36.0,
+                        "GUID": "4bf11af6-32f6-402f-bd1e-95fb3feea60e",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 230,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "爆发",
+                            "Value": false,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "5c984088-07f1-4ea6-b8af-9c0d32917e7d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 231,
+                        "Enable": true,
+                        "Remark": "关爆发"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "绝峰箭",
+                            "Value": false,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "5c984088-07f1-4ea6-b8af-9c0d32917e7d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 232,
+                        "Enable": true,
+                        "Remark": "关Apex"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "DOT",
+                            "Value": false,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "5c984088-07f1-4ea6-b8af-9c0d32917e7d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 233,
+                        "Enable": true,
+                        "Remark": "关dot"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "攒碎心箭",
+                            "Value": false,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "cc60ac4f-e7ec-40fc-bd37-dc2df4682954",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 234,
+                        "Enable": true,
+                        "Remark": "关攒碎心箭"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "唱歌",
+                            "Value": false,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "5c984088-07f1-4ea6-b8af-9c0d32917e7d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 235,
+                        "Enable": true,
+                        "Remark": "关唱歌"
+                      }
+                    ],
+                    "GUID": "4781c2d0-a6a1-466c-889f-b858e2c0bd6b",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 226,
+                    "Enable": true,
+                    "Remark": "p4输出 结尾锁爆发"
                   },
                   {
                     "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
