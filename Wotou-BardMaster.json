@@ -1,8 +1,8 @@
 [
   {
     "Name": "FRU-Bard ",
-    "Version": "1216.03",
+    "Version": "1217.01",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
-    "UpdateInfo": "p1取消抢开起手；p2九天前置；p2续dot；p4爆发延后到双目标，如无需延后请取消211节点；p5默认3G起手，如需2G起手请自行选择"
+    "UpdateInfo": "p2 九天前置；p2 续dot；p4 爆发延后到双目标，如无需延后，请取消211节点；p5 2G起手"
   }
 ]

@@ -6539,7 +6539,7 @@
                   "W": 1.0
                 },
                 "Id": 242,
-                "Enable": true,
+                "Enable": false,
                 "Remark": "选择3G起手"
               },
               {
@@ -6578,7 +6578,7 @@
                   "W": 1.0
                 },
                 "Id": 244,
-                "Enable": true,
+                "Enable": false,
                 "Remark": "重新使用起手"
               },
               {
@@ -6921,6 +6921,124 @@
                           {
                             "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
                             "DisplayName": "General/等待技能释放",
+                            "Remark": "风dot",
+                            "SpellId": 7407
+                          },
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
+                            "DisplayName": "General/等待技能释放",
+                            "Remark": "Apex",
+                            "SpellId": 16496
+                          },
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
+                            "DisplayName": "General/等待技能释放",
+                            "Remark": "毒dot",
+                            "SpellId": 7406
+                          },
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
+                            "DisplayName": "General/等待技能释放",
+                            "Remark": "爆发射击",
+                            "SpellId": 16495
+                          },
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
+                            "DisplayName": "General/等待技能释放",
+                            "Remark": "辉煌箭",
+                            "SpellId": 7409
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "9115b122-2f12-4720-bce8-b782b71fc62b",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 255,
+                        "Enable": true,
+                        "Remark": "落地第1G"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionCastSpell, AEAssist",
+                            "Remark": null,
+                            "SpellConfig": {
+                              "Remark": "",
+                              "Category": 0,
+                              "SpellId": 36975,
+                              "CoolDowncheck": false,
+                              "CoolDowncheck_time": 0.0,
+                              "TargetType": 0,
+                              "IsPartyMember": true,
+                              "LimitJobType": 0,
+                              "LimitBuffIds": [],
+                              "LimitMaxHpType": 0,
+                              "LimitHpType": 0,
+                              "Location": {
+                                "X": 0.0,
+                                "Y": 0.0,
+                                "Z": 0.0
+                              },
+                              "TargetSelector": {
+                                "Enable": false,
+                                "Target": 0,
+                                "FilterDatas": [],
+                                "NeedTargetable": false,
+                                "SndFilter": 0,
+                                "PMIndex": 0
+                              },
+                              "AutoCheckActionChange": true
+                            },
+                            "DisplayName": "技能使用/强制使用技能"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "45ae746a-8340-42c4-953a-8115721db731",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 256,
+                        "Enable": true,
+                        "Remark": "碎心箭"
+                      }
+                    ],
+                    "GUID": "b309b157-b263-475b-83a6-ce3f8c45d216",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 254,
+                    "Enable": true,
+                    "Remark": "碎心箭"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 1,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
+                            "DisplayName": "General/等待技能释放",
                             "Remark": "战斗之声",
                             "SpellId": 118
                           }
@@ -6934,7 +7052,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 255,
+                        "Id": 258,
                         "Enable": true,
                         "Remark": "战斗之声"
                       },
@@ -6950,7 +7068,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 256,
+                        "Id": 259,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -6976,7 +7094,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 257,
+                        "Id": 260,
                         "Enable": true,
                         "Remark": "战斗之声"
                       },
@@ -6992,7 +7110,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 258,
+                        "Id": 261,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -7018,7 +7136,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 259,
+                        "Id": 262,
                         "Enable": true,
                         "Remark": "战斗之声"
                       },
@@ -7042,7 +7160,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 260,
+                        "Id": 263,
                         "Enable": true,
                         "Remark": "关dot"
                       }
@@ -7055,7 +7173,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 254,
+                    "Id": 257,
                     "Enable": true,
                     "Remark": "结尾关dot"
                   }
@@ -7114,10 +7232,10 @@
   "ExposedVars": [],
   "ExposedVarDesc": "",
   "OpenerScript": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Module;\nusing AEAssist.CombatRoutine.Module.Opener;\nusing AEAssist.Helper;\nusing AEAssist.JobApi;\nusing AEAssist.MemoryApi;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class OpenerTest : IOpener\n{\n    // 留空代表使用ACR提供的起手\n    public List<Action<Slot>> Sequence { get; } = new();\n\n    // 处理倒计时期间的行为\n    public void InitCountDown(CountDownHandler countDownHandler)\n    {\n        //起手\n        Wotou.Bard.Setting.BardSettings.Instance.Opener = 2;\n        if (Wotou.Bard.BardRotationEntry.QT.GetQt(\"爆发药\") && Wotou.Bard.Setting.BardSettings.Instance.UsePotionInOpener)\n               countDownHandler.AddAction(1000, Spell.CreatePotion);\n    }\n}",
-  "Note": "p2九天前置；p2续dot；p4爆发延后到双目标，如无需延后，请取消211节点；p5默认3G起手，如需2G起手请自行选择",
+  "Note": "p2 九天前置；p2 续dot；p4 爆发延后到双目标，如无需延后，请取消211节点；p5 2G起手",
   "TerritoryTypeId": 1238,
   "TerritoryWeatherId": 0,
   "TargetAcrAuthor": "Wotou",
-  "ClearCustomed": false,
-  "LogsAddress": ""
+  "ClearCustomed": true,
+  "LogsAddress": "https://cn.fflogs.com/reports/a:7tBqbTk4JH2MzApC"
 }
