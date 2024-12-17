@@ -74,14 +74,14 @@
               },
               {
                 "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                "Key": "九天",
+                "Key": "九天连箭",
                 "Value": true,
                 "DisplayName": "Bard/QT",
                 "Remark": null
               },
               {
                 "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                "Key": "侧风",
+                "Key": "侧风诱导箭",
                 "Value": true,
                 "DisplayName": "Bard/QT",
                 "Remark": null
@@ -1096,7 +1096,7 @@
                         "TriggerActions": [
                           {
                             "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                            "Key": "九天",
+                            "Key": "九天连箭",
                             "Value": false,
                             "DisplayName": "Bard/QT",
                             "Remark": null
@@ -2252,14 +2252,14 @@
                   },
                   {
                     "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                    "Key": "九天",
+                    "Key": "九天连箭",
                     "Value": true,
                     "DisplayName": "Bard/QT",
                     "Remark": null
                   },
                   {
                     "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                    "Key": "侧风",
+                    "Key": "侧风诱导箭",
                     "Value": true,
                     "DisplayName": "Bard/QT",
                     "Remark": null
@@ -2267,7 +2267,7 @@
                   {
                     "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
                     "Key": "九天前置",
-                    "Value": false,
+                    "Value": true,
                     "DisplayName": "Bard/QT",
                     "Remark": null
                   }
@@ -3804,7 +3804,7 @@
                           {
                             "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
                             "Key": "唱歌",
-                            "Value": true,
+                            "Value": false,
                             "DisplayName": "Bard/QT",
                             "Remark": null
                           }
@@ -3824,8 +3824,8 @@
                       },
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[11.50]秒",
-                        "Delay": 11.5,
+                        "DisplayName": "延迟[8.50]秒",
+                        "Delay": 8.5,
                         "GUID": "568728fa-4f02-4bb9-86c8-d70da4ea56e6",
                         "Important": false,
                         "Color": {
@@ -4371,7 +4371,7 @@
                         "TriggerActions": [
                           {
                             "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                            "Key": "侧风",
+                            "Key": "侧风诱导箭",
                             "Value": false,
                             "DisplayName": "Bard/QT",
                             "Remark": null
@@ -4421,7 +4421,7 @@
                         "TriggerActions": [
                           {
                             "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                            "Key": "侧风",
+                            "Key": "侧风诱导箭",
                             "Value": true,
                             "DisplayName": "Bard/QT",
                             "Remark": null
@@ -5564,14 +5564,14 @@
                   },
                   {
                     "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                    "Key": "九天",
+                    "Key": "九天连箭",
                     "Value": true,
                     "DisplayName": "Bard/QT",
                     "Remark": null
                   },
                   {
                     "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                    "Key": "侧风",
+                    "Key": "侧风诱导箭",
                     "Value": true,
                     "DisplayName": "Bard/QT",
                     "Remark": null
@@ -6905,14 +6905,14 @@
                   },
                   {
                     "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                    "Key": "九天",
+                    "Key": "九天连箭",
                     "Value": true,
                     "DisplayName": "Bard/QT",
                     "Remark": null
                   },
                   {
                     "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                    "Key": "侧风",
+                    "Key": "侧风诱导箭",
                     "Value": true,
                     "DisplayName": "Bard/QT",
                     "Remark": null
