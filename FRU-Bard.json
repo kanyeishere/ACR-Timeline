@@ -295,7 +295,7 @@
                           "W": 1.0
                         },
                         "Id": 13,
-                        "Enable": true,
+                        "Enable": false,
                         "Remark": "切军神"
                       },
                       {
@@ -2330,7 +2330,7 @@
                   "W": 1.0
                 },
                 "Id": 81,
-                "Enable": true,
+                "Enable": false,
                 "Remark": "九天前置"
               },
               {
@@ -3231,8 +3231,8 @@
                     "Childs": [
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[211.50]秒",
-                        "Delay": 211.5,
+                        "DisplayName": "延迟[208.00]秒",
+                        "Delay": 208.0,
                         "GUID": "568728fa-4f02-4bb9-86c8-d70da4ea56e6",
                         "Important": false,
                         "Color": {
@@ -3824,8 +3824,8 @@
                       },
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[8.50]秒",
-                        "Delay": 8.5,
+                        "DisplayName": "延迟[8.00]秒",
+                        "Delay": 8.0,
                         "GUID": "568728fa-4f02-4bb9-86c8-d70da4ea56e6",
                         "Important": false,
                         "Color": {
@@ -7465,6 +7465,231 @@
             "Id": 247,
             "Enable": true,
             "Remark": "p5"
+          },
+          {
+            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+            "DisplayName": "序列",
+            "IgnoreNodeResult": false,
+            "StopWhenDead": false,
+            "Childs": [
+              {
+                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                "TriggerActions": [
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                    "DisplayName": "指令/发送指令",
+                    "Remark": "目标选择器on",
+                    "Command": "/aeTargetSelector on"
+                  }
+                ],
+                "DisplayName": "行为",
+                "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                "Important": false,
+                "Color": {
+                  "X": 1.0,
+                  "Y": 1.0,
+                  "Z": 0.4,
+                  "W": 1.0
+                },
+                "Id": 273,
+                "Enable": true,
+                "Remark": "目标选择器on"
+              },
+              {
+                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                "TriggerActions": [
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                    "DisplayName": "指令/发送指令",
+                    "Remark": "",
+                    "Command": "/aeTargetSelector mode3"
+                  }
+                ],
+                "DisplayName": "行为",
+                "GUID": "9b05c087-05a3-4c1c-968d-40017b796b80",
+                "Important": false,
+                "Color": {
+                  "X": 1.0,
+                  "Y": 1.0,
+                  "Z": 0.4,
+                  "W": 1.0
+                },
+                "Id": 274,
+                "Enable": true,
+                "Remark": "选择当前血量最高"
+              },
+              {
+                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                "CondLogicType": 1,
+                "CheckOnce": false,
+                "ReverseResult": false,
+                "TriggerConds": [
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondOnWeatherIdChanged, AEAssist",
+                    "Remark": "",
+                    "DisplayName": "General/天气变化",
+                    "WeatherId": 3
+                  }
+                ],
+                "DisplayName": "等待条件",
+                "GUID": "a43921a2-884a-462e-a12e-3084b3d1c671",
+                "Important": false,
+                "Color": {
+                  "X": 1.0,
+                  "Y": 1.0,
+                  "Z": 0.4,
+                  "W": 1.0
+                },
+                "Id": 275,
+                "Enable": true,
+                "Remark": "p2天气"
+              },
+              {
+                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                "TriggerActions": [
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                    "DisplayName": "指令/发送指令",
+                    "Remark": "目标选择器on",
+                    "Command": "/aeTargetSelector on"
+                  }
+                ],
+                "DisplayName": "行为",
+                "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                "Important": false,
+                "Color": {
+                  "X": 1.0,
+                  "Y": 1.0,
+                  "Z": 0.4,
+                  "W": 1.0
+                },
+                "Id": 276,
+                "Enable": true,
+                "Remark": "目标选择器on"
+              },
+              {
+                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                "DisplayName": "延迟[200.00]秒",
+                "Delay": 200.0,
+                "GUID": "568728fa-4f02-4bb9-86c8-d70da4ea56e6",
+                "Important": false,
+                "Color": {
+                  "X": 1.0,
+                  "Y": 1.0,
+                  "Z": 0.4,
+                  "W": 1.0
+                },
+                "Id": 277,
+                "Enable": true,
+                "Remark": ""
+              },
+              {
+                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                "TriggerActions": [
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                    "DisplayName": "指令/发送指令",
+                    "Remark": "目标选择器on",
+                    "Command": "/aeTargetSelector off"
+                  }
+                ],
+                "DisplayName": "行为",
+                "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                "Important": false,
+                "Color": {
+                  "X": 1.0,
+                  "Y": 1.0,
+                  "Z": 0.4,
+                  "W": 1.0
+                },
+                "Id": 278,
+                "Enable": true,
+                "Remark": "目标选择器off"
+              },
+              {
+                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                "CondLogicType": 1,
+                "CheckOnce": false,
+                "ReverseResult": false,
+                "TriggerConds": [
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondOnWeatherIdChanged, AEAssist",
+                    "Remark": "",
+                    "DisplayName": "General/天气变化",
+                    "WeatherId": 6
+                  }
+                ],
+                "DisplayName": "等待条件",
+                "GUID": "a43921a2-884a-462e-a12e-3084b3d1c671",
+                "Important": false,
+                "Color": {
+                  "X": 1.0,
+                  "Y": 1.0,
+                  "Z": 0.4,
+                  "W": 1.0
+                },
+                "Id": 279,
+                "Enable": true,
+                "Remark": "p3天气"
+              },
+              {
+                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                "TriggerActions": [
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                    "DisplayName": "指令/发送指令",
+                    "Remark": "目标选择器on",
+                    "Command": "/aeTargetSelector on"
+                  }
+                ],
+                "DisplayName": "行为",
+                "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                "Important": false,
+                "Color": {
+                  "X": 1.0,
+                  "Y": 1.0,
+                  "Z": 0.4,
+                  "W": 1.0
+                },
+                "Id": 280,
+                "Enable": true,
+                "Remark": "目标选择器on"
+              },
+              {
+                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                "TriggerActions": [
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                    "DisplayName": "指令/发送指令",
+                    "Remark": "",
+                    "Command": "/aeTargetSelector mode3"
+                  }
+                ],
+                "DisplayName": "行为",
+                "GUID": "9b05c087-05a3-4c1c-968d-40017b796b80",
+                "Important": false,
+                "Color": {
+                  "X": 1.0,
+                  "Y": 1.0,
+                  "Z": 0.4,
+                  "W": 1.0
+                },
+                "Id": 281,
+                "Enable": true,
+                "Remark": "选择当前血量最高"
+              }
+            ],
+            "GUID": "1b163cee-af82-48cc-9763-dac60ff10133",
+            "Important": false,
+            "Color": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 0.4,
+              "W": 1.0
+            },
+            "Id": 272,
+            "Enable": true,
+            "Remark": "目标选择器"
           }
         ],
         "GUID": "4e7645c7-15de-4d16-8364-1a9a146f1623",
@@ -7495,7 +7720,7 @@
   "ExposedVars": [],
   "ExposedVarDesc": "",
   "OpenerScript": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Module;\nusing AEAssist.CombatRoutine.Module.Opener;\nusing AEAssist.Helper;\nusing AEAssist.JobApi;\nusing AEAssist.MemoryApi;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class OpenerTest : IOpener\n{\n    // 留空代表使用ACR提供的起手\n    public List<Action<Slot>> Sequence { get; } = new();\n\n    // 处理倒计时期间的行为\n    public void InitCountDown(CountDownHandler countDownHandler)\n    {\n        //起手\n        Wotou.Bard.Setting.BardSettings.Instance.Opener = 2;\n        if (Wotou.Bard.BardRotationEntry.QT.GetQt(\"爆发药\") && Wotou.Bard.Setting.BardSettings.Instance.UsePotionInOpener)\n               countDownHandler.AddAction(1000, Spell.CreatePotion);\n    }\n}",
-  "Note": "p2 九天前置；p2 续dot修改；p4 爆发延后到双目标，如无需延后，请取消219节点；p5 2G起手",
+  "Note": "p4 爆发延后到双目标，如无需延后，请取消219节点；p5 2G起手；目标选择器中，请务必勾选“有目标时不自动切换目标”",
   "TerritoryTypeId": 1238,
   "TerritoryWeatherId": 0,
   "TargetAcrAuthor": "Wotou",

@@ -1,8 +1,8 @@
 [
   {
     "Name": "FRU-Bard ",
-    "Version": "1218.02",
+    "Version": "1219.01",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
-    "UpdateInfo": "请务必将ACR更新并且重启AE后使用！ 请务必将ACR更新并且重启AE后使用！ p2九天前置；p2续dot修改；p4爆发延后到双目标，如无需延后，请取消219节点；p5 2G起手"
+    "UpdateInfo": "请务必将ACR更新并且重启AE后使用！目标选择器中，请务必勾选“有目标时不自动切换目标”！ p4爆发延后到双目标，如无需延后，请取消219节点"
   }
 ]
