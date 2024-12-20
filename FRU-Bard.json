@@ -7554,6 +7554,45 @@
                         "Id": 277,
                         "Enable": true,
                         "Remark": "目标选择器on"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[120.00]秒",
+                        "Delay": 120.0,
+                        "GUID": "9ce679ba-e5b7-4e21-9504-b813b1940408",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 278,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector off"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 279,
+                        "Enable": true,
+                        "Remark": "目标选择器off"
                       }
                     ],
                     "GUID": "38ca3bdb-9baa-46d5-86f4-1a58c521e515",
@@ -7596,7 +7635,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 279,
+                        "Id": 281,
                         "Enable": true,
                         "Remark": "p2天气"
                       },
@@ -7619,7 +7658,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 280,
+                        "Id": 282,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -7642,7 +7681,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 281,
+                        "Id": 283,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -7658,7 +7697,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 282,
+                        "Id": 284,
                         "Enable": true,
                         "Remark": "p2.5"
                       },
@@ -7681,7 +7720,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 283,
+                        "Id": 285,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -7694,7 +7733,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 278,
+                    "Id": 280,
                     "Enable": true,
                     "Remark": "p2"
                   },
@@ -7726,7 +7765,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 285,
+                        "Id": 287,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -7749,7 +7788,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 286,
+                        "Id": 288,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -7772,7 +7811,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 287,
+                        "Id": 289,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -7788,7 +7827,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 288,
+                        "Id": 290,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -7811,7 +7850,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 289,
+                        "Id": 291,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       },
@@ -7827,7 +7866,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 290,
+                        "Id": 292,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -7850,7 +7889,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 291,
+                        "Id": 293,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -7866,7 +7905,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 292,
+                        "Id": 294,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -7889,7 +7928,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 293,
+                        "Id": 295,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -7902,7 +7941,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 284,
+                    "Id": 286,
                     "Enable": true,
                     "Remark": "p3 慎用"
                   },
@@ -7934,7 +7973,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 295,
+                        "Id": 297,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -7950,7 +7989,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 296,
+                        "Id": 298,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -7973,7 +8012,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 297,
+                        "Id": 299,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -7996,7 +8035,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 298,
+                        "Id": 300,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -8012,7 +8051,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 299,
+                        "Id": 301,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -8035,7 +8074,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 300,
+                        "Id": 302,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       },
@@ -8051,7 +8090,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 301,
+                        "Id": 303,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -8074,7 +8113,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 302,
+                        "Id": 304,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -8090,7 +8129,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 303,
+                        "Id": 305,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -8113,7 +8152,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 304,
+                        "Id": 306,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -8126,7 +8165,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 294,
+                    "Id": 296,
                     "Enable": true,
                     "Remark": "p4"
                   },
@@ -8158,7 +8197,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 306,
+                        "Id": 308,
                         "Enable": true,
                         "Remark": "p5天气"
                       },
@@ -8181,7 +8220,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 307,
+                        "Id": 309,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       }
@@ -8194,7 +8233,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 305,
+                    "Id": 307,
                     "Enable": true,
                     "Remark": "p5"
                   }

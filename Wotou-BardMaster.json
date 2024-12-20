@@ -1,8 +1,8 @@
 [
   {
     "Name": "FRU-Bard ",
-    "Version": "1220.01",
+    "Version": "1220.02",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
-    "UpdateInfo": "请务必将ACR更新并且重启AE后使用！修复目标选择器；目标选择器中，请务必勾选“有目标时不自动切换目标”！P5前歌轴3-3-12，P5歌轴3-6-9；P4爆发延后到双目标，如无需延后，请取消219节点"
+    "UpdateInfo": "请务必将ACR更新并且重启AE后使用！修复目标选择器；修复p1停手时关闭目标选择器；目标选择器中，请务必勾选“有目标时不自动切换目标”！P5前歌轴3-3-12，P5歌轴3-6-9；P4爆发延后到双目标，如无需延后，请取消219节点"
   }
 ]
