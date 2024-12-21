@@ -8210,12 +8210,41 @@
                         "Id": 305,
                         "Enable": true,
                         "Remark": "目标选择器on"
-                      },
+                      }
+                    ],
+                    "GUID": "c4079e9d-46fd-4d5f-9526-65f4c501936d",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 301,
+                    "Enable": true,
+                    "Remark": "p4前半"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
                       {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[10.00]秒",
-                        "Delay": 10.0,
-                        "GUID": "ec56d217-0893-4259-9718-e785a1365166",
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 1,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondOnWeatherIdChanged, AEAssist",
+                            "Remark": "",
+                            "DisplayName": "General/天气变化",
+                            "WeatherId": 6
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "a43921a2-884a-462e-a12e-3084b3d1c671",
                         "Important": false,
                         "Color": {
                           "X": 1.0,
@@ -8223,7 +8252,23 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 306,
+                        "Id": 307,
+                        "Enable": true,
+                        "Remark": "p3天气"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[174.00]秒",
+                        "Delay": 174.0,
+                        "GUID": "58b2666d-a0a4-41f9-afc7-807e248cbcc3",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 308,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -8246,7 +8291,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 307,
+                        "Id": 309,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       },
@@ -8262,7 +8307,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 308,
+                        "Id": 310,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -8285,7 +8330,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 309,
+                        "Id": 311,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -8301,7 +8346,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 310,
+                        "Id": 312,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -8324,7 +8369,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 311,
+                        "Id": 313,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -8337,9 +8382,9 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 301,
+                    "Id": 306,
                     "Enable": true,
-                    "Remark": "p4"
+                    "Remark": "p4后半"
                   },
                   {
                     "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
@@ -8369,7 +8414,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 313,
+                        "Id": 315,
                         "Enable": true,
                         "Remark": "p5天气"
                       },
@@ -8392,7 +8437,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 314,
+                        "Id": 316,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       }
@@ -8405,7 +8450,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 312,
+                    "Id": 314,
                     "Enable": true,
                     "Remark": "p5"
                   }
