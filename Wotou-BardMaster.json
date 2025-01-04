@@ -1,8 +1,8 @@
 [
   {
     "Name": "FRU-Bard ",
-    "Version": "0101.01",
+    "Version": "0104.01",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
-    "UpdateInfo": "测试版，全程10纷乱，旧版请上云轴下载；目标选择器中，请务必勾选“有目标时不自动切换目标”！P4爆发延后到双目标，如无需延后，请取消233节点"
+    "UpdateInfo": "修复10纷乱；新增p4爆发双目标dot；目标选择器中，请勾选“有目标时不自动切换目标”！P4爆发延后到双目标，如无需延后，取消238节点"
   }
 ]
