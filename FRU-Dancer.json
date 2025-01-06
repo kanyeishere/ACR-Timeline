@@ -4817,6 +4817,823 @@
             "Id": 164,
             "Enable": true,
             "Remark": "p5"
+          },
+          {
+            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+            "DisplayName": "序列",
+            "IgnoreNodeResult": false,
+            "StopWhenDead": false,
+            "Childs": [
+              {
+                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeParallel, AEAssist",
+                "DisplayName": "并行",
+                "AnyReturn": false,
+                "StopWhenDead": false,
+                "Childs": [
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "",
+                            "Command": "/aeTargetSelector mode3"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "9b05c087-05a3-4c1c-968d-40017b796b80",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 179,
+                        "Enable": true,
+                        "Remark": "选择当前血量最高"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector on"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 180,
+                        "Enable": true,
+                        "Remark": "目标选择器on"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[120.00]秒",
+                        "Delay": 120.0,
+                        "GUID": "9ce679ba-e5b7-4e21-9504-b813b1940408",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 181,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector off"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 182,
+                        "Enable": true,
+                        "Remark": "目标选择器off"
+                      }
+                    ],
+                    "GUID": "38ca3bdb-9baa-46d5-86f4-1a58c521e515",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 178,
+                    "Enable": true,
+                    "Remark": "p1"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 1,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondOnWeatherIdChanged, AEAssist",
+                            "Remark": "",
+                            "DisplayName": "General/天气变化",
+                            "WeatherId": 3
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "a43921a2-884a-462e-a12e-3084b3d1c671",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 184,
+                        "Enable": true,
+                        "Remark": "p2天气"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "",
+                            "Command": "/aeTargetSelector mode3"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "9b05c087-05a3-4c1c-968d-40017b796b80",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 185,
+                        "Enable": true,
+                        "Remark": "选择当前血量最高"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector on"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 186,
+                        "Enable": true,
+                        "Remark": "目标选择器on"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[200.00]秒",
+                        "Delay": 200.0,
+                        "GUID": "568728fa-4f02-4bb9-86c8-d70da4ea56e6",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 187,
+                        "Enable": true,
+                        "Remark": "p2.5"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector off"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 188,
+                        "Enable": true,
+                        "Remark": "目标选择器off"
+                      }
+                    ],
+                    "GUID": "19e6df7a-3021-4d62-b119-79bc80be0a64",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 183,
+                    "Enable": true,
+                    "Remark": "p2"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 1,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondOnWeatherIdChanged, AEAssist",
+                            "Remark": "",
+                            "DisplayName": "General/天气变化",
+                            "WeatherId": 6
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "a43921a2-884a-462e-a12e-3084b3d1c671",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 190,
+                        "Enable": true,
+                        "Remark": "p3天气"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "",
+                            "Command": "/aeTargetSelector mode3"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "9b05c087-05a3-4c1c-968d-40017b796b80",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 191,
+                        "Enable": true,
+                        "Remark": "选择当前血量最高"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector on"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 192,
+                        "Enable": true,
+                        "Remark": "目标选择器on"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[5.00]秒",
+                        "Delay": 5.0,
+                        "GUID": "cc653e8f-33dc-4f4b-bad6-3cc93998bd2d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 193,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector off"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 194,
+                        "Enable": true,
+                        "Remark": "目标选择器off"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[55.00]秒",
+                        "Delay": 55.0,
+                        "GUID": "8aef3b1c-ad93-41ad-9a5e-0fe21a29d7c9",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 195,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector on"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 196,
+                        "Enable": true,
+                        "Remark": "目标选择器on"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[5.00]秒",
+                        "Delay": 5.0,
+                        "GUID": "cc653e8f-33dc-4f4b-bad6-3cc93998bd2d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 197,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector off"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 198,
+                        "Enable": true,
+                        "Remark": "目标选择器off"
+                      }
+                    ],
+                    "GUID": "fb21b7a1-dcc4-4343-b20f-f7b399d7be8e",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 189,
+                    "Enable": true,
+                    "Remark": "p3 慎用"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 1,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondOnWeatherIdChanged, AEAssist",
+                            "Remark": "",
+                            "DisplayName": "General/天气变化",
+                            "WeatherId": 6
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "a43921a2-884a-462e-a12e-3084b3d1c671",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 200,
+                        "Enable": true,
+                        "Remark": "p3天气"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[164.00]秒",
+                        "Delay": 164.0,
+                        "GUID": "58b2666d-a0a4-41f9-afc7-807e248cbcc3",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 201,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "",
+                            "Command": "/aeTargetSelector mode3"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "9b05c087-05a3-4c1c-968d-40017b796b80",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 202,
+                        "Enable": true,
+                        "Remark": "选择当前血量最高"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector on"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 203,
+                        "Enable": true,
+                        "Remark": "目标选择器on"
+                      }
+                    ],
+                    "GUID": "c4079e9d-46fd-4d5f-9526-65f4c501936d",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 199,
+                    "Enable": true,
+                    "Remark": "p4前半"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 1,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondOnWeatherIdChanged, AEAssist",
+                            "Remark": "",
+                            "DisplayName": "General/天气变化",
+                            "WeatherId": 6
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "a43921a2-884a-462e-a12e-3084b3d1c671",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 205,
+                        "Enable": true,
+                        "Remark": "p3天气"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[174.00]秒",
+                        "Delay": 174.0,
+                        "GUID": "58b2666d-a0a4-41f9-afc7-807e248cbcc3",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 206,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector off"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 207,
+                        "Enable": true,
+                        "Remark": "目标选择器off"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[75.00]秒",
+                        "Delay": 75.0,
+                        "GUID": "af294e7d-08c0-46c2-b9a8-880b55106701",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 208,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector on"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 209,
+                        "Enable": true,
+                        "Remark": "目标选择器on"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[15.00]秒",
+                        "Delay": 15.0,
+                        "GUID": "ec56d217-0893-4259-9718-e785a1365166",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 210,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector off"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 211,
+                        "Enable": true,
+                        "Remark": "目标选择器off"
+                      }
+                    ],
+                    "GUID": "c4079e9d-46fd-4d5f-9526-65f4c501936d",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 204,
+                    "Enable": true,
+                    "Remark": "p4后半"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 1,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondOnWeatherIdChanged, AEAssist",
+                            "Remark": "",
+                            "DisplayName": "General/天气变化",
+                            "WeatherId": 9
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "a43921a2-884a-462e-a12e-3084b3d1c671",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 213,
+                        "Enable": true,
+                        "Remark": "p5天气"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector on"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 214,
+                        "Enable": true,
+                        "Remark": "目标选择器on"
+                      }
+                    ],
+                    "GUID": "f579e44e-b957-4509-b1dd-616182e7cc0b",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 212,
+                    "Enable": true,
+                    "Remark": "p5"
+                  }
+                ],
+                "GUID": "d13ad8d5-abc5-4ba0-9d0e-e25b52f1d7e2",
+                "Important": false,
+                "Color": {
+                  "X": 1.0,
+                  "Y": 1.0,
+                  "Z": 0.4,
+                  "W": 1.0
+                },
+                "Id": 177,
+                "Enable": true,
+                "Remark": ""
+              }
+            ],
+            "GUID": "1b163cee-af82-48cc-9763-dac60ff10133",
+            "Important": false,
+            "Color": {
+              "X": 1.0,
+              "Y": 1.0,
+              "Z": 0.4,
+              "W": 1.0
+            },
+            "Id": 176,
+            "Enable": true,
+            "Remark": "目标选择器"
           }
         ],
         "GUID": "4e7645c7-15de-4d16-8364-1a9a146f1623",
