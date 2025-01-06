@@ -1797,81 +1797,149 @@
                         "Remark": "开小舞"
                       },
                       {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[25.00]秒",
-                        "Delay": 25.0,
-                        "GUID": "f54365c5-042a-45ee-b21c-791f70ac2f64",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 69,
-                        "Enable": true,
-                        "Remark": ""
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
-                        "CondLogicType": 0,
-                        "CheckOnce": false,
-                        "ReverseResult": false,
-                        "TriggerConds": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
-                            "DisplayName": "General/等待技能释放",
-                            "Remark": "",
-                            "SpellId": 15997
-                          }
-                        ],
-                        "DisplayName": "等待条件",
-                        "GUID": "d8efaabd-1e48-480c-b70e-0992a12c5bc9",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 70,
-                        "Enable": true,
-                        "Remark": "小舞释放"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[3.30]秒",
-                        "Delay": 3.3,
-                        "GUID": "42a09307-4b1b-4dac-8893-245db52f08d2",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 71,
-                        "Enable": true,
-                        "Remark": ""
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeParallel, AEAssist",
-                        "DisplayName": "并行",
-                        "AnyReturn": false,
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                        "DisplayName": "序列",
+                        "IgnoreNodeResult": false,
                         "StopWhenDead": false,
                         "Childs": [
                           {
-                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
-                            "DisplayName": "序列",
-                            "IgnoreNodeResult": false,
+                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                            "DisplayName": "延迟[25.00]秒",
+                            "Delay": 25.0,
+                            "GUID": "f54365c5-042a-45ee-b21c-791f70ac2f64",
+                            "Important": false,
+                            "Color": {
+                              "X": 1.0,
+                              "Y": 1.0,
+                              "Z": 0.4,
+                              "W": 1.0
+                            },
+                            "Id": 70,
+                            "Enable": true,
+                            "Remark": ""
+                          },
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                            "CondLogicType": 0,
+                            "CheckOnce": false,
+                            "ReverseResult": false,
+                            "TriggerConds": [
+                              {
+                                "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
+                                "DisplayName": "General/等待技能释放",
+                                "Remark": "",
+                                "SpellId": 15997
+                              }
+                            ],
+                            "DisplayName": "等待条件",
+                            "GUID": "d8efaabd-1e48-480c-b70e-0992a12c5bc9",
+                            "Important": false,
+                            "Color": {
+                              "X": 1.0,
+                              "Y": 1.0,
+                              "Z": 0.4,
+                              "W": 1.0
+                            },
+                            "Id": 71,
+                            "Enable": true,
+                            "Remark": "小舞释放"
+                          },
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                            "DisplayName": "延迟[3.30]秒",
+                            "Delay": 3.3,
+                            "GUID": "42a09307-4b1b-4dac-8893-245db52f08d2",
+                            "Important": false,
+                            "Color": {
+                              "X": 1.0,
+                              "Y": 1.0,
+                              "Z": 0.4,
+                              "W": 1.0
+                            },
+                            "Id": 72,
+                            "Enable": true,
+                            "Remark": ""
+                          },
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeParallel, AEAssist",
+                            "DisplayName": "并行",
+                            "AnyReturn": false,
                             "StopWhenDead": false,
                             "Childs": [
                               {
-                                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeScriptNode, AEAssist",
-                                "OnlyCheck": true,
-                                "Script": "using AEAssist.Extension;\nusing AEAssist;\nusing AEAssist.CombatRoutine.Trigger;\nusing AEAssist.CombatRoutine.Trigger.Node;\n\nnamespace ScriptTest;\n\npublic class TestScript : ITriggerScript\n{\n    // Check返回True代表此节点执行完毕， 非检测模式下，返回false时一直重复执行（每帧）\n    // 检测模式下， condParams必定为空\n    public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)\n    {\n        var target = Core.Me.GetCurrTarget();\n\n        if (target == null)\n            return true;\n\n        return false;\n    }\n}",
-                                "DisplayName": "脚本节点",
-                                "GUID": "a963bb18-3c84-4017-9600-ecaf78bc7f85",
+                                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                                "DisplayName": "序列",
+                                "IgnoreNodeResult": false,
+                                "StopWhenDead": false,
+                                "Childs": [
+                                  {
+                                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeScriptNode, AEAssist",
+                                    "OnlyCheck": true,
+                                    "Script": "using AEAssist.Extension;\nusing AEAssist;\nusing AEAssist.CombatRoutine.Trigger;\nusing AEAssist.CombatRoutine.Trigger.Node;\n\nnamespace ScriptTest;\n\npublic class TestScript : ITriggerScript\n{\n    // Check返回True代表此节点执行完毕， 非检测模式下，返回false时一直重复执行（每帧）\n    // 检测模式下， condParams必定为空\n    public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)\n    {\n        var target = Core.Me.GetCurrTarget();\n\n        if (target == null)\n            return true;\n\n        return false;\n    }\n}",
+                                    "DisplayName": "脚本节点",
+                                    "GUID": "a963bb18-3c84-4017-9600-ecaf78bc7f85",
+                                    "Important": false,
+                                    "Color": {
+                                      "X": 1.0,
+                                      "Y": 1.0,
+                                      "Z": 0.4,
+                                      "W": 1.0
+                                    },
+                                    "Id": 75,
+                                    "Enable": true,
+                                    "Remark": "当前目标消失"
+                                  },
+                                  {
+                                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                                    "TriggerActions": [
+                                      {
+                                        "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionCastSpell, AEAssist",
+                                        "Remark": null,
+                                        "SpellConfig": {
+                                          "Remark": "",
+                                          "Category": 0,
+                                          "SpellId": 16192,
+                                          "CoolDowncheck": false,
+                                          "CoolDowncheck_time": 0.0,
+                                          "TargetType": 0,
+                                          "IsPartyMember": true,
+                                          "LimitJobType": 0,
+                                          "LimitBuffIds": [],
+                                          "LimitMaxHpType": 0,
+                                          "LimitHpType": 0,
+                                          "Location": {
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                          },
+                                          "TargetSelector": {
+                                            "Enable": true,
+                                            "Target": 0,
+                                            "FilterDatas": [],
+                                            "NeedTargetable": false,
+                                            "SndFilter": 0,
+                                            "PMIndex": 0
+                                          },
+                                          "AutoCheckActionChange": true
+                                        },
+                                        "DisplayName": "技能使用/强制使用技能"
+                                      }
+                                    ],
+                                    "DisplayName": "行为",
+                                    "GUID": "0b9022cb-4077-444e-988e-a212bfcce6ed",
+                                    "Important": false,
+                                    "Color": {
+                                      "X": 1.0,
+                                      "Y": 1.0,
+                                      "Z": 0.4,
+                                      "W": 1.0
+                                    },
+                                    "Id": 76,
+                                    "Enable": true,
+                                    "Remark": "小舞结束"
+                                  }
+                                ],
+                                "GUID": "209fb7ad-a766-4888-b11d-2d50ca47e6ea",
                                 "Important": false,
                                 "Color": {
                                   "X": 1.0,
@@ -1881,46 +1949,15 @@
                                 },
                                 "Id": 74,
                                 "Enable": true,
-                                "Remark": "当前目标消失"
+                                "Remark": ""
                               },
                               {
-                                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                                "TriggerActions": [
-                                  {
-                                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionCastSpell, AEAssist",
-                                    "Remark": null,
-                                    "SpellConfig": {
-                                      "Remark": "",
-                                      "Category": 0,
-                                      "SpellId": 16192,
-                                      "CoolDowncheck": false,
-                                      "CoolDowncheck_time": 0.0,
-                                      "TargetType": 0,
-                                      "IsPartyMember": true,
-                                      "LimitJobType": 0,
-                                      "LimitBuffIds": [],
-                                      "LimitMaxHpType": 0,
-                                      "LimitHpType": 0,
-                                      "Location": {
-                                        "X": 0.0,
-                                        "Y": 0.0,
-                                        "Z": 0.0
-                                      },
-                                      "TargetSelector": {
-                                        "Enable": true,
-                                        "Target": 0,
-                                        "FilterDatas": [],
-                                        "NeedTargetable": false,
-                                        "SndFilter": 0,
-                                        "PMIndex": 0
-                                      },
-                                      "AutoCheckActionChange": true
-                                    },
-                                    "DisplayName": "技能使用/强制使用技能"
-                                  }
-                                ],
-                                "DisplayName": "行为",
-                                "GUID": "0b9022cb-4077-444e-988e-a212bfcce6ed",
+                                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                                "DisplayName": "序列",
+                                "IgnoreNodeResult": false,
+                                "StopWhenDead": false,
+                                "Childs": [],
+                                "GUID": "21ccd3e3-ab03-48a2-a7d6-8e24e5276849",
                                 "Important": false,
                                 "Color": {
                                   "X": 1.0,
@@ -1928,12 +1965,12 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 75,
+                                "Id": 77,
                                 "Enable": true,
-                                "Remark": "小舞结束"
+                                "Remark": ""
                               }
                             ],
-                            "GUID": "209fb7ad-a766-4888-b11d-2d50ca47e6ea",
+                            "GUID": "6ddb30ec-19d7-49ed-a769-0a1857f54242",
                             "Important": false,
                             "Color": {
                               "X": 1.0,
@@ -1944,27 +1981,9 @@
                             "Id": 73,
                             "Enable": true,
                             "Remark": ""
-                          },
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
-                            "DisplayName": "序列",
-                            "IgnoreNodeResult": false,
-                            "StopWhenDead": false,
-                            "Childs": [],
-                            "GUID": "21ccd3e3-ab03-48a2-a7d6-8e24e5276849",
-                            "Important": false,
-                            "Color": {
-                              "X": 1.0,
-                              "Y": 1.0,
-                              "Z": 0.4,
-                              "W": 1.0
-                            },
-                            "Id": 76,
-                            "Enable": true,
-                            "Remark": ""
                           }
                         ],
-                        "GUID": "6ddb30ec-19d7-49ed-a769-0a1857f54242",
+                        "GUID": "7f0b4cc7-568c-423c-a54c-12bf01b69345",
                         "Important": false,
                         "Color": {
                           "X": 1.0,
@@ -1972,7 +1991,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 72,
+                        "Id": 69,
                         "Enable": true,
                         "Remark": ""
                       }
@@ -2017,7 +2036,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 78,
+                        "Id": 79,
                         "Enable": true,
                         "Remark": "大舞释放"
                       },
@@ -2043,7 +2062,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 79,
+                        "Id": 80,
                         "Enable": true,
                         "Remark": "百花释放"
                       },
@@ -2059,7 +2078,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 80,
+                        "Id": 81,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -2087,7 +2106,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 81,
+                        "Id": 82,
                         "Enable": true,
                         "Remark": "百花cd好了"
                       },
@@ -2136,7 +2155,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 82,
+                        "Id": 83,
                         "Enable": true,
                         "Remark": "百花"
                       },
@@ -2162,7 +2181,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 83,
+                        "Id": 84,
                         "Enable": true,
                         "Remark": "大舞释放"
                       },
@@ -2188,7 +2207,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 84,
+                        "Id": 85,
                         "Enable": true,
                         "Remark": "百花释放"
                       },
@@ -2204,7 +2223,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 85,
+                        "Id": 86,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -2232,7 +2251,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 86,
+                        "Id": 87,
                         "Enable": true,
                         "Remark": "百花cd好了"
                       },
@@ -2281,7 +2300,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 87,
+                        "Id": 88,
                         "Enable": true,
                         "Remark": "百花"
                       }
@@ -2294,7 +2313,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 77,
+                    "Id": 78,
                     "Enable": true,
                     "Remark": "百花"
                   },
@@ -2316,7 +2335,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 89,
+                        "Id": 90,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -2363,7 +2382,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 90,
+                        "Id": 91,
                         "Enable": true,
                         "Remark": "光水晶可选中"
                       },
@@ -2408,7 +2427,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 91,
+                        "Id": 92,
                         "Enable": true,
                         "Remark": "选中最近的光水晶"
                       },
@@ -2442,7 +2461,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 95,
+                                    "Id": 96,
                                     "Enable": true,
                                     "Remark": "等待当前目标消失"
                                   },
@@ -2502,7 +2521,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 96,
+                                    "Id": 97,
                                     "Enable": true,
                                     "Remark": "光水晶可选中"
                                   },
@@ -2560,7 +2579,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 97,
+                                    "Id": 98,
                                     "Enable": true,
                                     "Remark": "选中25米内血量最高的光水晶"
                                   },
@@ -2576,7 +2595,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 98,
+                                    "Id": 99,
                                     "Enable": true,
                                     "Remark": ""
                                   }
@@ -2589,7 +2608,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 94,
+                                "Id": 95,
                                 "Enable": true,
                                 "Remark": ""
                               }
@@ -2602,7 +2621,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 93,
+                            "Id": 94,
                             "Enable": true,
                             "Remark": "光水晶"
                           },
@@ -2668,7 +2687,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 100,
+                                "Id": 101,
                                 "Enable": true,
                                 "Remark": "永久水晶无敌"
                               },
@@ -2684,7 +2703,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 101,
+                                "Id": 102,
                                 "Enable": true,
                                 "Remark": ""
                               },
@@ -2744,7 +2763,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 102,
+                                "Id": 103,
                                 "Enable": true,
                                 "Remark": "永久水晶无敌消失"
                               },
@@ -2789,7 +2808,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 103,
+                                "Id": 104,
                                 "Enable": true,
                                 "Remark": "选中永久水晶"
                               },
@@ -2808,7 +2827,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 104,
+                                "Id": 105,
                                 "Enable": true,
                                 "Remark": "清理光水晶序列"
                               }
@@ -2821,7 +2840,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 99,
+                            "Id": 100,
                             "Enable": true,
                             "Remark": "永久水晶"
                           }
@@ -2834,7 +2853,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 92,
+                        "Id": 93,
                         "Enable": true,
                         "Remark": ""
                       }
@@ -2847,7 +2866,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 88,
+                    "Id": 89,
                     "Enable": true,
                     "Remark": "6分钟爆发目标选择"
                   },
@@ -2879,7 +2898,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 106,
+                        "Id": 107,
                         "Enable": true,
                         "Remark": "大舞释放"
                       },
@@ -2895,7 +2914,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 107,
+                        "Id": 108,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -2944,7 +2963,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 108,
+                        "Id": 109,
                         "Enable": true,
                         "Remark": "预跳大舞"
                       }
@@ -2957,7 +2976,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 105,
+                    "Id": 106,
                     "Enable": true,
                     "Remark": "大舞控制"
                   }
@@ -3015,7 +3034,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 110,
+                "Id": 111,
                 "Enable": true,
                 "Remark": "p3天气"
               },
@@ -3034,7 +3053,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 111,
+                "Id": 112,
                 "Enable": true,
                 "Remark": ""
               },
@@ -3107,7 +3126,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 112,
+                "Id": 113,
                 "Enable": true,
                 "Remark": "QT初始化"
               },
@@ -3135,7 +3154,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 115,
+                        "Id": 116,
                         "Enable": true,
                         "Remark": "第一轮分摊分散"
                       },
@@ -3185,7 +3204,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 116,
+                        "Id": 117,
                         "Enable": true,
                         "Remark": "桑巴"
                       },
@@ -3201,7 +3220,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 117,
+                        "Id": 118,
                         "Enable": true,
                         "Remark": "44分摊+AOE"
                       },
@@ -3251,7 +3270,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 118,
+                        "Id": 119,
                         "Enable": true,
                         "Remark": "桑巴"
                       }
@@ -3264,7 +3283,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 114,
+                    "Id": 115,
                     "Enable": true,
                     "Remark": "p3减伤"
                   },
@@ -3286,7 +3305,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 120,
+                        "Id": 121,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -3310,7 +3329,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 121,
+                        "Id": 122,
                         "Enable": true,
                         "Remark": "关大舞"
                       },
@@ -3334,7 +3353,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 122,
+                        "Id": 123,
                         "Enable": true,
                         "Remark": "关百花"
                       },
@@ -3350,7 +3369,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 123,
+                        "Id": 124,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -3374,7 +3393,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 124,
+                        "Id": 125,
                         "Enable": true,
                         "Remark": "开大舞"
                       },
@@ -3398,7 +3417,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 125,
+                        "Id": 126,
                         "Enable": true,
                         "Remark": "关小舞"
                       },
@@ -3422,7 +3441,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 126,
+                        "Id": 127,
                         "Enable": true,
                         "Remark": "开百花"
                       },
@@ -3448,7 +3467,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 127,
+                        "Id": 128,
                         "Enable": true,
                         "Remark": "百花释放"
                       },
@@ -3472,7 +3491,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 128,
+                        "Id": 129,
                         "Enable": true,
                         "Remark": "开小舞"
                       },
@@ -3488,7 +3507,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 129,
+                        "Id": 130,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -3516,7 +3535,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 130,
+                        "Id": 131,
                         "Enable": true,
                         "Remark": "小舞cd好了"
                       },
@@ -3565,7 +3584,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 131,
+                        "Id": 132,
                         "Enable": true,
                         "Remark": "小舞"
                       }
@@ -3578,7 +3597,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 119,
+                    "Id": 120,
                     "Enable": true,
                     "Remark": "p3爆发"
                   }
@@ -3591,7 +3610,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 113,
+                "Id": 114,
                 "Enable": true,
                 "Remark": ""
               }
@@ -3604,7 +3623,7 @@
               "Z": 0.4,
               "W": 1.0
             },
-            "Id": 109,
+            "Id": 110,
             "Enable": true,
             "Remark": "p3"
           },
@@ -3636,7 +3655,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 133,
+                "Id": 134,
                 "Enable": true,
                 "Remark": "p3天气"
               },
@@ -3652,7 +3671,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 134,
+                "Id": 135,
                 "Enable": true,
                 "Remark": ""
               },
@@ -3725,7 +3744,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 135,
+                "Id": 136,
                 "Enable": true,
                 "Remark": "QT初始化"
               },
@@ -3749,7 +3768,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 136,
+                "Id": 137,
                 "Enable": true,
                 "Remark": "开AOE"
               },
@@ -3797,7 +3816,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 139,
+                        "Id": 140,
                         "Enable": true,
                         "Remark": "死亡轮回"
                       },
@@ -3813,7 +3832,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 140,
+                        "Id": 141,
                         "Enable": true,
                         "Remark": "死亡轮回+无尽顿悟"
                       },
@@ -3863,7 +3882,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 141,
+                        "Id": 142,
                         "Enable": true,
                         "Remark": "桑巴"
                       },
@@ -3891,7 +3910,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 142,
+                        "Id": 143,
                         "Enable": true,
                         "Remark": "桑巴cd好了"
                       },
@@ -3941,7 +3960,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 143,
+                        "Id": 144,
                         "Enable": true,
                         "Remark": "桑巴"
                       }
@@ -3954,7 +3973,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 138,
+                    "Id": 139,
                     "Enable": true,
                     "Remark": "p4减伤"
                   },
@@ -3984,7 +4003,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 145,
+                        "Id": 146,
                         "Enable": true,
                         "Remark": "关大舞"
                       },
@@ -4008,7 +4027,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 146,
+                        "Id": 147,
                         "Enable": true,
                         "Remark": "关百花"
                       },
@@ -4024,7 +4043,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 147,
+                        "Id": 148,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -4048,7 +4067,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 148,
+                        "Id": 149,
                         "Enable": true,
                         "Remark": "开大舞"
                       },
@@ -4072,7 +4091,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 149,
+                        "Id": 150,
                         "Enable": true,
                         "Remark": "关小舞"
                       },
@@ -4096,7 +4115,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 150,
+                        "Id": 151,
                         "Enable": true,
                         "Remark": "开百花"
                       },
@@ -4122,7 +4141,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 151,
+                        "Id": 152,
                         "Enable": true,
                         "Remark": "百花释放"
                       },
@@ -4146,7 +4165,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 152,
+                        "Id": 153,
                         "Enable": true,
                         "Remark": "开小舞"
                       },
@@ -4162,7 +4181,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 153,
+                        "Id": 154,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -4186,7 +4205,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 154,
+                        "Id": 155,
                         "Enable": true,
                         "Remark": "关大舞"
                       }
@@ -4199,7 +4218,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 144,
+                    "Id": 145,
                     "Enable": true,
                     "Remark": "p4输出 爆发延后到双目标"
                   },
@@ -4231,7 +4250,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 156,
+                        "Id": 157,
                         "Enable": true,
                         "Remark": "大舞释放"
                       },
@@ -4247,7 +4266,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 157,
+                        "Id": 158,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -4271,7 +4290,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 158,
+                        "Id": 159,
                         "Enable": true,
                         "Remark": "关大舞"
                       }
@@ -4284,7 +4303,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 155,
+                    "Id": 156,
                     "Enable": true,
                     "Remark": "p4输出 结尾锁爆发"
                   }
@@ -4297,7 +4316,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 137,
+                "Id": 138,
                 "Enable": true,
                 "Remark": ""
               }
@@ -4310,7 +4329,7 @@
               "Z": 0.4,
               "W": 1.0
             },
-            "Id": 132,
+            "Id": 133,
             "Enable": true,
             "Remark": "p4"
           },
@@ -4342,7 +4361,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 160,
+                "Id": 161,
                 "Enable": true,
                 "Remark": "p5天气"
               },
@@ -4361,7 +4380,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 161,
+                "Id": 162,
                 "Enable": true,
                 "Remark": ""
               },
@@ -4434,7 +4453,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 162,
+                "Id": 163,
                 "Enable": true,
                 "Remark": "QT初始化"
               },
@@ -4458,7 +4477,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 163,
+                "Id": 164,
                 "Enable": true,
                 "Remark": "开启强对齐"
               },
@@ -4514,7 +4533,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 166,
+                        "Id": 167,
                         "Enable": true,
                         "Remark": "落地第1G"
                       },
@@ -4530,7 +4549,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 167,
+                        "Id": 168,
                         "Enable": true,
                         "Remark": "光暗直线挡枪"
                       },
@@ -4580,7 +4599,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 168,
+                        "Id": 169,
                         "Enable": true,
                         "Remark": "桑巴"
                       },
@@ -4596,7 +4615,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 169,
+                        "Id": 170,
                         "Enable": true,
                         "Remark": "光暗直线挡枪"
                       },
@@ -4646,7 +4665,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 170,
+                        "Id": 171,
                         "Enable": true,
                         "Remark": "桑巴"
                       }
@@ -4659,7 +4678,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 165,
+                    "Id": 166,
                     "Enable": true,
                     "Remark": "p5减伤"
                   }
@@ -4672,7 +4691,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 164,
+                "Id": 165,
                 "Enable": true,
                 "Remark": ""
               }
@@ -4685,7 +4704,7 @@
               "Z": 0.4,
               "W": 1.0
             },
-            "Id": 159,
+            "Id": 160,
             "Enable": true,
             "Remark": "p5"
           }
