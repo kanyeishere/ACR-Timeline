@@ -4,5 +4,11 @@
     "Version": "0109.01",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
     "UpdateInfo": "修复10纷乱；新增p4爆发双目标dot；目标选择器中，请勾选“有目标时不自动切换目标”！P4爆发延后到双目标，如无需延后，取消229节点"
+  },
+  {
+    "Name": "TEA-Bard ",
+    "Version": "0109.01",
+    "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/TEA-Bard.json",
+    "UpdateInfo": "p1已实测，p2-p4脑测版，p3火龙卷及p4减伤自己给，自动选择70-80起手"
   }
 ]
