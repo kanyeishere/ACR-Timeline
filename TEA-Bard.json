@@ -191,6 +191,32 @@
                             "ReverseResult": false,
                             "TriggerConds": [
                               {
+                                "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
+                                "DisplayName": "General/等待技能释放",
+                                "Remark": "",
+                                "SpellId": 3560
+                              }
+                            ],
+                            "DisplayName": "等待条件",
+                            "GUID": "89b3ba1f-db1a-4eb9-95f7-6fe104872376",
+                            "Important": false,
+                            "Color": {
+                              "X": 1.0,
+                              "Y": 1.0,
+                              "Z": 0.4,
+                              "W": 1.0
+                            },
+                            "Id": 10,
+                            "Enable": true,
+                            "Remark": "3560"
+                          },
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                            "CondLogicType": 0,
+                            "CheckOnce": false,
+                            "ReverseResult": false,
+                            "TriggerConds": [
+                              {
                                 "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondWaitTarget, AEAssist",
                                 "TargetSelector": {
                                   "Enable": true,
@@ -227,7 +253,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 10,
+                            "Id": 11,
                             "Enable": true,
                             "Remark": "活水之手可选中"
                           },
@@ -251,7 +277,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 11,
+                            "Id": 12,
                             "Enable": true,
                             "Remark": "关dot"
                           },
@@ -282,7 +308,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 12,
+                            "Id": 13,
                             "Enable": true,
                             "Remark": "选中活水之手"
                           },
@@ -309,14 +335,14 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 13,
+                            "Id": 14,
                             "Enable": true,
                             "Remark": "解锁失血, 纷乱"
                           },
                           {
                             "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                            "DisplayName": "延迟[4.80]秒",
-                            "Delay": 4.8,
+                            "DisplayName": "延迟[3.00]秒",
+                            "Delay": 3.0,
                             "GUID": "744ea465-c140-47fe-9ac8-603cda32d001",
                             "Important": false,
                             "Color": {
@@ -325,7 +351,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 14,
+                            "Id": 15,
                             "Enable": true,
                             "Remark": ""
                           },
@@ -338,10 +364,17 @@
                                 "Value": true,
                                 "DisplayName": "Bard/QT",
                                 "Remark": null
+                              },
+                              {
+                                "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                                "Key": "AOE",
+                                "Value": false,
+                                "DisplayName": "Bard/QT",
+                                "Remark": null
                               }
                             ],
                             "DisplayName": "行为",
-                            "GUID": "67b2a5c0-4878-4602-a1ad-690ae8470307",
+                            "GUID": "b72c0e38-a324-49c3-8f2e-a92e6afb3824",
                             "Important": false,
                             "Color": {
                               "X": 1.0,
@@ -349,9 +382,9 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 15,
+                            "Id": 16,
                             "Enable": true,
-                            "Remark": "开dot"
+                            "Remark": "开dot 关aoe"
                           }
                         ],
                         "GUID": "f506a76a-8cfa-4565-80a7-b7e33a365b0d",
@@ -415,7 +448,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 18,
+                            "Id": 19,
                             "Enable": true,
                             "Remark": "冲洗"
                           },
@@ -431,7 +464,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 19,
+                            "Id": 20,
                             "Enable": true,
                             "Remark": ""
                           },
@@ -481,7 +514,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 20,
+                            "Id": 21,
                             "Enable": true,
                             "Remark": "行吟"
                           },
@@ -528,7 +561,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 21,
+                            "Id": 22,
                             "Enable": true,
                             "Remark": "存在窒息buff"
                           },
@@ -585,7 +618,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 24,
+                                    "Id": 25,
                                     "Enable": true,
                                     "Remark": "自己窒息"
                                   },
@@ -635,7 +668,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 25,
+                                    "Id": 26,
                                     "Enable": true,
                                     "Remark": "解自己"
                                   }
@@ -648,7 +681,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 23,
+                                "Id": 24,
                                 "Enable": true,
                                 "Remark": ""
                               },
@@ -718,7 +751,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 27,
+                                    "Id": 28,
                                     "Enable": true,
                                     "Remark": "解队友"
                                   }
@@ -731,7 +764,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 26,
+                                "Id": 27,
                                 "Enable": true,
                                 "Remark": ""
                               }
@@ -744,7 +777,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 22,
+                            "Id": 23,
                             "Enable": true,
                             "Remark": ""
                           }
@@ -757,7 +790,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 17,
+                        "Id": 18,
                         "Enable": true,
                         "Remark": "溅开 6连拍地板 ActionId: 18866"
                       }
@@ -770,7 +803,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 16,
+                    "Id": 17,
                     "Enable": true,
                     "Remark": "减伤"
                   },
@@ -823,7 +856,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 29,
+                        "Id": 30,
                         "Enable": true,
                         "Remark": "狩猎人偶可选中"
                       },
@@ -868,7 +901,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 30,
+                        "Id": 31,
                         "Enable": true,
                         "Remark": "关dot 关aoe"
                       },
@@ -902,7 +935,7 @@
                                   "Remark": "",
                                   "StrParam1": "",
                                   "UintParam1": 0,
-                                  "FloatParam1": 24.9,
+                                  "FloatParam1": 25.0,
                                   "LeftTime": 0,
                                   "JobsCategory": 0,
                                   "CompareType": 4,
@@ -928,7 +961,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 31,
+                        "Id": 32,
                         "Enable": true,
                         "Remark": "小怪血量低于24.9后切目标为水基佬"
                       },
@@ -959,7 +992,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 32,
+                        "Id": 33,
                         "Enable": true,
                         "Remark": "有生命活水"
                       },
@@ -990,7 +1023,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 33,
+                        "Id": 34,
                         "Enable": true,
                         "Remark": "开dot 开aoe"
                       }
@@ -1003,7 +1036,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 28,
+                    "Id": 29,
                     "Enable": true,
                     "Remark": "小怪切目标"
                   },
@@ -1034,7 +1067,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 35,
+                        "Id": 36,
                         "Enable": true,
                         "Remark": "42-42-45"
                       },
@@ -1060,7 +1093,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 36,
+                        "Id": 37,
                         "Enable": true,
                         "Remark": "军神"
                       },
@@ -1098,7 +1131,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 37,
+                        "Id": 38,
                         "Enable": true,
                         "Remark": "关唱歌 关爆发"
                       }
@@ -1111,9 +1144,98 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 34,
+                    "Id": 35,
                     "Enable": true,
                     "Remark": "歌轴"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 0,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
+                            "Strs": null,
+                            "Remark": "",
+                            "RegexNameOrId": "18470",
+                            "NeedTargetable": false,
+                            "DisplayName": "General/敌人读条使用技能"
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "b47ca833-d905-489a-8a99-1875a94f8b60",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 40,
+                        "Enable": true,
+                        "Remark": "倾泻"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[5.00]秒",
+                        "Delay": 5.0,
+                        "GUID": "dc223ea3-343a-4cca-bebe-7ffa8260474d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 41,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionLockSpell, AEAssist",
+                            "IdList": [
+                              107
+                            ],
+                            "IsLock": false,
+                            "DisplayName": "技能使用/锁定技能",
+                            "Remark": null
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "4ffea801-d202-449f-b302-15f2cd43edde",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 42,
+                        "Enable": true,
+                        "Remark": "解锁纷乱"
+                      }
+                    ],
+                    "GUID": "f506a76a-8cfa-4565-80a7-b7e33a365b0d",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 39,
+                    "Enable": true,
+                    "Remark": "第一次倾泻 技能: 18470"
                   }
                 ],
                 "GUID": "6eafcd89-4f97-4d3b-8e90-aa7b6f0e8a04",
@@ -1171,7 +1293,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 39,
+                "Id": 44,
                 "Enable": true,
                 "Remark": "P2转场"
               },
@@ -1211,7 +1333,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 42,
+                        "Id": 47,
                         "Enable": true,
                         "Remark": "回旋碎踢"
                       },
@@ -1227,7 +1349,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 43,
+                        "Id": 48,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -1277,7 +1399,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 44,
+                        "Id": 49,
                         "Enable": true,
                         "Remark": "行吟"
                       }
@@ -1290,7 +1412,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 41,
+                    "Id": 46,
                     "Enable": true,
                     "Remark": "减伤"
                   },
@@ -1343,7 +1465,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 46,
+                        "Id": 51,
                         "Enable": true,
                         "Remark": "Cruise Chaser"
                       },
@@ -1381,7 +1503,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 47,
+                        "Id": 52,
                         "Enable": true,
                         "Remark": "开唱歌 开爆发"
                       },
@@ -1412,7 +1534,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 48,
+                        "Id": 53,
                         "Enable": true,
                         "Remark": "选中 Cruise Chaser"
                       },
@@ -1438,7 +1560,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 49,
+                        "Id": 54,
                         "Enable": true,
                         "Remark": "毒dot"
                       },
@@ -1469,7 +1591,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 50,
+                        "Id": 55,
                         "Enable": true,
                         "Remark": "选中 Brute Justice"
                       },
@@ -1495,7 +1617,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 51,
+                        "Id": 56,
                         "Enable": true,
                         "Remark": "毒dot"
                       },
@@ -1526,7 +1648,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 52,
+                        "Id": 57,
                         "Enable": true,
                         "Remark": "选中 Cruise Chaser"
                       }
@@ -1539,7 +1661,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 45,
+                    "Id": 50,
                     "Enable": true,
                     "Remark": "双目标dot"
                   },
@@ -1561,7 +1683,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 54,
+                        "Id": 59,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -1587,7 +1709,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 55,
+                        "Id": 60,
                         "Enable": true,
                         "Remark": "纷乱"
                       },
@@ -1603,7 +1725,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 56,
+                        "Id": 61,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -1634,7 +1756,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 57,
+                        "Id": 62,
                         "Enable": true,
                         "Remark": "关唱歌 关爆发"
                       }
@@ -1647,7 +1769,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 53,
+                    "Id": 58,
                     "Enable": true,
                     "Remark": "结尾关爆发"
                   }
@@ -1660,7 +1782,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 40,
+                "Id": 45,
                 "Enable": true,
                 "Remark": ""
               }
@@ -1673,7 +1795,7 @@
               "Z": 0.4,
               "W": 1.0
             },
-            "Id": 38,
+            "Id": 43,
             "Enable": true,
             "Remark": "P2"
           },
@@ -1707,7 +1829,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 59,
+                "Id": 64,
                 "Enable": true,
                 "Remark": "P3转场"
               },
@@ -1738,7 +1860,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 60,
+                "Id": 65,
                 "Enable": true,
                 "Remark": "开唱歌 开爆发"
               },
@@ -1776,7 +1898,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 63,
+                        "Id": 68,
                         "Enable": true,
                         "Remark": "军神"
                       },
@@ -1807,7 +1929,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 64,
+                        "Id": 69,
                         "Enable": true,
                         "Remark": "关唱歌 关爆发"
                       },
@@ -1854,7 +1976,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 65,
+                        "Id": 70,
                         "Enable": true,
                         "Remark": "至尊亚历山大"
                       },
@@ -1885,7 +2007,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 66,
+                        "Id": 71,
                         "Enable": true,
                         "Remark": "至尊亚历山大"
                       },
@@ -1916,7 +2038,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 67,
+                        "Id": 72,
                         "Enable": true,
                         "Remark": "开唱歌 开爆发"
                       }
@@ -1929,7 +2051,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 62,
+                    "Id": 67,
                     "Enable": true,
                     "Remark": "真心关爆发"
                   },
@@ -1963,7 +2085,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 69,
+                        "Id": 74,
                         "Enable": true,
                         "Remark": "夏诺雅台词检测"
                       },
@@ -2013,7 +2135,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 70,
+                        "Id": 75,
                         "Enable": true,
                         "Remark": "行吟"
                       }
@@ -2026,7 +2148,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 68,
+                    "Id": 73,
                     "Enable": true,
                     "Remark": "结晶爆炸"
                   },
@@ -2060,7 +2182,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 72,
+                        "Id": 77,
                         "Enable": true,
                         "Remark": "神圣审判"
                       }
@@ -2073,7 +2195,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 71,
+                    "Id": 76,
                     "Enable": true,
                     "Remark": "神圣审判（软狂暴）技能：18552"
                   }
@@ -2086,7 +2208,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 61,
+                "Id": 66,
                 "Enable": true,
                 "Remark": ""
               }
@@ -2099,7 +2221,7 @@
               "Z": 0.4,
               "W": 1.0
             },
-            "Id": 58,
+            "Id": 63,
             "Enable": true,
             "Remark": "P3"
           },
@@ -2133,7 +2255,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 74,
+                "Id": 79,
                 "Enable": true,
                 "Remark": "P4转场"
               },
@@ -2159,7 +2281,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 75,
+                "Id": 80,
                 "Enable": true,
                 "Remark": "锁军神"
               },
@@ -2197,7 +2319,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 78,
+                        "Id": 83,
                         "Enable": true,
                         "Remark": "贤者歌"
                       },
@@ -2223,7 +2345,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 79,
+                        "Id": 84,
                         "Enable": true,
                         "Remark": "解锁军神"
                       }
@@ -2236,7 +2358,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 77,
+                    "Id": 82,
                     "Enable": true,
                     "Remark": ""
                   },
@@ -2270,7 +2392,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 81,
+                        "Id": 86,
                         "Enable": true,
                         "Remark": "制导"
                       },
@@ -2286,7 +2408,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 82,
+                        "Id": 87,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -2302,7 +2424,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 83,
+                        "Id": 88,
                         "Enable": true,
                         "Remark": "制导判定"
                       }
@@ -2315,7 +2437,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 80,
+                    "Id": 85,
                     "Enable": true,
                     "Remark": "制导（0.5测分散分摊）技能: 18571"
                   },
@@ -2349,7 +2471,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 85,
+                        "Id": 90,
                         "Enable": true,
                         "Remark": "加重株罚"
                       },
@@ -2365,7 +2487,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 86,
+                        "Id": 91,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -2381,7 +2503,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 87,
+                        "Id": 92,
                         "Enable": true,
                         "Remark": "加重株罚判定"
                       }
@@ -2394,7 +2516,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 84,
+                    "Id": 89,
                     "Enable": true,
                     "Remark": "加重株罚 技能: 18578"
                   },
@@ -2428,7 +2550,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 89,
+                        "Id": 94,
                         "Enable": true,
                         "Remark": "株罚"
                       },
@@ -2444,7 +2566,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 90,
+                        "Id": 95,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -2460,7 +2582,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 91,
+                        "Id": 96,
                         "Enable": true,
                         "Remark": "株罚判定"
                       }
@@ -2473,116 +2595,9 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 88,
+                    "Id": 93,
                     "Enable": true,
                     "Remark": "株罚  技能:18577"
-                  },
-                  {
-                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
-                    "DisplayName": "序列",
-                    "IgnoreNodeResult": false,
-                    "StopWhenDead": false,
-                    "Childs": [
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
-                        "CondLogicType": 0,
-                        "CheckOnce": false,
-                        "ReverseResult": false,
-                        "TriggerConds": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
-                            "Strs": null,
-                            "Remark": "",
-                            "RegexNameOrId": "19220",
-                            "NeedTargetable": false,
-                            "DisplayName": "General/敌人读条使用技能"
-                          }
-                        ],
-                        "DisplayName": "等待条件",
-                        "GUID": "cb0523ea-f951-453d-a47d-e28eba4dee2f",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 93,
-                        "Enable": true,
-                        "Remark": "未来确定β"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
-                        "CondLogicType": 0,
-                        "CheckOnce": false,
-                        "ReverseResult": false,
-                        "TriggerConds": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
-                            "Strs": null,
-                            "Remark": "",
-                            "RegexNameOrId": "18578",
-                            "NeedTargetable": false,
-                            "DisplayName": "General/敌人读条使用技能"
-                          }
-                        ],
-                        "DisplayName": "等待条件",
-                        "GUID": "99866f13-047b-4c89-a4db-9e16dccc9998",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 94,
-                        "Enable": true,
-                        "Remark": "加重株罚"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[3.00]秒",
-                        "Delay": 3.0,
-                        "GUID": "9d5b5cc2-e747-4c8a-82f4-02ac5700990b",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 95,
-                        "Enable": true,
-                        "Remark": ""
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                        "TriggerActions": [],
-                        "DisplayName": "行为",
-                        "GUID": "ee8c5d02-9887-4658-a41a-e999b55e66ad",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 96,
-                        "Enable": true,
-                        "Remark": "加重株罚判定"
-                      }
-                    ],
-                    "GUID": "4fab7c8f-64c8-4622-9b54-2f0012a797f2",
-                    "Important": false,
-                    "Color": {
-                      "X": 1.0,
-                      "Y": 1.0,
-                      "Z": 0.4,
-                      "W": 1.0
-                    },
-                    "Id": 92,
-                    "Enable": true,
-                    "Remark": "第二次加重株罚"
                   },
                   {
                     "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
@@ -2628,13 +2643,13 @@
                             "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
                             "Strs": null,
                             "Remark": "",
-                            "RegexNameOrId": "18577",
+                            "RegexNameOrId": "18578",
                             "NeedTargetable": false,
                             "DisplayName": "General/敌人读条使用技能"
                           }
                         ],
                         "DisplayName": "等待条件",
-                        "GUID": "5463b9ed-aeeb-46f3-88a5-c609cc00187d",
+                        "GUID": "99866f13-047b-4c89-a4db-9e16dccc9998",
                         "Important": false,
                         "Color": {
                           "X": 1.0,
@@ -2644,13 +2659,13 @@
                         },
                         "Id": 99,
                         "Enable": true,
-                        "Remark": "株罚"
+                        "Remark": "加重株罚"
                       },
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[5.00]秒",
-                        "Delay": 5.0,
-                        "GUID": "c563d82f-df9b-4375-b334-e8bf834c2b85",
+                        "DisplayName": "延迟[3.00]秒",
+                        "Delay": 3.0,
+                        "GUID": "9d5b5cc2-e747-4c8a-82f4-02ac5700990b",
                         "Important": false,
                         "Color": {
                           "X": 1.0,
@@ -2666,7 +2681,7 @@
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
                         "TriggerActions": [],
                         "DisplayName": "行为",
-                        "GUID": "973ee45c-c579-4955-a41b-1645b719c51a",
+                        "GUID": "ee8c5d02-9887-4658-a41a-e999b55e66ad",
                         "Important": false,
                         "Color": {
                           "X": 1.0,
@@ -2675,6 +2690,113 @@
                           "W": 1.0
                         },
                         "Id": 101,
+                        "Enable": true,
+                        "Remark": "加重株罚判定"
+                      }
+                    ],
+                    "GUID": "4fab7c8f-64c8-4622-9b54-2f0012a797f2",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 97,
+                    "Enable": true,
+                    "Remark": "第二次加重株罚"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 0,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
+                            "Strs": null,
+                            "Remark": "",
+                            "RegexNameOrId": "19220",
+                            "NeedTargetable": false,
+                            "DisplayName": "General/敌人读条使用技能"
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "cb0523ea-f951-453d-a47d-e28eba4dee2f",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 103,
+                        "Enable": true,
+                        "Remark": "未来确定β"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 0,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
+                            "Strs": null,
+                            "Remark": "",
+                            "RegexNameOrId": "18577",
+                            "NeedTargetable": false,
+                            "DisplayName": "General/敌人读条使用技能"
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "5463b9ed-aeeb-46f3-88a5-c609cc00187d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 104,
+                        "Enable": true,
+                        "Remark": "株罚"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[5.00]秒",
+                        "Delay": 5.0,
+                        "GUID": "c563d82f-df9b-4375-b334-e8bf834c2b85",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 105,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [],
+                        "DisplayName": "行为",
+                        "GUID": "973ee45c-c579-4955-a41b-1645b719c51a",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 106,
                         "Enable": true,
                         "Remark": "株罚判定"
                       }
@@ -2687,7 +2809,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 97,
+                    "Id": 102,
                     "Enable": true,
                     "Remark": "第二次株罚"
                   },
@@ -2721,7 +2843,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 103,
+                        "Id": 108,
                         "Enable": true,
                         "Remark": "株连"
                       },
@@ -2737,7 +2859,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 104,
+                        "Id": 109,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -2753,7 +2875,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 105,
+                        "Id": 110,
                         "Enable": true,
                         "Remark": "株连判定"
                       }
@@ -2766,116 +2888,9 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 102,
+                    "Id": 107,
                     "Enable": true,
                     "Remark": "株连"
-                  },
-                  {
-                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
-                    "DisplayName": "序列",
-                    "IgnoreNodeResult": false,
-                    "StopWhenDead": false,
-                    "Childs": [
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
-                        "CondLogicType": 0,
-                        "CheckOnce": false,
-                        "ReverseResult": false,
-                        "TriggerConds": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
-                            "Strs": null,
-                            "Remark": "",
-                            "RegexNameOrId": "18580",
-                            "NeedTargetable": false,
-                            "DisplayName": "General/敌人读条使用技能"
-                          }
-                        ],
-                        "DisplayName": "等待条件",
-                        "GUID": "3fa4b796-7fe0-444d-ad37-69a4461c9961",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 107,
-                        "Enable": true,
-                        "Remark": "株连"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
-                        "CondLogicType": 0,
-                        "CheckOnce": false,
-                        "ReverseResult": false,
-                        "TriggerConds": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
-                            "Strs": null,
-                            "Remark": "",
-                            "RegexNameOrId": "18578",
-                            "NeedTargetable": false,
-                            "DisplayName": "General/敌人读条使用技能"
-                          }
-                        ],
-                        "DisplayName": "等待条件",
-                        "GUID": "99866f13-047b-4c89-a4db-9e16dccc9998",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 108,
-                        "Enable": true,
-                        "Remark": "加重株罚"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[3.00]秒",
-                        "Delay": 3.0,
-                        "GUID": "338574af-3dca-44c0-9060-0c7d6efb41a5",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 109,
-                        "Enable": true,
-                        "Remark": ""
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                        "TriggerActions": [],
-                        "DisplayName": "行为",
-                        "GUID": "982300d7-3cb0-45cb-b81e-c913330fa4f0",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 110,
-                        "Enable": true,
-                        "Remark": "加重株罚判定"
-                      }
-                    ],
-                    "GUID": "09e6121a-275d-48c7-9bcd-d3812d619c00",
-                    "Important": false,
-                    "Color": {
-                      "X": 1.0,
-                      "Y": 1.0,
-                      "Z": 0.4,
-                      "W": 1.0
-                    },
-                    "Id": 106,
-                    "Enable": true,
-                    "Remark": "第三次加重株罚"
                   },
                   {
                     "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
@@ -2921,13 +2936,13 @@
                             "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
                             "Strs": null,
                             "Remark": "",
-                            "RegexNameOrId": "18577",
+                            "RegexNameOrId": "18578",
                             "NeedTargetable": false,
                             "DisplayName": "General/敌人读条使用技能"
                           }
                         ],
                         "DisplayName": "等待条件",
-                        "GUID": "5463b9ed-aeeb-46f3-88a5-c609cc00187d",
+                        "GUID": "99866f13-047b-4c89-a4db-9e16dccc9998",
                         "Important": false,
                         "Color": {
                           "X": 1.0,
@@ -2937,13 +2952,13 @@
                         },
                         "Id": 113,
                         "Enable": true,
-                        "Remark": "株罚"
+                        "Remark": "加重株罚"
                       },
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[5.00]秒",
-                        "Delay": 5.0,
-                        "GUID": "c563d82f-df9b-4375-b334-e8bf834c2b85",
+                        "DisplayName": "延迟[3.00]秒",
+                        "Delay": 3.0,
+                        "GUID": "338574af-3dca-44c0-9060-0c7d6efb41a5",
                         "Important": false,
                         "Color": {
                           "X": 1.0,
@@ -2959,7 +2974,7 @@
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
                         "TriggerActions": [],
                         "DisplayName": "行为",
-                        "GUID": "973ee45c-c579-4955-a41b-1645b719c51a",
+                        "GUID": "982300d7-3cb0-45cb-b81e-c913330fa4f0",
                         "Important": false,
                         "Color": {
                           "X": 1.0,
@@ -2969,10 +2984,10 @@
                         },
                         "Id": 115,
                         "Enable": true,
-                        "Remark": "株罚判定"
+                        "Remark": "加重株罚判定"
                       }
                     ],
-                    "GUID": "a64b10f2-ca8a-4e5a-a98f-dd0c71eddda0",
+                    "GUID": "09e6121a-275d-48c7-9bcd-d3812d619c00",
                     "Important": false,
                     "Color": {
                       "X": 1.0,
@@ -2982,7 +2997,7 @@
                     },
                     "Id": 111,
                     "Enable": true,
-                    "Remark": "第三次株罚"
+                    "Remark": "第三次加重株罚"
                   },
                   {
                     "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
@@ -3019,6 +3034,113 @@
                         "Remark": "株连"
                       },
                       {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 0,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
+                            "Strs": null,
+                            "Remark": "",
+                            "RegexNameOrId": "18577",
+                            "NeedTargetable": false,
+                            "DisplayName": "General/敌人读条使用技能"
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "5463b9ed-aeeb-46f3-88a5-c609cc00187d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 118,
+                        "Enable": true,
+                        "Remark": "株罚"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[5.00]秒",
+                        "Delay": 5.0,
+                        "GUID": "c563d82f-df9b-4375-b334-e8bf834c2b85",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 119,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [],
+                        "DisplayName": "行为",
+                        "GUID": "973ee45c-c579-4955-a41b-1645b719c51a",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 120,
+                        "Enable": true,
+                        "Remark": "株罚判定"
+                      }
+                    ],
+                    "GUID": "a64b10f2-ca8a-4e5a-a98f-dd0c71eddda0",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 116,
+                    "Enable": true,
+                    "Remark": "第三次株罚"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 0,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
+                            "Strs": null,
+                            "Remark": "",
+                            "RegexNameOrId": "18580",
+                            "NeedTargetable": false,
+                            "DisplayName": "General/敌人读条使用技能"
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "3fa4b796-7fe0-444d-ad37-69a4461c9961",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 122,
+                        "Enable": true,
+                        "Remark": "株连"
+                      },
+                      {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
                         "DisplayName": "延迟[20.00]秒",
                         "Delay": 20.0,
@@ -3030,7 +3152,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 118,
+                        "Id": 123,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -3058,7 +3180,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 119,
+                        "Id": 124,
                         "Enable": true,
                         "Remark": "株连"
                       },
@@ -3074,7 +3196,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 120,
+                        "Id": 125,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -3090,7 +3212,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 121,
+                        "Id": 126,
                         "Enable": true,
                         "Remark": "株连判定"
                       }
@@ -3103,7 +3225,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 116,
+                    "Id": 121,
                     "Enable": true,
                     "Remark": "株连"
                   }
@@ -3116,7 +3238,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 76,
+                "Id": 81,
                 "Enable": true,
                 "Remark": ""
               }
@@ -3129,7 +3251,7 @@
               "Z": 0.4,
               "W": 1.0
             },
-            "Id": 73,
+            "Id": 78,
             "Enable": true,
             "Remark": "P4"
           }
@@ -3162,7 +3284,7 @@
   "ExposedVars": [],
   "ExposedVarDesc": "",
   "OpenerScript": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Module;\nusing AEAssist.CombatRoutine.Module.Opener;\nusing AEAssist.Helper;\nusing AEAssist.JobApi;\nusing AEAssist.MemoryApi;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class OpenerTest : IOpener\n{\n    // 留空代表使用ACR提供的起手\n    public List<Action<Slot>> Sequence { get; } = new();\n\n    // 处理倒计时期间的行为\n    public void InitCountDown(CountDownHandler countDownHandler)\n    {\n        //起手\n        Wotou.Bard.Setting.BardSettings.Instance.Opener = 3;\n    }\n}",
-  "Note": "p1已实测，p2-p4脑测版，p3火龙卷及p4减伤自己给，自动选择70-80起手",
+  "Note": "p1p2已实测，p3p4脑测版，p3火龙卷及p4减伤自己给，自动选择70-80起手",
   "TerritoryTypeId": 887,
   "TerritoryWeatherId": 0,
   "TargetAcrAuthor": "Wotou",
