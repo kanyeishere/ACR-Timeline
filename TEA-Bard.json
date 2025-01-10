@@ -335,7 +335,7 @@
                               {
                                 "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
                                 "Key": "DOT",
-                                "Value": false,
+                                "Value": true,
                                 "DisplayName": "Bard/QT",
                                 "Remark": null
                               }
