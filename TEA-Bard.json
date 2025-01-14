@@ -651,8 +651,8 @@
                           },
                           {
                             "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                            "DisplayName": "延迟[5.00]秒",
-                            "Delay": 5.0,
+                            "DisplayName": "延迟[6.00]秒",
+                            "Delay": 5.999999,
                             "GUID": "162bf01e-eca3-4786-9664-9928a8927e01",
                             "Important": false,
                             "Color": {
@@ -1427,7 +1427,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -1538,7 +1538,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -1649,7 +1649,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -1760,7 +1760,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -1871,7 +1871,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -1982,7 +1982,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -2093,7 +2093,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -2204,7 +2204,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -3359,7 +3359,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -3502,7 +3502,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -3645,7 +3645,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -3788,7 +3788,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -3931,7 +3931,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -4074,7 +4074,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -4217,7 +4217,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
@@ -4360,7 +4360,7 @@
                                         "Z": 0.0
                                       },
                                       "TargetSelector": {
-                                        "Enable": false,
+                                        "Enable": true,
                                         "Target": 0,
                                         "FilterDatas": [],
                                         "NeedTargetable": false,
