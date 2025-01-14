@@ -1315,9 +1315,9 @@
                     "Remark": "小怪切目标"
                   },
                   {
-                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeParallel, AEAssist",
-                    "DisplayName": "并行",
-                    "AnyReturn": false,
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
                     "StopWhenDead": false,
                     "Childs": [
                       {
@@ -2256,7 +2256,7 @@
                         "Remark": ""
                       }
                     ],
-                    "GUID": "a9cfe9e9-6219-4f70-bb87-7e3b62c106e5",
+                    "GUID": "a35ff4c5-5ffd-4af7-9df2-df994955da6d",
                     "Important": false,
                     "Color": {
                       "X": 1.0,
