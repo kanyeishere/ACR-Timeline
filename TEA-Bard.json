@@ -3040,6 +3040,13 @@
                             "Value": false,
                             "DisplayName": "Bard/QT",
                             "Remark": null
+                          },
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "绝峰箭",
+                            "Value": false,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
                           }
                         ],
                         "DisplayName": "行为",
@@ -3053,7 +3060,7 @@
                         },
                         "Id": 113,
                         "Enable": true,
-                        "Remark": "关唱歌 关爆发"
+                        "Remark": "关唱歌 关爆发 关apex"
                       }
                     ],
                     "GUID": "6a63886b-6a48-4614-a4bc-792bb5846140",
@@ -3118,6 +3125,13 @@
                             "Value": false,
                             "DisplayName": "Bard/QT",
                             "Remark": null
+                          },
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "绝峰箭",
+                            "Value": false,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
                           }
                         ],
                         "DisplayName": "行为",
@@ -3131,7 +3145,7 @@
                         },
                         "Id": 116,
                         "Enable": true,
-                        "Remark": "关唱歌 关爆发"
+                        "Remark": "关唱歌 关爆发 关apex"
                       },
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
@@ -3332,6 +3346,13 @@
                             "Value": true,
                             "DisplayName": "Bard/QT",
                             "Remark": null
+                          },
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "绝峰箭",
+                            "Value": true,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
                           }
                         ],
                         "DisplayName": "行为",
@@ -3345,7 +3366,7 @@
                         },
                         "Id": 123,
                         "Enable": true,
-                        "Remark": "开唱歌 开爆发"
+                        "Remark": "开唱歌 开爆发 开apex"
                       },
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
