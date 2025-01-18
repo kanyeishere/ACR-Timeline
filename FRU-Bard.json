@@ -7139,8 +7139,8 @@
                         "Childs": [
                           {
                             "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                            "DisplayName": "延迟[142.00]秒",
-                            "Delay": 142.0,
+                            "DisplayName": "延迟[141.00]秒",
+                            "Delay": 141.0,
                             "GUID": "bea081a0-6b2f-4709-8cb9-53f26dce68c7",
                             "Important": false,
                             "Color": {
@@ -7232,7 +7232,7 @@
                           },
                           {
                             "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
-                            "CondLogicType": 0,
+                            "CondLogicType": 1,
                             "CheckOnce": false,
                             "ReverseResult": false,
                             "TriggerConds": [
@@ -7262,6 +7262,33 @@
                                 },
                                 "Remark": null,
                                 "DisplayName": "General/目标符合条件"
+                              },
+                              {
+                                "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondWaitTarget, AEAssist",
+                                "TargetSelector": {
+                                  "Enable": true,
+                                  "Target": 4,
+                                  "FilterDatas": [
+                                    {
+                                      "Filter": 1,
+                                      "Remark": "Usurper of Frost",
+                                      "StrParam1": "",
+                                      "UintParam1": 17833,
+                                      "FloatParam1": 0.0,
+                                      "LeftTime": 0,
+                                      "JobsCategory": 0,
+                                      "CompareType": 5,
+                                      "BuffCompareType": 3,
+                                      "Marker": 0,
+                                      "Nearest": false
+                                    }
+                                  ],
+                                  "NeedTargetable": true,
+                                  "SndFilter": 0,
+                                  "PMIndex": 0
+                                },
+                                "Remark": null,
+                                "DisplayName": "General/目标符合条件"
                               }
                             ],
                             "DisplayName": "等待条件",
@@ -7275,7 +7302,7 @@
                             },
                             "Id": 264,
                             "Enable": true,
-                            "Remark": "Oracle of Darkness 可选中"
+                            "Remark": "Oracle of Darkness / Usurper of Frost 可选中"
                           },
                           {
                             "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
@@ -9283,7 +9310,7 @@
   "ExposedVars": [],
   "ExposedVarDesc": "",
   "OpenerScript": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Module;\nusing AEAssist.CombatRoutine.Module.Opener;\nusing AEAssist.Helper;\nusing AEAssist.JobApi;\nusing AEAssist.MemoryApi;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class OpenerTest : IOpener\n{\n    // 留空代表使用ACR提供的起手\n    public List<Action<Slot>> Sequence { get; } = new();\n\n    // 处理倒计时期间的行为\n    public void InitCountDown(CountDownHandler countDownHandler)\n    {\n        //起手\n        Wotou.Bard.Setting.BardSettings.Instance.Opener = 2;\n        if (Wotou.Bard.BardRotationEntry.QT.GetQt(\"爆发药\") && Wotou.Bard.Setting.BardSettings.Instance.UsePotionInOpener)\n               countDownHandler.AddAction(1000, Spell.CreatePotion);\n    }\n}",
-  "Note": "修复10纷乱；新增p4爆发双目标dot；目标选择器中，请勾选“有目标时不自动切换目标”！P4爆发延后到双目标，如无需延后，取消229节点",
+  "Note": "修复10纷乱；新增p4爆发双目标dot；目标选择器中，请勾选“有目标时不自动切换目标”！P4爆发延后到双目标，如无需延后，取消228节点",
   "TerritoryTypeId": 1238,
   "TerritoryWeatherId": 0,
   "TargetAcrAuthor": "Wotou",
