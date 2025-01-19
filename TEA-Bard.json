@@ -5770,10 +5770,11 @@
                                 "ReverseResult": false,
                                 "TriggerConds": [
                                   {
-                                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondMonitorACT, AEAssist",
+                                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondCheckAbilityEffect, AEAssist",
+                                    "DisplayName": "副本流程/检测自身最近是否ReceiveAbilityEffect",
                                     "Remark": "",
-                                    "DisplayName": "General/ACT日志监控(废弃)",
-                                    "RegexValue": "^21\\|[^|]{1,33}\\|40[^|]{6}\\|[^|]+\\|4B0E\\|"
+                                    "ActionId": 19214,
+                                    "CheckTime": 1.0
                                   }
                                 ],
                                 "DisplayName": "等待条件",
@@ -5787,7 +5788,7 @@
                                 },
                                 "Id": 216,
                                 "Enable": true,
-                                "Remark": "1静止"
+                                "Remark": "1静"
                               }
                             ],
                             "GUID": "dd9d8f78-69d0-4733-8de4-5eba317adcaf",
@@ -5815,10 +5816,11 @@
                                 "ReverseResult": false,
                                 "TriggerConds": [
                                   {
-                                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondMonitorACT, AEAssist",
+                                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondCheckAbilityEffect, AEAssist",
+                                    "DisplayName": "副本流程/检测自身最近是否ReceiveAbilityEffect",
                                     "Remark": "",
-                                    "DisplayName": "General/ACT日志监控(废弃)",
-                                    "RegexValue": "^21\\|[^|]{1,33}\\|40[^|]{6}\\|[^|]+\\|4B0D\\|"
+                                    "ActionId": 19213,
+                                    "CheckTime": 1.0
                                   }
                                 ],
                                 "DisplayName": "等待条件",
@@ -5859,6 +5861,117 @@
                         "Id": 214,
                         "Enable": true,
                         "Remark": "1动静"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeParallel, AEAssist",
+                        "DisplayName": "并行",
+                        "AnyReturn": false,
+                        "StopWhenDead": false,
+                        "Childs": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                            "DisplayName": "序列",
+                            "IgnoreNodeResult": false,
+                            "StopWhenDead": false,
+                            "Childs": [
+                              {
+                                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                                "CondLogicType": 0,
+                                "CheckOnce": false,
+                                "ReverseResult": false,
+                                "TriggerConds": [
+                                  {
+                                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondCheckAbilityEffect, AEAssist",
+                                    "DisplayName": "副本流程/检测自身最近是否ReceiveAbilityEffect",
+                                    "Remark": "",
+                                    "ActionId": 18586,
+                                    "CheckTime": 1.0
+                                  }
+                                ],
+                                "DisplayName": "等待条件",
+                                "GUID": "da90357a-bab7-45b9-9bd4-4c5a95597dbf",
+                                "Important": false,
+                                "Color": {
+                                  "X": 1.0,
+                                  "Y": 1.0,
+                                  "Z": 0.4,
+                                  "W": 1.0
+                                },
+                                "Id": 221,
+                                "Enable": true,
+                                "Remark": "2静"
+                              }
+                            ],
+                            "GUID": "dd9d8f78-69d0-4733-8de4-5eba317adcaf",
+                            "Important": false,
+                            "Color": {
+                              "X": 1.0,
+                              "Y": 1.0,
+                              "Z": 0.4,
+                              "W": 1.0
+                            },
+                            "Id": 220,
+                            "Enable": true,
+                            "Remark": ""
+                          },
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                            "DisplayName": "序列",
+                            "IgnoreNodeResult": false,
+                            "StopWhenDead": false,
+                            "Childs": [
+                              {
+                                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                                "CondLogicType": 0,
+                                "CheckOnce": false,
+                                "ReverseResult": false,
+                                "TriggerConds": [
+                                  {
+                                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondCheckAbilityEffect, AEAssist",
+                                    "DisplayName": "副本流程/检测自身最近是否ReceiveAbilityEffect",
+                                    "Remark": "",
+                                    "ActionId": 18585,
+                                    "CheckTime": 1.0
+                                  }
+                                ],
+                                "DisplayName": "等待条件",
+                                "GUID": "21f861e5-a5e3-42a0-a889-6d0179301a39",
+                                "Important": false,
+                                "Color": {
+                                  "X": 1.0,
+                                  "Y": 1.0,
+                                  "Z": 0.4,
+                                  "W": 1.0
+                                },
+                                "Id": 223,
+                                "Enable": true,
+                                "Remark": "2动"
+                              }
+                            ],
+                            "GUID": "5fd117b9-55a8-4246-a79b-0db20be37e66",
+                            "Important": false,
+                            "Color": {
+                              "X": 1.0,
+                              "Y": 1.0,
+                              "Z": 0.4,
+                              "W": 1.0
+                            },
+                            "Id": 222,
+                            "Enable": true,
+                            "Remark": ""
+                          }
+                        ],
+                        "GUID": "7486f32e-ce02-427e-abb9-cda8f39aaf5e",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 219,
+                        "Enable": true,
+                        "Remark": "2动静"
                       }
                     ],
                     "GUID": "e0e4a768-d0f1-4f2e-b7ff-3794410c6893",
@@ -5901,7 +6014,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 220,
+                        "Id": 225,
                         "Enable": true,
                         "Remark": "0.5测静读条"
                       },
@@ -5917,7 +6030,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 221,
+                        "Id": 226,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -5954,7 +6067,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 222,
+                        "Id": 227,
                         "Enable": true,
                         "Remark": "停手"
                       }
@@ -5967,7 +6080,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 219,
+                    "Id": 224,
                     "Enable": true,
                     "Remark": "0.5测静读条"
                   }
