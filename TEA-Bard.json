@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Wotou",
-  "Name": "TEA-Bard v0122.02",
+  "Name": "TEA-Bard v0122.03",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -3016,54 +3016,10 @@
                         "Remark": "选盾"
                       },
                       {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
-                        "CondLogicType": 0,
-                        "CheckOnce": false,
-                        "ReverseResult": false,
-                        "TriggerConds": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondWaitTarget, AEAssist",
-                            "TargetSelector": {
-                              "Enable": true,
-                              "Target": 1,
-                              "FilterDatas": [
-                                {
-                                  "Filter": 0,
-                                  "Remark": "",
-                                  "StrParam1": "等离子护盾",
-                                  "UintParam1": 0,
-                                  "FloatParam1": 0.0,
-                                  "LeftTime": 0,
-                                  "JobsCategory": 0,
-                                  "CompareType": 5,
-                                  "BuffCompareType": 3,
-                                  "Marker": 0,
-                                  "Nearest": false
-                                },
-                                {
-                                  "Filter": 3,
-                                  "Remark": "",
-                                  "StrParam1": "",
-                                  "UintParam1": 0,
-                                  "FloatParam1": 10.0,
-                                  "LeftTime": 0,
-                                  "JobsCategory": 0,
-                                  "CompareType": 5,
-                                  "BuffCompareType": 3,
-                                  "Marker": 0,
-                                  "Nearest": false
-                                }
-                              ],
-                              "NeedTargetable": false,
-                              "SndFilter": 0,
-                              "PMIndex": 0
-                            },
-                            "Remark": null,
-                            "DisplayName": "General/目标符合条件"
-                          }
-                        ],
-                        "DisplayName": "等待条件",
-                        "GUID": "d54122cf-cfe7-4122-a0a6-982a4c349556",
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[3.00]秒",
+                        "Delay": 3.0,
+                        "GUID": "da591543-9619-43c3-be5d-df5aba784588",
                         "Important": false,
                         "Color": {
                           "X": 1.0,
@@ -3073,7 +3029,7 @@
                         },
                         "Id": 111,
                         "Enable": true,
-                        "Remark": "盾血小于10"
+                        "Remark": ""
                       },
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
@@ -3112,7 +3068,7 @@
                           {
                             "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
                             "Key": "DOT",
-                            "Value": false,
+                            "Value": true,
                             "DisplayName": "Bard/QT",
                             "Remark": null
                           }
