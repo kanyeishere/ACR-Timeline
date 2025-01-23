@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Wotou",
-  "Name": "TEA-Bard v0122.04",
+  "Name": "TEA-Bard v0123.01",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -5829,15 +5829,17 @@
                     "Childs": [
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
-                        "CondLogicType": 0,
+                        "CondLogicType": 1,
                         "CheckOnce": false,
                         "ReverseResult": false,
                         "TriggerConds": [
                           {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondMonitorACT, AEAssist",
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
+                            "Strs": null,
                             "Remark": "",
-                            "DisplayName": "General/ACT日志监控(废弃)",
-                            "RegexValue": "^.{14} 14:487F:|^.{14} StartsCasting 14:.{8}:[^:]*:487F:"
+                            "RegexNameOrId": "18559",
+                            "NeedTargetable": false,
+                            "DisplayName": "General/敌人读条使用技能"
                           }
                         ],
                         "DisplayName": "等待条件",
