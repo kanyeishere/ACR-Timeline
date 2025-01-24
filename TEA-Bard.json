@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Wotou",
-  "Name": "TEA-Bard v0125.02",
+  "Name": "TEA-Bard v0125.03",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -3259,52 +3259,11 @@
                         "Remark": "battle voice < 5s"
                       },
                       {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
-                        "DisplayName": "序列",
-                        "IgnoreNodeResult": false,
-                        "StopWhenDead": false,
-                        "Childs": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeScriptNode, AEAssist",
-                            "OnlyCheck": false,
-                            "Script": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Trigger;\nusing AEAssist.CombatRoutine.Trigger.Node;\nusing AEAssist.Extension;\nusing AEAssist.Helper;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class CheckCurrJobPotion : ITriggerScript\n{\n    // Check返回True代表此节点执行完毕， 非检测模式下，返回false时一直重复执行（每帧）\n    // 检测模式下， condParams必定为空\n    public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)\n    {\n        if (Core.Me.CurrentJob() == Jobs.Bard)\n            return ItemHelper.CheckCurrJobPotion() && Wotou.Bard.BardRotationEntry.QT.GetQt(Wotou.Bard.QTKey.UsePotion);\n        if (Core.Me.CurrentJob() == Jobs.Dancer)\n            return ItemHelper.CheckCurrJobPotion() && Wotou.Dancer.DancerRotationEntry.QT.GetQt(Wotou.Dancer.QTKey.UsePotion);\n        return false;\n    }\n}",
-                            "DisplayName": "脚本节点",
-                            "GUID": "945dd960-a2b2-4ffd-9e58-7682bef53b2e",
-                            "Important": false,
-                            "Color": {
-                              "X": 1.0,
-                              "Y": 1.0,
-                              "Z": 0.4,
-                              "W": 1.0
-                            },
-                            "Id": 121,
-                            "Enable": true,
-                            "Remark": "爆发药cd好了"
-                          },
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                            "TriggerActions": [
-                              {
-                                "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionUsePotion, AEAssist",
-                                "DisplayName": "General/使用爆发药",
-                                "Remark": ""
-                              }
-                            ],
-                            "DisplayName": "行为",
-                            "GUID": "5de7231c-0c51-4cd5-bf4a-ec6191efedef",
-                            "Important": true,
-                            "Color": {
-                              "X": 1.0,
-                              "Y": 1.0,
-                              "Z": 0.4,
-                              "W": 1.0
-                            },
-                            "Id": 122,
-                            "Enable": true,
-                            "Remark": "爆发药"
-                          }
-                        ],
-                        "GUID": "ebd6c192-a27e-4aee-b771-65f9548f7368",
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeScriptNode, AEAssist",
+                        "OnlyCheck": false,
+                        "Script": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Trigger;\nusing AEAssist.CombatRoutine.Trigger.Node;\nusing AEAssist.Extension;\nusing AEAssist.Helper;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class CheckCurrJobPotion : ITriggerScript\n{\n    // Check返回True代表此节点执行完毕， 非检测模式下，返回false时一直重复执行（每帧）\n    // 检测模式下， condParams必定为空\n    public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)\n    {\n        if (Core.Me.CurrentJob() == Jobs.Bard)\n            return ItemHelper.CheckCurrJobPotion() && Wotou.Bard.BardRotationEntry.QT.GetQt(Wotou.Bard.QTKey.UsePotion);\n        if (Core.Me.CurrentJob() == Jobs.Dancer)\n            return ItemHelper.CheckCurrJobPotion() && Wotou.Dancer.DancerRotationEntry.QT.GetQt(Wotou.Dancer.QTKey.UsePotion);\n        return false;\n    }\n}",
+                        "DisplayName": "脚本节点",
+                        "GUID": "945dd960-a2b2-4ffd-9e58-7682bef53b2e",
                         "Important": false,
                         "Color": {
                           "X": 1.0,
@@ -3314,7 +3273,29 @@
                         },
                         "Id": 120,
                         "Enable": true,
-                        "Remark": ""
+                        "Remark": "爆发药cd好了"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionUsePotion, AEAssist",
+                            "DisplayName": "General/使用爆发药",
+                            "Remark": ""
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "5de7231c-0c51-4cd5-bf4a-ec6191efedef",
+                        "Important": true,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 121,
+                        "Enable": true,
+                        "Remark": "爆发药"
                       }
                     ],
                     "GUID": "f42c0b18-f203-4be1-9af0-6e5f8cecb47d",
@@ -3385,9 +3366,28 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 124,
+                "Id": 123,
                 "Enable": true,
                 "Remark": "P3转场"
+              },
+              {
+                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeClearWaitNode, AEAssist",
+                "OnlyPreNode": true,
+                "RangeClear": false,
+                "MinNode": 0,
+                "MaxNode": -1,
+                "DisplayName": "清理等待条件",
+                "GUID": "e5c4c3e6-4784-4877-852b-4fbd72a1536a",
+                "Important": false,
+                "Color": {
+                  "X": 1.0,
+                  "Y": 1.0,
+                  "Z": 0.4,
+                  "W": 1.0
+                },
+                "Id": 124,
+                "Enable": true,
+                "Remark": ""
               },
               {
                 "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
@@ -5500,71 +5500,11 @@
                         "Remark": "battle voice CD剩5s"
                       },
                       {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeParallel, AEAssist",
-                        "DisplayName": "并行",
-                        "AnyReturn": false,
-                        "StopWhenDead": false,
-                        "Childs": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
-                            "DisplayName": "序列",
-                            "IgnoreNodeResult": false,
-                            "StopWhenDead": false,
-                            "Childs": [
-                              {
-                                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeScriptNode, AEAssist",
-                                "OnlyCheck": false,
-                                "Script": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Trigger;\nusing AEAssist.CombatRoutine.Trigger.Node;\nusing AEAssist.Extension;\nusing AEAssist.Helper;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class CheckCurrJobPotion : ITriggerScript\n{\n    // Check返回True代表此节点执行完毕， 非检测模式下，返回false时一直重复执行（每帧）\n    // 检测模式下， condParams必定为空\n    public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)\n    {\n        if (Core.Me.CurrentJob() == Jobs.Bard)\n            return ItemHelper.CheckCurrJobPotion() && Wotou.Bard.BardRotationEntry.QT.GetQt(Wotou.Bard.QTKey.UsePotion);\n        if (Core.Me.CurrentJob() == Jobs.Dancer)\n            return ItemHelper.CheckCurrJobPotion() && Wotou.Dancer.DancerRotationEntry.QT.GetQt(Wotou.Dancer.QTKey.UsePotion);\n        return false;\n    }\n}",
-                                "DisplayName": "脚本节点",
-                                "GUID": "945dd960-a2b2-4ffd-9e58-7682bef53b2e",
-                                "Important": false,
-                                "Color": {
-                                  "X": 1.0,
-                                  "Y": 1.0,
-                                  "Z": 0.4,
-                                  "W": 1.0
-                                },
-                                "Id": 195,
-                                "Enable": true,
-                                "Remark": "爆发药cd好了"
-                              },
-                              {
-                                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                                "TriggerActions": [
-                                  {
-                                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionUsePotion, AEAssist",
-                                    "DisplayName": "General/使用爆发药",
-                                    "Remark": ""
-                                  }
-                                ],
-                                "DisplayName": "行为",
-                                "GUID": "5de7231c-0c51-4cd5-bf4a-ec6191efedef",
-                                "Important": true,
-                                "Color": {
-                                  "X": 1.0,
-                                  "Y": 1.0,
-                                  "Z": 0.4,
-                                  "W": 1.0
-                                },
-                                "Id": 196,
-                                "Enable": true,
-                                "Remark": "爆发药"
-                              }
-                            ],
-                            "GUID": "ebd6c192-a27e-4aee-b771-65f9548f7368",
-                            "Important": false,
-                            "Color": {
-                              "X": 1.0,
-                              "Y": 1.0,
-                              "Z": 0.4,
-                              "W": 1.0
-                            },
-                            "Id": 194,
-                            "Enable": true,
-                            "Remark": ""
-                          }
-                        ],
-                        "GUID": "41dd5025-4322-4b2f-b6d7-c585c5f7956a",
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeScriptNode, AEAssist",
+                        "OnlyCheck": false,
+                        "Script": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Trigger;\nusing AEAssist.CombatRoutine.Trigger.Node;\nusing AEAssist.Extension;\nusing AEAssist.Helper;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class CheckCurrJobPotion : ITriggerScript\n{\n    // Check返回True代表此节点执行完毕， 非检测模式下，返回false时一直重复执行（每帧）\n    // 检测模式下， condParams必定为空\n    public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)\n    {\n        if (Core.Me.CurrentJob() == Jobs.Bard)\n            return ItemHelper.CheckCurrJobPotion() && Wotou.Bard.BardRotationEntry.QT.GetQt(Wotou.Bard.QTKey.UsePotion);\n        if (Core.Me.CurrentJob() == Jobs.Dancer)\n            return ItemHelper.CheckCurrJobPotion() && Wotou.Dancer.DancerRotationEntry.QT.GetQt(Wotou.Dancer.QTKey.UsePotion);\n        return false;\n    }\n}",
+                        "DisplayName": "脚本节点",
+                        "GUID": "945dd960-a2b2-4ffd-9e58-7682bef53b2e",
                         "Important": false,
                         "Color": {
                           "X": 1.0,
@@ -5574,7 +5514,29 @@
                         },
                         "Id": 193,
                         "Enable": true,
-                        "Remark": ""
+                        "Remark": "爆发药cd好了"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionUsePotion, AEAssist",
+                            "DisplayName": "General/使用爆发药",
+                            "Remark": ""
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "5de7231c-0c51-4cd5-bf4a-ec6191efedef",
+                        "Important": true,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 194,
+                        "Enable": true,
+                        "Remark": "爆发药"
                       }
                     ],
                     "GUID": "d4b01c7f-f185-4501-acfd-949a263b56bb",
@@ -5586,8 +5548,8 @@
                       "W": 1.0
                     },
                     "Id": 190,
-                    "Enable": true,
-                    "Remark": "火龙卷爆发"
+                    "Enable": false,
+                    "Remark": "火龙卷爆发药"
                   }
                 ],
                 "GUID": "8823a617-1571-4c6b-9bfb-5e670a09d29f",
@@ -5611,7 +5573,7 @@
               "Z": 0.4,
               "W": 1.0
             },
-            "Id": 123,
+            "Id": 122,
             "Enable": true,
             "Remark": "P3"
           },
@@ -5645,9 +5607,28 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 198,
+                "Id": 196,
                 "Enable": true,
                 "Remark": "P4转场"
+              },
+              {
+                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeClearWaitNode, AEAssist",
+                "OnlyPreNode": true,
+                "RangeClear": false,
+                "MinNode": 0,
+                "MaxNode": -1,
+                "DisplayName": "清理等待条件",
+                "GUID": "e5c4c3e6-4784-4877-852b-4fbd72a1536a",
+                "Important": false,
+                "Color": {
+                  "X": 1.0,
+                  "Y": 1.0,
+                  "Z": 0.4,
+                  "W": 1.0
+                },
+                "Id": 197,
+                "Enable": true,
+                "Remark": ""
               },
               {
                 "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
@@ -5671,7 +5652,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 199,
+                "Id": 198,
                 "Enable": true,
                 "Remark": "锁军神"
               },
@@ -5709,7 +5690,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 202,
+                        "Id": 201,
                         "Enable": true,
                         "Remark": "贤者歌"
                       },
@@ -5735,7 +5716,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 203,
+                        "Id": 202,
                         "Enable": true,
                         "Remark": "解锁军神"
                       }
@@ -5748,7 +5729,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 201,
+                    "Id": 200,
                     "Enable": true,
                     "Remark": ""
                   },
@@ -5782,7 +5763,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 205,
+                        "Id": 204,
                         "Enable": true,
                         "Remark": "制导"
                       },
@@ -5798,7 +5779,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 206,
+                        "Id": 205,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -5848,7 +5829,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 207,
+                        "Id": 206,
                         "Enable": true,
                         "Remark": "行吟"
                       }
@@ -5861,7 +5842,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 204,
+                    "Id": 203,
                     "Enable": true,
                     "Remark": "制导（0.5测分散分摊）技能: 18571"
                   },
@@ -5906,7 +5887,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 211,
+                                "Id": 210,
                                 "Enable": true,
                                 "Remark": "1静"
                               }
@@ -5919,7 +5900,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 210,
+                            "Id": 209,
                             "Enable": true,
                             "Remark": ""
                           },
@@ -5952,7 +5933,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 213,
+                                "Id": 212,
                                 "Enable": true,
                                 "Remark": "1动"
                               }
@@ -5965,7 +5946,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 212,
+                            "Id": 211,
                             "Enable": true,
                             "Remark": ""
                           }
@@ -5978,7 +5959,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 209,
+                        "Id": 208,
                         "Enable": true,
                         "Remark": "1动静"
                       },
@@ -6017,7 +5998,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 216,
+                                "Id": 215,
                                 "Enable": true,
                                 "Remark": "2静"
                               }
@@ -6030,7 +6011,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 215,
+                            "Id": 214,
                             "Enable": true,
                             "Remark": ""
                           },
@@ -6063,7 +6044,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 218,
+                                "Id": 217,
                                 "Enable": true,
                                 "Remark": "2动"
                               }
@@ -6076,7 +6057,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 217,
+                            "Id": 216,
                             "Enable": true,
                             "Remark": ""
                           }
@@ -6089,7 +6070,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 214,
+                        "Id": 213,
                         "Enable": true,
                         "Remark": "2动静"
                       }
@@ -6102,7 +6083,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 208,
+                    "Id": 207,
                     "Enable": true,
                     "Remark": "1测动静"
                   },
@@ -6136,7 +6117,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 220,
+                        "Id": 219,
                         "Enable": true,
                         "Remark": "0.5测静读条"
                       },
@@ -6152,7 +6133,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 221,
+                        "Id": 220,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -6189,7 +6170,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 222,
+                        "Id": 221,
                         "Enable": true,
                         "Remark": "停手"
                       },
@@ -6205,7 +6186,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 223,
+                        "Id": 222,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -6242,7 +6223,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 224,
+                        "Id": 223,
                         "Enable": true,
                         "Remark": "动手"
                       }
@@ -6255,7 +6236,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 219,
+                    "Id": 218,
                     "Enable": true,
                     "Remark": "0.5测静读条"
                   },
@@ -6289,7 +6270,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 226,
+                        "Id": 225,
                         "Enable": true,
                         "Remark": "终审判决"
                       },
@@ -6305,7 +6286,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 227,
+                        "Id": 226,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -6355,7 +6336,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 228,
+                        "Id": 227,
                         "Enable": true,
                         "Remark": "冲刺"
                       }
@@ -6368,7 +6349,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 225,
+                    "Id": 224,
                     "Enable": true,
                     "Remark": "第一次光暗冲刺"
                   },
@@ -6402,7 +6383,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 230,
+                        "Id": 229,
                         "Enable": true,
                         "Remark": "神圣大审判"
                       },
@@ -6430,7 +6411,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 231,
+                        "Id": 230,
                         "Enable": true,
                         "Remark": "株连"
                       },
@@ -6446,7 +6427,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 232,
+                        "Id": 231,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -6496,7 +6477,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 233,
+                        "Id": 232,
                         "Enable": true,
                         "Remark": "行吟"
                       }
@@ -6509,7 +6490,7 @@
                       "Z": 0.17254902,
                       "W": 1.0
                     },
-                    "Id": 229,
+                    "Id": 228,
                     "Enable": true,
                     "Remark": "地火团减"
                   },
@@ -6543,7 +6524,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 235,
+                        "Id": 234,
                         "Enable": true,
                         "Remark": "未来确定β"
                       },
@@ -6559,7 +6540,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 236,
+                        "Id": 235,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -6608,7 +6589,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 237,
+                        "Id": 236,
                         "Enable": true,
                         "Remark": "疾跑"
                       }
@@ -6621,9 +6602,134 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 234,
+                    "Id": 233,
                     "Enable": true,
                     "Remark": "二测最后疾跑"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 0,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondCheckSpellCd, AEAssist",
+                            "SpellId": 118,
+                            "CoolDown": 5,
+                            "Larger": false,
+                            "Remark": null,
+                            "DisplayName": "General/检测技能CD"
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "312eca59-f3ba-4cb9-9d36-80ac9664f0bf",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 238,
+                        "Enable": true,
+                        "Remark": "battle voice CD剩5s"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeScriptNode, AEAssist",
+                        "OnlyCheck": false,
+                        "Script": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Trigger;\nusing AEAssist.CombatRoutine.Trigger.Node;\nusing AEAssist.Extension;\nusing AEAssist.Helper;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class CheckCurrJobPotion : ITriggerScript\n{\n    // Check返回True代表此节点执行完毕， 非检测模式下，返回false时一直重复执行（每帧）\n    // 检测模式下， condParams必定为空\n    public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)\n    {\n        if (Core.Me.CurrentJob() == Jobs.Bard)\n            return ItemHelper.CheckCurrJobPotion() && Wotou.Bard.BardRotationEntry.QT.GetQt(Wotou.Bard.QTKey.UsePotion);\n        if (Core.Me.CurrentJob() == Jobs.Dancer)\n            return ItemHelper.CheckCurrJobPotion() && Wotou.Dancer.DancerRotationEntry.QT.GetQt(Wotou.Dancer.QTKey.UsePotion);\n        return false;\n    }\n}",
+                        "DisplayName": "脚本节点",
+                        "GUID": "945dd960-a2b2-4ffd-9e58-7682bef53b2e",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 239,
+                        "Enable": true,
+                        "Remark": "爆发药cd好了"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionUsePotion, AEAssist",
+                            "DisplayName": "General/使用爆发药",
+                            "Remark": ""
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "5de7231c-0c51-4cd5-bf4a-ec6191efedef",
+                        "Important": true,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 240,
+                        "Enable": true,
+                        "Remark": "爆发药"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeScriptNode, AEAssist",
+                        "OnlyCheck": false,
+                        "Script": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Trigger;\nusing AEAssist.CombatRoutine.Trigger.Node;\nusing AEAssist.Extension;\nusing AEAssist.Helper;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class CheckCurrJobPotion : ITriggerScript\n{\n    // Check返回True代表此节点执行完毕， 非检测模式下，返回false时一直重复执行（每帧）\n    // 检测模式下， condParams必定为空\n    public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)\n    {\n        if (Core.Me.CurrentJob() == Jobs.Bard)\n            return ItemHelper.CheckCurrJobPotion() && Wotou.Bard.BardRotationEntry.QT.GetQt(Wotou.Bard.QTKey.UsePotion);\n        if (Core.Me.CurrentJob() == Jobs.Dancer)\n            return ItemHelper.CheckCurrJobPotion() && Wotou.Dancer.DancerRotationEntry.QT.GetQt(Wotou.Dancer.QTKey.UsePotion);\n        return false;\n    }\n}",
+                        "DisplayName": "脚本节点",
+                        "GUID": "945dd960-a2b2-4ffd-9e58-7682bef53b2e",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 241,
+                        "Enable": true,
+                        "Remark": "爆发药cd好了"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionUsePotion, AEAssist",
+                            "DisplayName": "General/使用爆发药",
+                            "Remark": ""
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "5de7231c-0c51-4cd5-bf4a-ec6191efedef",
+                        "Important": true,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 242,
+                        "Enable": true,
+                        "Remark": "爆发药"
+                      }
+                    ],
+                    "GUID": "d4b01c7f-f185-4501-acfd-949a263b56bb",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 237,
+                    "Enable": true,
+                    "Remark": "爆发药"
                   }
                 ],
                 "GUID": "fe2583df-6bd9-43eb-98e3-ec92cf3898e7",
@@ -6634,7 +6740,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 200,
+                "Id": 199,
                 "Enable": true,
                 "Remark": ""
               }
@@ -6647,7 +6753,7 @@
               "Z": 0.4,
               "W": 1.0
             },
-            "Id": 197,
+            "Id": 195,
             "Enable": true,
             "Remark": "P4"
           }
