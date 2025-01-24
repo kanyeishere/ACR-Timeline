@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Wotou",
-  "Name": "TEA-Bard v0125.01",
+  "Name": "TEA-Bard v0125.02",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -6680,7 +6680,7 @@
   "ExposedVars": [],
   "ExposedVarDesc": "",
   "OpenerScript": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Module;\nusing AEAssist.CombatRoutine.Module.Opener;\nusing AEAssist.Helper;\nusing AEAssist.JobApi;\nusing AEAssist.MemoryApi;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class OpenerTest : IOpener\n{\n    // 留空代表使用ACR提供的起手\n    public List<Action<Slot>> Sequence { get; } = new();\n\n    // 处理倒计时期间的行为\n    public void InitCountDown(CountDownHandler countDownHandler)\n    {\n        //起手\n        Wotou.Bard.Setting.BardSettings.Instance.Opener = 3;\n    }\n}",
-  "Note": "脑测版，p3火龙卷及p4减伤自己给；p1小怪根据职能自动选择；目标选择器勾选有目标不自动切换",
+  "Note": "全流程自动减伤、疾跑、防击退、停手动手切换；p1小怪根据职能自动选择；目标选择器勾选有目标不自动切换",
   "TerritoryTypeId": 887,
   "TerritoryWeatherId": 0,
   "TargetAcrAuthor": "Wotou",
