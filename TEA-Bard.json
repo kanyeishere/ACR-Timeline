@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Wotou",
-  "Name": "TEA-Bard v0124.02",
+  "Name": "TEA-Bard v0125.01",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -6512,6 +6512,118 @@
                     "Id": 229,
                     "Enable": true,
                     "Remark": "地火团减"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 0,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
+                            "Strs": null,
+                            "Remark": "",
+                            "RegexNameOrId": "19220",
+                            "NeedTargetable": false,
+                            "DisplayName": "General/敌人读条使用技能"
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "41aa177d-15e4-40f2-b676-ea4567b59ef4",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 235,
+                        "Enable": true,
+                        "Remark": "未来确定β"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[50.00]秒",
+                        "Delay": 50.0,
+                        "GUID": "a0af9eae-6acd-403e-a022-b20a276c898f",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 236,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionCastSpell, AEAssist",
+                            "Remark": null,
+                            "SpellConfig": {
+                              "Remark": "",
+                              "Category": 3,
+                              "SpellId": 15997,
+                              "CoolDowncheck": true,
+                              "CoolDowncheck_time": 3.0,
+                              "TargetType": 0,
+                              "IsPartyMember": true,
+                              "LimitJobType": 0,
+                              "LimitBuffIds": [],
+                              "LimitMaxHpType": 0,
+                              "LimitHpType": 0,
+                              "Location": {
+                                "X": 0.0,
+                                "Y": 0.0,
+                                "Z": 0.0
+                              },
+                              "TargetSelector": {
+                                "Enable": true,
+                                "Target": 0,
+                                "FilterDatas": [],
+                                "NeedTargetable": false,
+                                "SndFilter": 0,
+                                "PMIndex": 0
+                              },
+                              "AutoCheckActionChange": true
+                            },
+                            "DisplayName": "技能使用/强制使用技能"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "fb365d8f-4870-4cdd-9c1e-a1021a55218e",
+                        "Important": true,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 237,
+                        "Enable": true,
+                        "Remark": "疾跑"
+                      }
+                    ],
+                    "GUID": "a927fce4-651c-4687-8799-179b7cd04129",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 234,
+                    "Enable": true,
+                    "Remark": "二测最后疾跑"
                   }
                 ],
                 "GUID": "fe2583df-6bd9-43eb-98e3-ec92cf3898e7",
