@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard",
+  "Name": "FRU-Bard v0118.02",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -5933,7 +5933,7 @@
                       "W": 1.0
                     },
                     "Id": 210,
-                    "Enable": true,
+                    "Enable": false,
                     "Remark": "全程10根纷乱箭"
                   }
                 ],
@@ -7663,7 +7663,7 @@
                       "W": 1.0
                     },
                     "Id": 262,
-                    "Enable": true,
+                    "Enable": false,
                     "Remark": "全程10根纷乱箭"
                   },
                   {
@@ -9519,7 +9519,7 @@
   "ExposedVars": [],
   "ExposedVarDesc": "",
   "OpenerScript": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Module;\nusing AEAssist.CombatRoutine.Module.Opener;\nusing AEAssist.Helper;\nusing AEAssist.JobApi;\nusing AEAssist.MemoryApi;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class OpenerTest : IOpener\n{\n    // 留空代表使用ACR提供的起手\n    public List<Action<Slot>> Sequence { get; } = new();\n\n    // 处理倒计时期间的行为\n    public void InitCountDown(CountDownHandler countDownHandler)\n    {\n        //起手\n        Wotou.Bard.Setting.BardSettings.Instance.Opener = 2;\n        if (Wotou.Bard.BardRotationEntry.QT.GetQt(\"爆发药\") && Wotou.Bard.Setting.BardSettings.Instance.UsePotionInOpener)\n               countDownHandler.AddAction(1000, Spell.CreatePotion);\n    }\n}",
-  "Note": "修复10纷乱；新增p4爆发双目标dot；目标选择器中，请勾选“有目标时不自动切换目标”！P4爆发延后到双目标，如无需延后，取消234节点",
+  "Note": "全程9纷乱；新增p4爆发双目标dot；目标选择器中，请勾选“有目标时不自动切换目标”！P4爆发延后到双目标，如无需延后，取消234节点",
   "TerritoryTypeId": 1238,
   "TerritoryWeatherId": 0,
   "TargetAcrAuthor": "Wotou",
