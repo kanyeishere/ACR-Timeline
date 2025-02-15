@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Wotou",
-  "Name": "TEA-Bard v0125.03",
+  "Name": "TEA-Bard v0215.01",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -6548,14 +6548,13 @@
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
                         "TriggerActions": [
                           {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionCastSpell, AEAssist",
-                            "Remark": null,
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionHighPrioritySlot, AEAssist",
                             "SpellConfig": {
                               "Remark": "",
-                              "Category": 3,
-                              "SpellId": 15997,
+                              "Category": 0,
+                              "SpellId": 3,
                               "CoolDowncheck": true,
-                              "CoolDowncheck_time": 3.0,
+                              "CoolDowncheck_time": 0.0,
                               "TargetType": 0,
                               "IsPartyMember": true,
                               "LimitJobType": 0,
@@ -6577,11 +6576,13 @@
                               },
                               "AutoCheckActionChange": true
                             },
-                            "DisplayName": "技能使用/强制使用技能"
+                            "Clear": false,
+                            "DisplayName": "技能使用/插入高优先级技能",
+                            "Remark": null
                           }
                         ],
                         "DisplayName": "行为",
-                        "GUID": "fb365d8f-4870-4cdd-9c1e-a1021a55218e",
+                        "GUID": "857888b3-f95d-4f82-8b8a-baa03523c6ac",
                         "Important": true,
                         "Color": {
                           "X": 1.0,
@@ -6591,7 +6592,7 @@
                         },
                         "Id": 236,
                         "Enable": true,
-                        "Remark": "疾跑"
+                        "Remark": "冲刺"
                       }
                     ],
                     "GUID": "a927fce4-651c-4687-8799-179b7cd04129",

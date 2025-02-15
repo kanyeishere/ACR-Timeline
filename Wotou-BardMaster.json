@@ -7,7 +7,7 @@
   },
   {
     "Name": "TEA-Bard ",
-    "Version": "0125.03",
+    "Version": "0215.01",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/TEA-Bard.json",
     "UpdateInfo": "全流程自动减伤、疾跑、防击退、停手动手切换；p1小怪根据职能自动选择；目标选择器勾选有目标不自动切换"
   }
