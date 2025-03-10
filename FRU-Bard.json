@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard v0217.01",
+  "Name": "FRU-Bard v03.11 首日终极版",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -5898,7 +5898,7 @@
                                 "Z": 0.0
                               },
                               "TargetSelector": {
-                                "Enable": false,
+                                "Enable": true,
                                 "Target": 0,
                                 "FilterDatas": [],
                                 "NeedTargetable": false,
@@ -7414,7 +7414,7 @@
                                     "Z": 0.0
                                   },
                                   "TargetSelector": {
-                                    "Enable": false,
+                                    "Enable": true,
                                     "Target": 0,
                                     "FilterDatas": [],
                                     "NeedTargetable": false,
@@ -8926,6 +8926,42 @@
                     "StopWhenDead": false,
                     "Childs": [
                       {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeScriptNode, AEAssist",
+                        "OnlyCheck": false,
+                        "Script": "using System.Security.Cryptography;\nusing System.Text;\nusing AEAssist;\nusing AEAssist.CombatRoutine.Module;\nusing AEAssist.CombatRoutine.Trigger;\nusing AEAssist.CombatRoutine.Trigger.Node;\nusing AEAssist.Helper;\nusing AEAssist.MemoryApi;\nusing AEAssist.Verify;\nusing Wotou.Bard.Setting;\nusing Wotou.Dancer.Setting;\n\nnamespace Wotou.Common;\n\npublic class FruBardTimelineScript : ITriggerScript\n\n{\n    public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)\n    {\n        \n        if (IsRestrictedZoneForLowVip())\n        {\n            if (Wotou.Bard.Setting.BardSettings.Instance.StoredParty.Count <= 7)\n            {\n                Wotou.Bard.Setting.BardSettings.Instance.StoredParty = PartyHelper.Party.Select(player => ComputeMd5Hash(player.Name.ToString())).ToList();\n                Wotou.Bard.Setting.BardSettings.Instance.Save();\n            }\n        }\n        \n        if (IsRestrictedZoneForLowVip() && !IsInStaticParty(Wotou.Bard.Setting.BardSettings.Instance.StoredParty))\n            PlayerOptions.Instance.Stop = true;\n        \n        return false;\n    }\n    \n    private static bool IsRestrictedZoneForLowVip()\n    {\n        var currentZoneId = Core.Resolve<MemApiZoneInfo>().GetCurrTerrId();\n        return currentZoneId == 1238 && \n               Share.VIP.Level == VIPLevel.Normal &&\n               !Wotou.Bard.Setting.BardSettings.Instance.UnlockPassword.Equals(\"whosyourdaddy\", \n                   StringComparison.OrdinalIgnoreCase) &&\n               !Wotou.Dancer.Setting.DancerSettings.Instance.UnlockPassword.Equals(\"whosyourdaddy\", \n                   StringComparison.OrdinalIgnoreCase);\n    }\n    \n    private static bool IsInStaticParty(List<string> storedStaticPartyHashes)\n    {\n        PartyHelper.UpdateAllies();\n        var currentPartyHashes = PartyHelper.Party\n            .Select(player => ComputeMd5Hash(player.Name.ToString()))\n            .ToList();\n        \n        var matchCount = currentPartyHashes.Count(hash => storedStaticPartyHashes.Contains(hash));\n        return matchCount >= 2;\n    }\n    \n    private static string ComputeMd5Hash(string input)\n    {\n        var inputBytes = Encoding.UTF8.GetBytes(input);\n        var hashBytes = MD5.HashData(inputBytes);\n\n        // 将哈希值转换为十六进制字符串\n        return Convert.ToHexString(hashBytes).ToLower(); // .NET 5+ 使用 Convert.ToHexString()\n    }\n}",
+                        "DisplayName": "脚本节点",
+                        "GUID": "55f7fbfc-4dd7-4fbb-a17d-5df6c98f5f85",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 321,
+                        "Enable": true,
+                        "Remark": ""
+                      }
+                    ],
+                    "GUID": "251f1a06-0f9a-42c3-81d8-52596c64fbc4",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 320,
+                    "Enable": true,
+                    "Remark": "p2后半"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
                         "CondLogicType": 1,
                         "CheckOnce": false,
@@ -8947,7 +8983,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 321,
+                        "Id": 323,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -8970,7 +9006,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 322,
+                        "Id": 324,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -8993,7 +9029,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 323,
+                        "Id": 325,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -9009,7 +9045,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 324,
+                        "Id": 326,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9032,7 +9068,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 325,
+                        "Id": 327,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       },
@@ -9048,7 +9084,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 326,
+                        "Id": 328,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9071,7 +9107,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 327,
+                        "Id": 329,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -9087,7 +9123,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 328,
+                        "Id": 330,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9110,7 +9146,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 329,
+                        "Id": 331,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -9123,7 +9159,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 320,
+                    "Id": 322,
                     "Enable": true,
                     "Remark": "p3 慎用"
                   },
@@ -9155,7 +9191,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 331,
+                        "Id": 333,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -9171,7 +9207,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 332,
+                        "Id": 334,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9194,7 +9230,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 333,
+                        "Id": 335,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -9217,7 +9253,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 334,
+                        "Id": 336,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       }
@@ -9230,7 +9266,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 330,
+                    "Id": 332,
                     "Enable": true,
                     "Remark": "p4前半"
                   },
@@ -9262,7 +9298,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 336,
+                        "Id": 338,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -9278,7 +9314,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 337,
+                        "Id": 339,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9301,7 +9337,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 338,
+                        "Id": 340,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       },
@@ -9317,7 +9353,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 339,
+                        "Id": 341,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9340,7 +9376,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 340,
+                        "Id": 342,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -9356,7 +9392,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 341,
+                        "Id": 343,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9379,7 +9415,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 342,
+                        "Id": 344,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -9392,7 +9428,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 335,
+                    "Id": 337,
                     "Enable": true,
                     "Remark": "p4后半"
                   },
@@ -9424,7 +9460,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 344,
+                        "Id": 346,
                         "Enable": true,
                         "Remark": "p5天气"
                       },
@@ -9447,7 +9483,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 345,
+                        "Id": 347,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       }
@@ -9460,7 +9496,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 343,
+                    "Id": 345,
                     "Enable": true,
                     "Remark": "p5"
                   }

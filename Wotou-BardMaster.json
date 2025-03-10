@@ -1,13 +1,13 @@
 [
   {
     "Name": "FRU-Bard ",
-    "Version": "0217.01",
+    "Version": "0311.01首日终极版",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
     "UpdateInfo": "9纷乱；新增p4爆发双目标dot；目标选择器中，请勾选“有目标时不自动切换目标”！P4爆发延后到双目标，如无需延后，取消234节点"
   },
   {
     "Name": "TEA-Bard ",
-    "Version": "0301.01",
+    "Version": "0311.01首日终极版",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/TEA-Bard.json",
     "UpdateInfo": "全流程自动减伤、疾跑、防击退、停手动手切换；p1小怪根据职能自动选择；目标选择器勾选有目标不自动切换"
   }
