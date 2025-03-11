@@ -1,7 +1,7 @@
 [  
   {
     "Name": "FRU-Dancer ",
-    "Version": "0311.01 首日终极版",
+    "Version": "0311.02 首日终极版",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Dancer.json",
     "UpdateInfo": "绝伊甸舞者；为了循环工整，p1最后的小舞百花延后到p2；修复减伤不放/延后释放的问题；添加目标选择器，目标选择器中，请勾选“有目标时不自动切换目标”！ "
   }
