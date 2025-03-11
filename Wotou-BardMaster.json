@@ -7,9 +7,9 @@
   },
   {
     "Name": "FRU-Bard lllllLunatic 匠心轴 ",
-    "Version": "v0.11",
+    "Version": "v0.12",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard-lllllLunatic.json",
-    "UpdateInfo": "请设置变量以修改减伤和打法；有问题请 DC 联系 @lllllLunatic"
+    "UpdateInfo": "请配合队伍要求设置减伤和选择打法；有问题请 DC 联系 @lllllLunatic"
   },
   {
     "Name": "TEA-Bard ",
