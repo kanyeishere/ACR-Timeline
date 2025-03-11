@@ -7770,6 +7770,42 @@
                     "StopWhenDead": false,
                     "Childs": [
                       {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeScriptNode, AEAssist",
+                        "OnlyCheck": false,
+                        "Script": "using System.Security.Cryptography;\nusing System.Text;\nusing AEAssist;\nusing AEAssist.CombatRoutine.Module;\nusing AEAssist.CombatRoutine.Trigger;\nusing AEAssist.CombatRoutine.Trigger.Node;\nusing AEAssist.Helper;\nusing AEAssist.MemoryApi;\nusing AEAssist.Verify;\nusing Wotou.Bard.Setting;\nusing Wotou.Dancer.Setting;\n\nnamespace Wotou.Common;\n\npublic class FruBardTimelineScript : ITriggerScript\n\n{\n    public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)\n    {\n        \n        if (IsRestrictedZoneForLowVip())\n        {\n            if (Wotou.Bard.Setting.BardSettings.Instance.StoredParty.Count <= 7)\n            {\n                Wotou.Bard.Setting.BardSettings.Instance.StoredParty = PartyHelper.Party.Select(player => ComputeMd5Hash(player.Name.ToString())).ToList();\n                Wotou.Bard.Setting.BardSettings.Instance.Save();\n            }\n        }\n        \n        if (IsRestrictedZoneForLowVip() && !IsInStaticParty(Wotou.Bard.Setting.BardSettings.Instance.StoredParty))\n            PlayerOptions.Instance.Stop = true;\n        \n        return false;\n    }\n    \n    private static bool IsRestrictedZoneForLowVip()\n    {\n        var currentZoneId = Core.Resolve<MemApiZoneInfo>().GetCurrTerrId();\n        return currentZoneId == 1238 && \n               Share.VIP.Level == VIPLevel.Normal &&\n               !Wotou.Bard.Setting.BardSettings.Instance.UnlockPassword.Equals(\"whosyourdaddy\", \n                   StringComparison.OrdinalIgnoreCase) &&\n               !Wotou.Dancer.Setting.DancerSettings.Instance.UnlockPassword.Equals(\"whosyourdaddy\", \n                   StringComparison.OrdinalIgnoreCase);\n    }\n    \n    private static bool IsInStaticParty(List<string> storedStaticPartyHashes)\n    {\n        PartyHelper.UpdateAllies();\n        var currentPartyHashes = PartyHelper.Party\n            .Select(player => ComputeMd5Hash(player.Name.ToString()))\n            .ToList();\n        \n        var matchCount = currentPartyHashes.Count(hash => storedStaticPartyHashes.Contains(hash));\n        return matchCount >= 2;\n    }\n    \n    private static string ComputeMd5Hash(string input)\n    {\n        var inputBytes = Encoding.UTF8.GetBytes(input);\n        var hashBytes = MD5.HashData(inputBytes);\n\n        // 将哈希值转换为十六进制字符串\n        return Convert.ToHexString(hashBytes).ToLower(); // .NET 5+ 使用 Convert.ToHexString()\n    }\n}",
+                        "DisplayName": "脚本节点",
+                        "GUID": "55f7fbfc-4dd7-4fbb-a17d-5df6c98f5f85",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 272,
+                        "Enable": true,
+                        "Remark": ""
+                      }
+                    ],
+                    "GUID": "251f1a06-0f9a-42c3-81d8-52596c64fbc4",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 271,
+                    "Enable": true,
+                    "Remark": "p2后半"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
                         "CondLogicType": 1,
                         "CheckOnce": false,
@@ -7791,7 +7827,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 272,
+                        "Id": 274,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -7814,7 +7850,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 273,
+                        "Id": 275,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -7837,7 +7873,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 274,
+                        "Id": 276,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -7853,7 +7889,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 275,
+                        "Id": 277,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -7876,7 +7912,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 276,
+                        "Id": 278,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       },
@@ -7892,7 +7928,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 277,
+                        "Id": 279,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -7915,7 +7951,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 278,
+                        "Id": 280,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -7931,7 +7967,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 279,
+                        "Id": 281,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -7954,7 +7990,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 280,
+                        "Id": 282,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -7967,7 +8003,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 271,
+                    "Id": 273,
                     "Enable": true,
                     "Remark": "p3 慎用"
                   },
@@ -7999,7 +8035,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 282,
+                        "Id": 284,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -8015,7 +8051,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 283,
+                        "Id": 285,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -8038,7 +8074,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 284,
+                        "Id": 286,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -8061,7 +8097,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 285,
+                        "Id": 287,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       }
@@ -8074,7 +8110,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 281,
+                    "Id": 283,
                     "Enable": true,
                     "Remark": "p4前半"
                   },
@@ -8106,7 +8142,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 287,
+                        "Id": 289,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -8122,7 +8158,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 288,
+                        "Id": 290,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -8145,7 +8181,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 289,
+                        "Id": 291,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       },
@@ -8161,7 +8197,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 290,
+                        "Id": 292,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -8184,7 +8220,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 291,
+                        "Id": 293,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -8200,7 +8236,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 292,
+                        "Id": 294,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -8223,7 +8259,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 293,
+                        "Id": 295,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -8236,7 +8272,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 286,
+                    "Id": 288,
                     "Enable": true,
                     "Remark": "p4后半"
                   },
@@ -8268,7 +8304,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 295,
+                        "Id": 297,
                         "Enable": true,
                         "Remark": "p5天气"
                       },
@@ -8291,7 +8327,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 296,
+                        "Id": 298,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       }
@@ -8304,7 +8340,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 294,
+                    "Id": 296,
                     "Enable": true,
                     "Remark": "p5"
                   }
@@ -8398,7 +8434,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 304,
+                                        "Id": 306,
                                         "Enable": true,
                                         "Remark": "用户设置P1变量为0"
                                       },
@@ -8414,7 +8450,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 305,
+                                        "Id": 307,
                                         "Enable": true,
                                         "Remark": ""
                                       },
@@ -8463,7 +8499,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 306,
+                                        "Id": 308,
                                         "Enable": true,
                                         "Remark": "行吟"
                                       }
@@ -8476,7 +8512,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 303,
+                                    "Id": 305,
                                     "Enable": true,
                                     "Remark": "第一次aoe(覆盖44和第一次aoe)"
                                   },
@@ -8510,7 +8546,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 308,
+                                        "Id": 310,
                                         "Enable": true,
                                         "Remark": "用户设置P1变量为1"
                                       },
@@ -8526,7 +8562,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 309,
+                                        "Id": 311,
                                         "Enable": true,
                                         "Remark": "14秒八方判定"
                                       },
@@ -8576,7 +8612,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 310,
+                                        "Id": 312,
                                         "Enable": true,
                                         "Remark": "行吟"
                                       },
@@ -8592,7 +8628,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 311,
+                                        "Id": 313,
                                         "Enable": true,
                                         "Remark": ""
                                       },
@@ -8642,7 +8678,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 312,
+                                        "Id": 314,
                                         "Enable": true,
                                         "Remark": "行吟"
                                       }
@@ -8655,7 +8691,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 307,
+                                    "Id": 309,
                                     "Enable": true,
                                     "Remark": "第二次aoe(开场八方和第二次aoe)"
                                   }
@@ -8668,7 +8704,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 302,
+                                "Id": 304,
                                 "Enable": true,
                                 "Remark": "P1减伤：第一次aoe改成0，第二次aoe改成1"
                               }
@@ -8681,7 +8717,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 301,
+                            "Id": 303,
                             "Enable": true,
                             "Remark": "减伤"
                           },
@@ -8725,7 +8761,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 316,
+                                        "Id": 318,
                                         "Enable": true,
                                         "Remark": "用户设置P1变量为0"
                                       },
@@ -8741,7 +8777,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 317,
+                                        "Id": 319,
                                         "Enable": true,
                                         "Remark": ""
                                       },
@@ -8791,7 +8827,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 318,
+                                        "Id": 320,
                                         "Enable": true,
                                         "Remark": "大地神"
                                       }
@@ -8804,7 +8840,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 315,
+                                    "Id": 317,
                                     "Enable": true,
                                     "Remark": "第二次aoe给大地神"
                                   },
@@ -8838,7 +8874,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 320,
+                                        "Id": 322,
                                         "Enable": true,
                                         "Remark": "用户设置P1变量为1"
                                       },
@@ -8854,7 +8890,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 321,
+                                        "Id": 323,
                                         "Enable": true,
                                         "Remark": ""
                                       },
@@ -8904,7 +8940,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 322,
+                                        "Id": 324,
                                         "Enable": true,
                                         "Remark": "大地神"
                                       }
@@ -8917,7 +8953,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 319,
+                                    "Id": 321,
                                     "Enable": true,
                                     "Remark": "第一次aoe给大地神"
                                   }
@@ -8930,7 +8966,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 314,
+                                "Id": 316,
                                 "Enable": true,
                                 "Remark": ""
                               }
@@ -8943,7 +8979,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 313,
+                            "Id": 315,
                             "Enable": true,
                             "Remark": "大地神"
                           },
@@ -8965,7 +9001,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 324,
+                                "Id": 326,
                                 "Enable": true,
                                 "Remark": "雾龙后，八方前"
                               },
@@ -9014,7 +9050,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 325,
+                                "Id": 327,
                                 "Enable": true,
                                 "Remark": "内丹"
                               }
@@ -9027,7 +9063,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 323,
+                            "Id": 325,
                             "Enable": true,
                             "Remark": "内丹（防止奶妈不奶暴毙"
                           }
@@ -9040,7 +9076,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 300,
+                        "Id": 302,
                         "Enable": true,
                         "Remark": ""
                       }
@@ -9053,7 +9089,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 299,
+                    "Id": 301,
                     "Enable": true,
                     "Remark": "P1"
                   },
@@ -9085,7 +9121,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 327,
+                        "Id": 329,
                         "Enable": true,
                         "Remark": "P2天气"
                       },
@@ -9113,7 +9149,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 330,
+                                "Id": 332,
                                 "Enable": true,
                                 "Remark": "准备击退后4连分摊"
                               },
@@ -9162,7 +9198,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 331,
+                                "Id": 333,
                                 "Enable": true,
                                 "Remark": "行吟"
                               },
@@ -9200,7 +9236,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 334,
+                                        "Id": 336,
                                         "Enable": true,
                                         "Remark": "用户设置P1变量为0"
                                       },
@@ -9228,7 +9264,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 335,
+                                        "Id": 337,
                                         "Enable": true,
                                         "Remark": "光爆读条"
                                       },
@@ -9256,7 +9292,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 336,
+                                        "Id": 338,
                                         "Enable": true,
                                         "Remark": "行吟cd好了"
                                       },
@@ -9305,7 +9341,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 337,
+                                        "Id": 339,
                                         "Enable": true,
                                         "Remark": "行吟"
                                       }
@@ -9318,7 +9354,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 333,
+                                    "Id": 335,
                                     "Enable": true,
                                     "Remark": "光爆分摊"
                                   },
@@ -9352,7 +9388,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 339,
+                                        "Id": 341,
                                         "Enable": true,
                                         "Remark": "用户设置P1变量为1"
                                       },
@@ -9368,7 +9404,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 340,
+                                        "Id": 342,
                                         "Enable": true,
                                         "Remark": ""
                                       },
@@ -9417,7 +9453,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 341,
+                                        "Id": 343,
                                         "Enable": true,
                                         "Remark": "行吟"
                                       }
@@ -9430,7 +9466,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 338,
+                                    "Id": 340,
                                     "Enable": true,
                                     "Remark": "塔+分散/分摊+水波"
                                   },
@@ -9464,7 +9500,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 343,
+                                        "Id": 345,
                                         "Enable": true,
                                         "Remark": "用户设置P1变量为2"
                                       },
@@ -9492,7 +9528,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 344,
+                                        "Id": 346,
                                         "Enable": true,
                                         "Remark": "boss狂暴读条"
                                       },
@@ -9542,7 +9578,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 345,
+                                        "Id": 347,
                                         "Enable": true,
                                         "Remark": "行吟"
                                       }
@@ -9555,7 +9591,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 342,
+                                    "Id": 344,
                                     "Enable": true,
                                     "Remark": "狂暴"
                                   }
@@ -9568,7 +9604,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 332,
+                                "Id": 334,
                                 "Enable": true,
                                 "Remark": "P2减伤：光爆分摊改成0，塔+分散/分摊+水波改成1，覆盖狂暴改成2"
                               }
@@ -9581,7 +9617,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 329,
+                            "Id": 331,
                             "Enable": true,
                             "Remark": "减伤"
                           },
@@ -9611,7 +9647,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 347,
+                                "Id": 349,
                                 "Enable": true,
                                 "Remark": "大地神自动对齐"
                               },
@@ -9639,7 +9675,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 348,
+                                "Id": 350,
                                 "Enable": true,
                                 "Remark": "光爆读条"
                               },
@@ -9655,7 +9691,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 349,
+                                "Id": 351,
                                 "Enable": true,
                                 "Remark": ""
                               },
@@ -9679,7 +9715,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 350,
+                                "Id": 352,
                                 "Enable": true,
                                 "Remark": "锁大地神"
                               }
@@ -9692,7 +9728,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 346,
+                            "Id": 348,
                             "Enable": true,
                             "Remark": "大地神"
                           }
@@ -9705,7 +9741,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 328,
+                        "Id": 330,
                         "Enable": true,
                         "Remark": ""
                       }
@@ -9718,7 +9754,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 326,
+                    "Id": 328,
                     "Enable": true,
                     "Remark": "P2"
                   },
@@ -9750,7 +9786,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 352,
+                        "Id": 354,
                         "Enable": true,
                         "Remark": "P3天气"
                       },
@@ -9800,7 +9836,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 357,
+                                        "Id": 359,
                                         "Enable": true,
                                         "Remark": "P3减伤：覆盖前两次分摊改成0，覆盖后两次分摊改成1"
                                       },
@@ -9828,7 +9864,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 358,
+                                        "Id": 360,
                                         "Enable": true,
                                         "Remark": "一运aoe"
                                       },
@@ -9844,7 +9880,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 359,
+                                        "Id": 361,
                                         "Enable": true,
                                         "Remark": ""
                                       },
@@ -9894,7 +9930,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 360,
+                                        "Id": 362,
                                         "Enable": true,
                                         "Remark": "行吟"
                                       }
@@ -9907,7 +9943,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 356,
+                                    "Id": 358,
                                     "Enable": true,
                                     "Remark": "覆盖前两次分摊+激光"
                                   },
@@ -9941,7 +9977,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 362,
+                                        "Id": 364,
                                         "Enable": true,
                                         "Remark": "P3减伤：覆盖前两次分摊改成0，覆盖后两次分摊改成1"
                                       },
@@ -9988,7 +10024,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 363,
+                                        "Id": 365,
                                         "Enable": true,
                                         "Remark": "回溯前5.5s"
                                       },
@@ -10037,7 +10073,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 364,
+                                        "Id": 366,
                                         "Enable": true,
                                         "Remark": "行吟"
                                       }
@@ -10050,7 +10086,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 361,
+                                    "Id": 363,
                                     "Enable": true,
                                     "Remark": "覆盖回溯后两次分摊"
                                   }
@@ -10063,7 +10099,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 355,
+                                "Id": 357,
                                 "Enable": true,
                                 "Remark": "P3减伤：覆盖前两次激光改成0，覆盖后两次分摊改成1"
                               }
@@ -10076,7 +10112,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 354,
+                            "Id": 356,
                             "Enable": true,
                             "Remark": "减伤"
                           },
@@ -10098,7 +10134,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 366,
+                                "Id": 368,
                                 "Enable": true,
                                 "Remark": ""
                               },
@@ -10148,7 +10184,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 367,
+                                "Id": 369,
                                 "Enable": true,
                                 "Remark": "大地神"
                               },
@@ -10164,7 +10200,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 368,
+                                "Id": 370,
                                 "Enable": true,
                                 "Remark": ""
                               },
@@ -10188,7 +10224,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 369,
+                                "Id": 371,
                                 "Enable": true,
                                 "Remark": "自动对齐后续扩散盾"
                               }
@@ -10201,7 +10237,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 365,
+                            "Id": 367,
                             "Enable": true,
                             "Remark": "大地神"
                           },
@@ -10235,7 +10271,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 371,
+                                "Id": 373,
                                 "Enable": true,
                                 "Remark": "启示"
                               },
@@ -10251,7 +10287,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 372,
+                                "Id": 374,
                                 "Enable": true,
                                 "Remark": ""
                               },
@@ -10301,7 +10337,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 373,
+                                "Id": 375,
                                 "Enable": true,
                                 "Remark": "内丹"
                               }
@@ -10314,7 +10350,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 370,
+                            "Id": 372,
                             "Enable": true,
                             "Remark": "内丹"
                           }
@@ -10327,7 +10363,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 353,
+                        "Id": 355,
                         "Enable": true,
                         "Remark": ""
                       }
@@ -10340,7 +10376,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 351,
+                    "Id": 353,
                     "Enable": true,
                     "Remark": "P3"
                   },
@@ -10372,7 +10408,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 375,
+                        "Id": 377,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -10400,7 +10436,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 376,
+                        "Id": 378,
                         "Enable": true,
                         "Remark": "p3狂暴读条"
                       },
@@ -10416,7 +10452,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 377,
+                        "Id": 379,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -10466,7 +10502,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 382,
+                                        "Id": 384,
                                         "Enable": true,
                                         "Remark": "P4减伤：正攻击改成0，防击退改成1"
                                       },
@@ -10502,7 +10538,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 383,
+                                        "Id": 385,
                                         "Enable": true,
                                         "Remark": "死亡轮回"
                                       },
@@ -10518,7 +10554,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 384,
+                                        "Id": 386,
                                         "Enable": true,
                                         "Remark": ""
                                       },
@@ -10568,7 +10604,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 385,
+                                        "Id": 387,
                                         "Enable": true,
                                         "Remark": "行吟"
                                       },
@@ -10596,7 +10632,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 386,
+                                        "Id": 388,
                                         "Enable": true,
                                         "Remark": "行吟cd好了"
                                       },
@@ -10612,7 +10648,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 387,
+                                        "Id": 389,
                                         "Enable": true,
                                         "Remark": ""
                                       },
@@ -10662,7 +10698,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 388,
+                                        "Id": 390,
                                         "Enable": true,
                                         "Remark": "行吟"
                                       }
@@ -10675,7 +10711,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 381,
+                                    "Id": 383,
                                     "Enable": true,
                                     "Remark": "正攻"
                                   },
@@ -10709,7 +10745,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 390,
+                                        "Id": 392,
                                         "Enable": true,
                                         "Remark": "P4减伤：正攻击改成0，防击退改成1"
                                       },
@@ -10745,7 +10781,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 391,
+                                        "Id": 393,
                                         "Enable": true,
                                         "Remark": "光暗龙诗"
                                       },
@@ -10761,7 +10797,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 392,
+                                        "Id": 394,
                                         "Enable": true,
                                         "Remark": ""
                                       },
@@ -10811,7 +10847,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 393,
+                                        "Id": 395,
                                         "Enable": true,
                                         "Remark": "行吟"
                                       },
@@ -10870,7 +10906,7 @@
                                                   "Z": 0.4,
                                                   "W": 1.0
                                                 },
-                                                "Id": 396,
+                                                "Id": 398,
                                                 "Enable": true,
                                                 "Remark": "回溯前5s"
                                               },
@@ -10919,7 +10955,7 @@
                                                   "Z": 0.4,
                                                   "W": 1.0
                                                 },
-                                                "Id": 397,
+                                                "Id": 399,
                                                 "Enable": true,
                                                 "Remark": "行吟"
                                               }
@@ -10932,7 +10968,7 @@
                                               "Z": 0.4,
                                               "W": 1.0
                                             },
-                                            "Id": 395,
+                                            "Id": 397,
                                             "Enable": true,
                                             "Remark": "减伤"
                                           },
@@ -10985,7 +11021,7 @@
                                                   "Z": 0.4,
                                                   "W": 1.0
                                                 },
-                                                "Id": 399,
+                                                "Id": 401,
                                                 "Enable": true,
                                                 "Remark": "回溯前2.5s"
                                               },
@@ -11034,7 +11070,7 @@
                                                   "Z": 0.4,
                                                   "W": 1.0
                                                 },
-                                                "Id": 400,
+                                                "Id": 402,
                                                 "Enable": true,
                                                 "Remark": "防击退"
                                               }
@@ -11047,7 +11083,7 @@
                                               "Z": 0.4,
                                               "W": 1.0
                                             },
-                                            "Id": 398,
+                                            "Id": 400,
                                             "Enable": true,
                                             "Remark": "Y字防击退"
                                           }
@@ -11060,7 +11096,7 @@
                                           "Z": 0.4,
                                           "W": 1.0
                                         },
-                                        "Id": 394,
+                                        "Id": 396,
                                         "Enable": true,
                                         "Remark": "二运"
                                       }
@@ -11073,7 +11109,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 389,
+                                    "Id": 391,
                                     "Enable": true,
                                     "Remark": "Y字防击退"
                                   }
@@ -11086,7 +11122,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 380,
+                                "Id": 382,
                                 "Enable": true,
                                 "Remark": "P4减伤：正攻击改成0，防击退改成1"
                               }
@@ -11099,7 +11135,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 379,
+                            "Id": 381,
                             "Enable": true,
                             "Remark": "减伤"
                           },
@@ -11129,7 +11165,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 402,
+                                "Id": 404,
                                 "Enable": true,
                                 "Remark": "大地神自动对齐"
                               }
@@ -11142,7 +11178,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 401,
+                            "Id": 403,
                             "Enable": true,
                             "Remark": "大地神"
                           }
@@ -11155,7 +11191,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 378,
+                        "Id": 380,
                         "Enable": true,
                         "Remark": ""
                       }
@@ -11168,7 +11204,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 374,
+                    "Id": 376,
                     "Enable": true,
                     "Remark": "P4"
                   },
@@ -11200,7 +11236,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 404,
+                        "Id": 406,
                         "Enable": true,
                         "Remark": "p5天气"
                       },
@@ -11244,7 +11280,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 408,
+                                    "Id": 410,
                                     "Enable": true,
                                     "Remark": "P5：3次44分摊改成0，两次挡枪改成1"
                                   },
@@ -11272,7 +11308,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 409,
+                                    "Id": 411,
                                     "Enable": true,
                                     "Remark": "死亡轮回"
                                   },
@@ -11281,84 +11317,6 @@
                                     "DisplayName": "延迟[2.00]秒",
                                     "Delay": 2.0,
                                     "GUID": "ec685000-4988-4f09-8dbb-807484403c33",
-                                    "Important": false,
-                                    "Color": {
-                                      "X": 1.0,
-                                      "Y": 1.0,
-                                      "Z": 0.4,
-                                      "W": 1.0
-                                    },
-                                    "Id": 410,
-                                    "Enable": true,
-                                    "Remark": ""
-                                  },
-                                  {
-                                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                                    "TriggerActions": [
-                                      {
-                                        "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionHighPrioritySlot, AEAssist",
-                                        "SpellConfig": {
-                                          "Remark": "",
-                                          "Category": 0,
-                                          "SpellId": 7405,
-                                          "CoolDowncheck": true,
-                                          "CoolDowncheck_time": 0.5,
-                                          "TargetType": 0,
-                                          "IsPartyMember": true,
-                                          "LimitJobType": 0,
-                                          "LimitBuffIds": [],
-                                          "LimitMaxHpType": 0,
-                                          "LimitHpType": 0,
-                                          "Location": {
-                                            "X": 0.0,
-                                            "Y": 0.0,
-                                            "Z": 0.0
-                                          },
-                                          "TargetSelector": {
-                                            "Enable": false,
-                                            "Target": 0,
-                                            "FilterDatas": [],
-                                            "NeedTargetable": false,
-                                            "SndFilter": 0,
-                                            "PMIndex": 0
-                                          },
-                                          "AutoCheckActionChange": true
-                                        },
-                                        "Clear": false,
-                                        "DisplayName": "技能使用/插入高优先级技能",
-                                        "Remark": null
-                                      }
-                                    ],
-                                    "DisplayName": "行为",
-                                    "GUID": "a5688980-b454-435a-8000-dd14ffc4cc07",
-                                    "Important": false,
-                                    "Color": {
-                                      "X": 1.0,
-                                      "Y": 1.0,
-                                      "Z": 0.4,
-                                      "W": 1.0
-                                    },
-                                    "Id": 411,
-                                    "Enable": true,
-                                    "Remark": "行吟"
-                                  },
-                                  {
-                                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
-                                    "CondLogicType": 0,
-                                    "CheckOnce": false,
-                                    "ReverseResult": false,
-                                    "TriggerConds": [
-                                      {
-                                        "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
-                                        "Strs": null,
-                                        "Remark": "",
-                                        "RegexNameOrId": "40310",
-                                        "NeedTargetable": true,
-                                        "DisplayName": "General/敌人读条使用技能"
-                                      }
-                                    ],
-                                    "DisplayName": "等待条件",
-                                    "GUID": "cc925033-f04c-49e5-84af-b45592e3f2fe",
                                     "Important": false,
                                     "Color": {
                                       "X": 1.0,
@@ -11368,6 +11326,84 @@
                                     },
                                     "Id": 412,
                                     "Enable": true,
+                                    "Remark": ""
+                                  },
+                                  {
+                                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                                    "TriggerActions": [
+                                      {
+                                        "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionHighPrioritySlot, AEAssist",
+                                        "SpellConfig": {
+                                          "Remark": "",
+                                          "Category": 0,
+                                          "SpellId": 7405,
+                                          "CoolDowncheck": true,
+                                          "CoolDowncheck_time": 0.5,
+                                          "TargetType": 0,
+                                          "IsPartyMember": true,
+                                          "LimitJobType": 0,
+                                          "LimitBuffIds": [],
+                                          "LimitMaxHpType": 0,
+                                          "LimitHpType": 0,
+                                          "Location": {
+                                            "X": 0.0,
+                                            "Y": 0.0,
+                                            "Z": 0.0
+                                          },
+                                          "TargetSelector": {
+                                            "Enable": false,
+                                            "Target": 0,
+                                            "FilterDatas": [],
+                                            "NeedTargetable": false,
+                                            "SndFilter": 0,
+                                            "PMIndex": 0
+                                          },
+                                          "AutoCheckActionChange": true
+                                        },
+                                        "Clear": false,
+                                        "DisplayName": "技能使用/插入高优先级技能",
+                                        "Remark": null
+                                      }
+                                    ],
+                                    "DisplayName": "行为",
+                                    "GUID": "a5688980-b454-435a-8000-dd14ffc4cc07",
+                                    "Important": false,
+                                    "Color": {
+                                      "X": 1.0,
+                                      "Y": 1.0,
+                                      "Z": 0.4,
+                                      "W": 1.0
+                                    },
+                                    "Id": 413,
+                                    "Enable": true,
+                                    "Remark": "行吟"
+                                  },
+                                  {
+                                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                                    "CondLogicType": 0,
+                                    "CheckOnce": false,
+                                    "ReverseResult": false,
+                                    "TriggerConds": [
+                                      {
+                                        "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
+                                        "Strs": null,
+                                        "Remark": "",
+                                        "RegexNameOrId": "40310",
+                                        "NeedTargetable": true,
+                                        "DisplayName": "General/敌人读条使用技能"
+                                      }
+                                    ],
+                                    "DisplayName": "等待条件",
+                                    "GUID": "cc925033-f04c-49e5-84af-b45592e3f2fe",
+                                    "Important": false,
+                                    "Color": {
+                                      "X": 1.0,
+                                      "Y": 1.0,
+                                      "Z": 0.4,
+                                      "W": 1.0
+                                    },
+                                    "Id": 414,
+                                    "Enable": true,
                                     "Remark": "死亡轮回"
                                   },
                                   {
@@ -11382,7 +11418,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 413,
+                                    "Id": 415,
                                     "Enable": true,
                                     "Remark": ""
                                   },
@@ -11432,7 +11468,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 414,
+                                    "Id": 416,
                                     "Enable": true,
                                     "Remark": "行吟"
                                   },
@@ -11460,7 +11496,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 415,
+                                    "Id": 417,
                                     "Enable": true,
                                     "Remark": "死亡轮回"
                                   },
@@ -11476,7 +11512,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 416,
+                                    "Id": 418,
                                     "Enable": true,
                                     "Remark": ""
                                   },
@@ -11526,7 +11562,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 417,
+                                    "Id": 419,
                                     "Enable": true,
                                     "Remark": "行吟"
                                   }
@@ -11539,7 +11575,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 407,
+                                "Id": 409,
                                 "Enable": true,
                                 "Remark": "3次44分摊"
                               },
@@ -11573,7 +11609,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 419,
+                                    "Id": 421,
                                     "Enable": true,
                                     "Remark": "P5：3次44分摊改成0，两次挡枪改成1"
                                   },
@@ -11601,7 +11637,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 420,
+                                    "Id": 422,
                                     "Enable": true,
                                     "Remark": "挡枪"
                                   },
@@ -11617,7 +11653,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 421,
+                                    "Id": 423,
                                     "Enable": true,
                                     "Remark": ""
                                   },
@@ -11667,7 +11703,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 422,
+                                    "Id": 424,
                                     "Enable": true,
                                     "Remark": "行吟"
                                   },
@@ -11695,7 +11731,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 423,
+                                    "Id": 425,
                                     "Enable": true,
                                     "Remark": "挡枪"
                                   },
@@ -11711,7 +11747,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 424,
+                                    "Id": 426,
                                     "Enable": true,
                                     "Remark": ""
                                   },
@@ -11761,7 +11797,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 425,
+                                    "Id": 427,
                                     "Enable": true,
                                     "Remark": "行吟"
                                   }
@@ -11774,7 +11810,7 @@
                                   "Z": 0.4,
                                   "W": 1.0
                                 },
-                                "Id": 418,
+                                "Id": 420,
                                 "Enable": true,
                                 "Remark": "2次挡枪"
                               }
@@ -11787,7 +11823,7 @@
                               "Z": 0.4,
                               "W": 1.0
                             },
-                            "Id": 406,
+                            "Id": 408,
                             "Enable": true,
                             "Remark": "P5：3次44分摊改成0，两次挡枪改成1"
                           }
@@ -11800,7 +11836,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 405,
+                        "Id": 407,
                         "Enable": true,
                         "Remark": ""
                       }
@@ -11813,7 +11849,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 403,
+                    "Id": 405,
                     "Enable": true,
                     "Remark": "P5"
                   }
@@ -11826,7 +11862,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 298,
+                "Id": 300,
                 "Enable": true,
                 "Remark": ""
               }
@@ -11839,7 +11875,7 @@
               "Z": 0.4,
               "W": 1.0
             },
-            "Id": 297,
+            "Id": 299,
             "Enable": true,
             "Remark": "减伤轴以及额外防暴毙小功能"
           }
