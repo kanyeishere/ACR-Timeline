@@ -7,7 +7,7 @@
   },
   {
     "Name": "FRU-Bard lllllLunatic 匠心轴 ",
-    "Version": "v0.13 新增自动爆发药,修复已知p3p4问题，以及减伤",
+    "Version": "0.14 新增p2开场驱散，默认关闭，有需要在359节点开启，如非固定队必需，最好别开",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard-lllllLunatic.json",
     "UpdateInfo": "请配合队伍要求设置减伤和选择打法；有问题请 DC 联系 @lllllLunatic"
   },
