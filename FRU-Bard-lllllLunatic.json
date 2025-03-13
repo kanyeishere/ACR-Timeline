@@ -8618,8 +8618,8 @@
                                       },
                                       {
                                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                                        "DisplayName": "延迟[97.00]秒",
-                                        "Delay": 97.0,
+                                        "DisplayName": "延迟[98.00]秒",
+                                        "Delay": 98.0,
                                         "GUID": "6176223f-ba14-4244-ad33-28e87e0046f6",
                                         "Important": false,
                                         "Color": {
