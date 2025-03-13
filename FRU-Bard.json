@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard v0311.04 首日终极版",
+  "Name": "FRU-Bard v0311.05 首日终极版",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -2494,7 +2494,8 @@
                                 "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
                                 "TriggerActions": [
                                   {
-                                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionHighPrioritySlot, AEAssist",
+                                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionCastSpell, AEAssist",
+                                    "Remark": null,
                                     "SpellConfig": {
                                       "Remark": "",
                                       "Category": 0,
@@ -2522,9 +2523,7 @@
                                       },
                                       "AutoCheckActionChange": true
                                     },
-                                    "Clear": false,
-                                    "DisplayName": "技能使用/插入高优先级技能",
-                                    "Remark": null
+                                    "DisplayName": "技能使用/强制使用技能"
                                   }
                                 ],
                                 "DisplayName": "行为",
@@ -2538,7 +2537,7 @@
                                 },
                                 "Id": 91,
                                 "Enable": true,
-                                "Remark": "Apex"
+                                "Remark": "强制 Apex"
                               }
                             ],
                             "GUID": "6e9f17a4-3592-4fd6-a01a-08fc945b119c",
@@ -2606,7 +2605,8 @@
                                 "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
                                 "TriggerActions": [
                                   {
-                                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionHighPrioritySlot, AEAssist",
+                                    "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionCastSpell, AEAssist",
+                                    "Remark": null,
                                     "SpellConfig": {
                                       "Remark": "",
                                       "Category": 0,
@@ -2634,9 +2634,7 @@
                                       },
                                       "AutoCheckActionChange": true
                                     },
-                                    "Clear": false,
-                                    "DisplayName": "技能使用/插入高优先级技能",
-                                    "Remark": null
+                                    "DisplayName": "技能使用/强制使用技能"
                                   }
                                 ],
                                 "DisplayName": "行为",
@@ -2650,7 +2648,7 @@
                                 },
                                 "Id": 95,
                                 "Enable": true,
-                                "Remark": "Apex"
+                                "Remark": "强制 Apex"
                               }
                             ],
                             "GUID": "d15b19f3-f46a-4bb3-a0da-9b95ba2f16e6",
@@ -2933,7 +2931,8 @@
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
                         "TriggerActions": [
                           {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionHighPrioritySlot, AEAssist",
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionCastSpell, AEAssist",
+                            "Remark": null,
                             "SpellConfig": {
                               "Remark": "",
                               "Category": 0,
@@ -2961,9 +2960,7 @@
                               },
                               "AutoCheckActionChange": true
                             },
-                            "Clear": false,
-                            "DisplayName": "技能使用/插入高优先级技能",
-                            "Remark": null
+                            "DisplayName": "技能使用/强制使用技能"
                           }
                         ],
                         "DisplayName": "行为",
@@ -2977,7 +2974,7 @@
                         },
                         "Id": 107,
                         "Enable": true,
-                        "Remark": "Apex"
+                        "Remark": "强制 Apex"
                       }
                     ],
                     "GUID": "94fb1037-a215-46fc-9f0e-b6abfd47f414",
