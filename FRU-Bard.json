@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard v0311.08 首日终极版",
+  "Name": "FRU-Bard v0315",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -1881,8 +1881,8 @@
                               "Remark": "",
                               "Category": 0,
                               "SpellId": 7408,
-                              "CoolDowncheck": false,
-                              "CoolDowncheck_time": 0.1,
+                              "CoolDowncheck": true,
+                              "CoolDowncheck_time": 0.0,
                               "TargetType": 0,
                               "IsPartyMember": true,
                               "LimitJobType": 0,
@@ -2356,7 +2356,7 @@
                 "TriggerActions": [
                   {
                     "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
-                    "Key": "AOE",
+                    "Key": "九天连箭",
                     "Value": true,
                     "DisplayName": "Bard/QT",
                     "Remark": null
@@ -2396,7 +2396,7 @@
                   "W": 1.0
                 },
                 "Id": 83,
-                "Enable": false,
+                "Enable": true,
                 "Remark": "九天前置"
               },
               {
@@ -4007,6 +4007,13 @@
                             "Value": true,
                             "DisplayName": "Bard/QT",
                             "Remark": null
+                          },
+                          {
+                            "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
+                            "Key": "AOE",
+                            "Value": false,
+                            "DisplayName": "Bard/QT",
+                            "Remark": null
                           }
                         ],
                         "DisplayName": "行为",
@@ -4020,7 +4027,7 @@
                         },
                         "Id": 145,
                         "Enable": true,
-                        "Remark": "开唱歌"
+                        "Remark": "开唱歌 关AOE"
                       }
                     ],
                     "GUID": "adea9929-847f-4f7c-b87f-e76661402e04",
