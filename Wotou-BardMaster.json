@@ -1,7 +1,7 @@
 [
   {
     "Name": "FRU-Bard ",
-    "Version": "0311.07 首日终极版",
+    "Version": "0311.08 首日终极版",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
     "UpdateInfo": "9纷乱；新增p4全程双目标实验性功能-287节点；目标选择器中，请勾选“有目标时不自动切换目标”！P4爆发延后到双目标，如无需延后，取消239节点"
   },
