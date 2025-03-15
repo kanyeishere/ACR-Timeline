@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard v0316.01",
+  "Name": "FRU-Bard v0316.02",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -2560,8 +2560,8 @@
                             "Childs": [
                               {
                                 "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                                "DisplayName": "延迟[4.80]秒",
-                                "Delay": 4.8,
+                                "DisplayName": "延迟[2.50]秒",
+                                "Delay": 2.5,
                                 "GUID": "20dad11c-e29b-4c0a-8774-7b0ebfab0976",
                                 "Important": false,
                                 "Color": {
