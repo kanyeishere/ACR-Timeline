@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 38,
   "Author": "詩超絆 & Wotou ",
-  "Name": "FRU-Dancer v0317.03",
+  "Name": "FRU-Dancer v0317.04",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -1124,8 +1124,8 @@
                     "Childs": [
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[46.00]秒",
-                        "Delay": 46.0,
+                        "DisplayName": "延迟[48.00]秒",
+                        "Delay": 48.0,
                         "GUID": "52a5ad05-1025-4fb8-be62-a351346f6169",
                         "Important": false,
                         "Color": {
@@ -1189,8 +1189,8 @@
                       },
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[110.00]秒",
-                        "Delay": 110.0,
+                        "DisplayName": "延迟[108.00]秒",
+                        "Delay": 108.0,
                         "GUID": "52a5ad05-1025-4fb8-be62-a351346f6169",
                         "Important": false,
                         "Color": {

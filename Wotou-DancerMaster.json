@@ -1,7 +1,7 @@
 [  
   {
     "Name": "FRU-Dancer ",
-    "Version": "0317.03",
+    "Version": "0317.04",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Dancer.json",
     "UpdateInfo": "修复p4减伤；为了循环工整，p1最后的小舞百花延后到p2；添加目标选择器，目标选择器中，请勾选“有目标时不自动切换目标”！ "
   }
