@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard v0317.03",
+  "Name": "FRU-Bard v0317.04",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -2333,7 +2333,7 @@
                   {
                     "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
                     "Key": "九天前置",
-                    "Value": true,
+                    "Value": false,
                     "DisplayName": "Bard/QT",
                     "Remark": null
                   }
@@ -2381,7 +2381,7 @@
                   {
                     "$type": "Wotou.Bard.Triggers.BardTriggerActionQt, Wotou",
                     "Key": "九天前置",
-                    "Value": true,
+                    "Value": false,
                     "DisplayName": "Bard/QT",
                     "Remark": null
                   }
@@ -2396,7 +2396,7 @@
                   "W": 1.0
                 },
                 "Id": 83,
-                "Enable": true,
+                "Enable": false,
                 "Remark": "九天前置"
               },
               {
