@@ -7,7 +7,7 @@
   },
   {
     "Name": "FRU-Bard lllllLunatic 匠心轴 ",
-    "Version": "0.23",
+    "Version": "0.317",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard-lllllLunatic.json",
     "UpdateInfo": " 修复修复了防止p1打太快apex罢工的情况，新增p4修血续毒，新增p2开场驱散，默认关闭，有需要在359节点开启，如非固定队必需，最好别开,修复大部分已知问题,请配合队伍要求设置减伤和选择打法；有问题请 DC 联系 @lllllLunatic"
   },
