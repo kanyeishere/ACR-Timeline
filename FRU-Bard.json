@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard v0317.02",
+  "Name": "FRU-Bard v0317.03",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -3425,6 +3425,22 @@
                                 "Times": 10,
                                 "Childs": [
                                   {
+                                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                                    "DisplayName": "延迟[0.10]秒",
+                                    "Delay": 0.1,
+                                    "GUID": "ea1bf8e9-6c3e-4067-b4a9-f308a9df20ed",
+                                    "Important": false,
+                                    "Color": {
+                                      "X": 1.0,
+                                      "Y": 1.0,
+                                      "Z": 0.4,
+                                      "W": 1.0
+                                    },
+                                    "Id": 128,
+                                    "Enable": true,
+                                    "Remark": ""
+                                  },
+                                  {
                                     "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeScriptNode, AEAssist",
                                     "OnlyCheck": false,
                                     "Script": "using AEAssist.Extension;\nusing AEAssist;\nusing AEAssist.CombatRoutine.Trigger;\nusing AEAssist.CombatRoutine.Trigger.Node;\n\nnamespace ScriptTest;\n\npublic class TestScript : ITriggerScript\n{\n    // Check返回True代表此节点执行完毕， 非检测模式下，返回false时一直重复执行（每帧）\n    // 检测模式下， condParams必定为空\n    public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)\n    {\n        var target = Core.Me.GetCurrTarget();\n\n        if (target == null)\n            return true;\n\n        return false;\n    }\n}",
@@ -3437,7 +3453,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 128,
+                                    "Id": 129,
                                     "Enable": true,
                                     "Remark": "等待当前目标消失"
                                   },
@@ -3497,7 +3513,7 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 129,
+                                    "Id": 130,
                                     "Enable": true,
                                     "Remark": "光水晶可选中"
                                   },
@@ -3555,25 +3571,9 @@
                                       "Z": 0.4,
                                       "W": 1.0
                                     },
-                                    "Id": 130,
-                                    "Enable": true,
-                                    "Remark": "选中25米内血量最高的光水晶"
-                                  },
-                                  {
-                                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                                    "DisplayName": "延迟[0.10]秒",
-                                    "Delay": 0.1,
-                                    "GUID": "ea1bf8e9-6c3e-4067-b4a9-f308a9df20ed",
-                                    "Important": false,
-                                    "Color": {
-                                      "X": 1.0,
-                                      "Y": 1.0,
-                                      "Z": 0.4,
-                                      "W": 1.0
-                                    },
                                     "Id": 131,
                                     "Enable": true,
-                                    "Remark": ""
+                                    "Remark": "选中25米内血量最高的光水晶"
                                   }
                                 ],
                                 "GUID": "c6267e50-3e10-4084-b3a3-f660f872dba7",
