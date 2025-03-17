@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard v0317.01",
+  "Name": "FRU-Bard v0317.02",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -8728,207 +8728,6 @@
                         "Remark": "落地第1G"
                       },
                       {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[79.00]秒",
-                        "Delay": 79.0,
-                        "GUID": "8dfadfc5-fa97-42b0-96ad-2db408784b06",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 309,
-                        "Enable": true,
-                        "Remark": "光暗直线挡枪"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                        "TriggerActions": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionHighPrioritySlot, AEAssist",
-                            "SpellConfig": {
-                              "Remark": "",
-                              "Category": 0,
-                              "SpellId": 7405,
-                              "CoolDowncheck": true,
-                              "CoolDowncheck_time": 0.5,
-                              "TargetType": 0,
-                              "IsPartyMember": true,
-                              "LimitJobType": 0,
-                              "LimitBuffIds": [],
-                              "LimitMaxHpType": 0,
-                              "LimitHpType": 0,
-                              "Location": {
-                                "X": 0.0,
-                                "Y": 0.0,
-                                "Z": 0.0
-                              },
-                              "TargetSelector": {
-                                "Enable": false,
-                                "Target": 0,
-                                "FilterDatas": [],
-                                "NeedTargetable": false,
-                                "SndFilter": 0,
-                                "PMIndex": 0
-                              },
-                              "AutoCheckActionChange": true
-                            },
-                            "Clear": false,
-                            "DisplayName": "技能使用/插入高优先级技能",
-                            "Remark": null
-                          }
-                        ],
-                        "DisplayName": "行为",
-                        "GUID": "a5688980-b454-435a-8000-dd14ffc4cc07",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 310,
-                        "Enable": true,
-                        "Remark": "行吟"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[112.00]秒",
-                        "Delay": 112.0,
-                        "GUID": "bef23ce3-983d-47a1-b20f-64dc8f017cdd",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 311,
-                        "Enable": true,
-                        "Remark": "光暗直线挡枪"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                        "TriggerActions": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionHighPrioritySlot, AEAssist",
-                            "SpellConfig": {
-                              "Remark": "",
-                              "Category": 0,
-                              "SpellId": 7405,
-                              "CoolDowncheck": true,
-                              "CoolDowncheck_time": 0.5,
-                              "TargetType": 0,
-                              "IsPartyMember": true,
-                              "LimitJobType": 0,
-                              "LimitBuffIds": [],
-                              "LimitMaxHpType": 0,
-                              "LimitHpType": 0,
-                              "Location": {
-                                "X": 0.0,
-                                "Y": 0.0,
-                                "Z": 0.0
-                              },
-                              "TargetSelector": {
-                                "Enable": false,
-                                "Target": 0,
-                                "FilterDatas": [],
-                                "NeedTargetable": false,
-                                "SndFilter": 0,
-                                "PMIndex": 0
-                              },
-                              "AutoCheckActionChange": true
-                            },
-                            "Clear": false,
-                            "DisplayName": "技能使用/插入高优先级技能",
-                            "Remark": null
-                          }
-                        ],
-                        "DisplayName": "行为",
-                        "GUID": "a5688980-b454-435a-8000-dd14ffc4cc07",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 312,
-                        "Enable": true,
-                        "Remark": "行吟"
-                      }
-                    ],
-                    "GUID": "38cb9368-77c6-4e42-8850-b7097496c3e7",
-                    "Important": false,
-                    "Color": {
-                      "X": 1.0,
-                      "Y": 1.0,
-                      "Z": 0.4,
-                      "W": 1.0
-                    },
-                    "Id": 307,
-                    "Enable": true,
-                    "Remark": "p5减伤"
-                  },
-                  {
-                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
-                    "DisplayName": "序列",
-                    "IgnoreNodeResult": false,
-                    "StopWhenDead": false,
-                    "Childs": [
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
-                        "CondLogicType": 1,
-                        "CheckOnce": false,
-                        "ReverseResult": false,
-                        "TriggerConds": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
-                            "DisplayName": "General/等待技能释放",
-                            "Remark": "风dot",
-                            "SpellId": 7407
-                          },
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
-                            "DisplayName": "General/等待技能释放",
-                            "Remark": "Apex",
-                            "SpellId": 16496
-                          },
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
-                            "DisplayName": "General/等待技能释放",
-                            "Remark": "毒dot",
-                            "SpellId": 7406
-                          },
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
-                            "DisplayName": "General/等待技能释放",
-                            "Remark": "爆发射击",
-                            "SpellId": 16495
-                          },
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondAfterSpell, AEAssist",
-                            "DisplayName": "General/等待技能释放",
-                            "Remark": "辉煌箭",
-                            "SpellId": 7409
-                          }
-                        ],
-                        "DisplayName": "等待条件",
-                        "GUID": "9115b122-2f12-4720-bce8-b782b71fc62b",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 314,
-                        "Enable": true,
-                        "Remark": "落地第1G"
-                      },
-                      {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
                         "TriggerActions": [
                           {
@@ -8973,7 +8772,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 315,
+                        "Id": 309,
                         "Enable": true,
                         "Remark": "碎心箭"
                       }
@@ -8986,7 +8785,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 313,
+                    "Id": 307,
                     "Enable": true,
                     "Remark": "碎心箭"
                   },
@@ -9018,7 +8817,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 317,
+                        "Id": 311,
                         "Enable": true,
                         "Remark": "战斗之声"
                       },
@@ -9034,7 +8833,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 318,
+                        "Id": 312,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9060,7 +8859,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 319,
+                        "Id": 313,
                         "Enable": true,
                         "Remark": "战斗之声"
                       },
@@ -9076,7 +8875,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 320,
+                        "Id": 314,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9102,7 +8901,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 321,
+                        "Id": 315,
                         "Enable": true,
                         "Remark": "战斗之声"
                       },
@@ -9126,7 +8925,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 322,
+                        "Id": 316,
                         "Enable": true,
                         "Remark": "关dot"
                       }
@@ -9139,9 +8938,214 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 316,
+                    "Id": 310,
                     "Enable": true,
                     "Remark": "结尾关dot"
+                  },
+                  {
+                    "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                    "DisplayName": "序列",
+                    "IgnoreNodeResult": false,
+                    "StopWhenDead": false,
+                    "Childs": [
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 1,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
+                            "Remark": "",
+                            "RegexNameOrId": "40316",
+                            "NeedTargetable": true,
+                            "DisplayName": "General/敌人读条使用技能"
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "0ca2da7e-22d4-4760-aa40-95cb32b6a400",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 318,
+                        "Enable": true,
+                        "Remark": "挡枪"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[5.50]秒",
+                        "Delay": 5.5,
+                        "GUID": "2e87d43d-58d8-4826-9c2d-e4d4594b93a3",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 319,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionHighPrioritySlot, AEAssist",
+                            "SpellConfig": {
+                              "Remark": "",
+                              "Category": 0,
+                              "SpellId": 7405,
+                              "CoolDowncheck": true,
+                              "CoolDowncheck_time": 0.5,
+                              "TargetType": 0,
+                              "IsPartyMember": true,
+                              "LimitJobType": 0,
+                              "LimitBuffIds": [],
+                              "LimitMaxHpType": 0,
+                              "LimitHpType": 0,
+                              "Location": {
+                                "X": 0.0,
+                                "Y": 0.0,
+                                "Z": 0.0
+                              },
+                              "TargetSelector": {
+                                "Enable": false,
+                                "Target": 0,
+                                "FilterDatas": [],
+                                "NeedTargetable": false,
+                                "SndFilter": 0,
+                                "PMIndex": 0
+                              },
+                              "AutoCheckActionChange": true
+                            },
+                            "Clear": false,
+                            "DisplayName": "技能使用/插入高优先级技能",
+                            "Remark": null
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "a5688980-b454-435a-8000-dd14ffc4cc07",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 320,
+                        "Enable": true,
+                        "Remark": "行吟"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
+                        "CondLogicType": 1,
+                        "CheckOnce": false,
+                        "ReverseResult": false,
+                        "TriggerConds": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
+                            "Remark": "",
+                            "RegexNameOrId": "40316",
+                            "NeedTargetable": true,
+                            "DisplayName": "General/敌人读条使用技能"
+                          }
+                        ],
+                        "DisplayName": "等待条件",
+                        "GUID": "0ca2da7e-22d4-4760-aa40-95cb32b6a400",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 321,
+                        "Enable": true,
+                        "Remark": "挡枪"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[5.50]秒",
+                        "Delay": 5.5,
+                        "GUID": "2e87d43d-58d8-4826-9c2d-e4d4594b93a3",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 322,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionHighPrioritySlot, AEAssist",
+                            "SpellConfig": {
+                              "Remark": "",
+                              "Category": 0,
+                              "SpellId": 7405,
+                              "CoolDowncheck": true,
+                              "CoolDowncheck_time": 0.5,
+                              "TargetType": 0,
+                              "IsPartyMember": true,
+                              "LimitJobType": 0,
+                              "LimitBuffIds": [],
+                              "LimitMaxHpType": 0,
+                              "LimitHpType": 0,
+                              "Location": {
+                                "X": 0.0,
+                                "Y": 0.0,
+                                "Z": 0.0
+                              },
+                              "TargetSelector": {
+                                "Enable": false,
+                                "Target": 0,
+                                "FilterDatas": [],
+                                "NeedTargetable": false,
+                                "SndFilter": 0,
+                                "PMIndex": 0
+                              },
+                              "AutoCheckActionChange": true
+                            },
+                            "Clear": false,
+                            "DisplayName": "技能使用/插入高优先级技能",
+                            "Remark": null
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "a5688980-b454-435a-8000-dd14ffc4cc07",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 323,
+                        "Enable": true,
+                        "Remark": "行吟"
+                      }
+                    ],
+                    "GUID": "74a26d9a-4cd3-47b7-9172-3618c1003a31",
+                    "Important": false,
+                    "Color": {
+                      "X": 1.0,
+                      "Y": 1.0,
+                      "Z": 0.4,
+                      "W": 1.0
+                    },
+                    "Id": 317,
+                    "Enable": true,
+                    "Remark": "p5减伤-2次挡枪"
                   }
                 ],
                 "GUID": "ba3131a4-1ef1-48ae-b40a-cd2aa6e487a4",
@@ -9206,7 +9210,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 326,
+                        "Id": 327,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -9229,7 +9233,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 327,
+                        "Id": 328,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -9245,7 +9249,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 328,
+                        "Id": 329,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9268,7 +9272,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 329,
+                        "Id": 330,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -9281,7 +9285,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 325,
+                    "Id": 326,
                     "Enable": true,
                     "Remark": "p1"
                   },
@@ -9313,7 +9317,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 331,
+                        "Id": 332,
                         "Enable": true,
                         "Remark": "p2天气"
                       },
@@ -9336,7 +9340,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 332,
+                        "Id": 333,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -9359,7 +9363,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 333,
+                        "Id": 334,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -9375,7 +9379,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 334,
+                        "Id": 335,
                         "Enable": true,
                         "Remark": "p2.5"
                       },
@@ -9398,7 +9402,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 335,
+                        "Id": 336,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -9411,7 +9415,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 330,
+                    "Id": 331,
                     "Enable": true,
                     "Remark": "p2"
                   },
@@ -9443,7 +9447,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 337,
+                        "Id": 338,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -9466,7 +9470,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 338,
+                        "Id": 339,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -9489,7 +9493,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 339,
+                        "Id": 340,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -9505,7 +9509,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 340,
+                        "Id": 341,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9528,7 +9532,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 341,
+                        "Id": 342,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       },
@@ -9544,7 +9548,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 342,
+                        "Id": 343,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9567,7 +9571,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 343,
+                        "Id": 344,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -9583,7 +9587,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 344,
+                        "Id": 345,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9606,7 +9610,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 345,
+                        "Id": 346,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -9619,7 +9623,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 336,
+                    "Id": 337,
                     "Enable": true,
                     "Remark": "p3 慎用"
                   },
@@ -9651,7 +9655,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 347,
+                        "Id": 348,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -9667,7 +9671,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 348,
+                        "Id": 349,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9690,7 +9694,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 349,
+                        "Id": 350,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -9713,7 +9717,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 350,
+                        "Id": 351,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       }
@@ -9726,7 +9730,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 346,
+                    "Id": 347,
                     "Enable": true,
                     "Remark": "p4"
                   },
@@ -9758,7 +9762,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 352,
+                        "Id": 353,
                         "Enable": true,
                         "Remark": "p5天气"
                       },
@@ -9781,7 +9785,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 353,
+                        "Id": 354,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       }
@@ -9794,7 +9798,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 351,
+                    "Id": 352,
                     "Enable": true,
                     "Remark": "p5"
                   }
@@ -9807,7 +9811,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 324,
+                "Id": 325,
                 "Enable": true,
                 "Remark": ""
               }
@@ -9820,7 +9824,7 @@
               "Z": 0.4,
               "W": 1.0
             },
-            "Id": 323,
+            "Id": 324,
             "Enable": true,
             "Remark": "目标选择器"
           }
