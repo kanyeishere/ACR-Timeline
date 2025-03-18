@@ -1,9 +1,9 @@
 [
   {
     "Name": "FRU-Bard ",
-    "Version": "0318.01",
+    "Version": "0318.02",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
-    "UpdateInfo": "修复DD前卡爆破箭的bug；修复p4减伤；新增p4全程双目标实验性功能-287节点；目标选择器中，请勾选“有目标时不自动切换目标”！P4爆发延后到双目标，如无需延后，取消239节点"
+    "UpdateInfo": "修复DD前卡爆破箭的bug；修复p4减伤；新增p4全程双目标实验性功能-300节点；P4爆发延后到双目标，如无需延后，取消239节点"
   },
   {
     "Name": "FRU-Bard lllllLunatic 匠心轴 ",

@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard v0318.01",
+  "Name": "FRU-Bard v0318.02",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -4268,9 +4268,9 @@
                                 "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeClearWaitNode, AEAssist",
                                 "OnlyPreNode": false,
                                 "RangeClear": true,
-                                "MinNode": 148,
-                                "MaxNode": 151,
-                                "DisplayName": "清理等待条件[148-151]",
+                                "MinNode": 149,
+                                "MaxNode": 152,
+                                "DisplayName": "清理等待条件[149-152]",
                                 "GUID": "87efe289-4f02-4e8b-8f19-f90eeec4a2d4",
                                 "Important": false,
                                 "Color": {
@@ -4480,9 +4480,9 @@
                                 "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeClearWaitNode, AEAssist",
                                 "OnlyPreNode": false,
                                 "RangeClear": true,
-                                "MinNode": 155,
-                                "MaxNode": 158,
-                                "DisplayName": "清理等待条件[155-158]",
+                                "MinNode": 156,
+                                "MaxNode": 159,
+                                "DisplayName": "清理等待条件[156-159]",
                                 "GUID": "87efe289-4f02-4e8b-8f19-f90eeec4a2d4",
                                 "Important": false,
                                 "Color": {
@@ -9254,6 +9254,29 @@
                         "Remark": "目标选择器on"
                       },
                       {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "NoTargetOnly  on ",
+                            "Command": "/aeTargetSelector NoTargetOnly on"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 330,
+                        "Enable": true,
+                        "Remark": "目标选择器on"
+                      },
+                      {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
                         "DisplayName": "延迟[120.00]秒",
                         "Delay": 120.0,
@@ -9265,7 +9288,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 330,
+                        "Id": 331,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9288,7 +9311,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 331,
+                        "Id": 332,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -9333,7 +9356,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 333,
+                        "Id": 334,
                         "Enable": true,
                         "Remark": "p2天气"
                       },
@@ -9356,7 +9379,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 334,
+                        "Id": 335,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -9379,7 +9402,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 335,
+                        "Id": 336,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -9395,7 +9418,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 336,
+                        "Id": 337,
                         "Enable": true,
                         "Remark": "p2.5"
                       },
@@ -9418,7 +9441,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 337,
+                        "Id": 338,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -9431,7 +9454,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 332,
+                    "Id": 333,
                     "Enable": true,
                     "Remark": "p2"
                   },
@@ -9463,7 +9486,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 339,
+                        "Id": 340,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -9486,7 +9509,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 340,
+                        "Id": 341,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -9509,7 +9532,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 341,
+                        "Id": 342,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -9525,7 +9548,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 342,
+                        "Id": 343,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9548,7 +9571,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 343,
+                        "Id": 344,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       },
@@ -9564,7 +9587,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 344,
+                        "Id": 345,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9587,7 +9610,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 345,
+                        "Id": 346,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -9603,7 +9626,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 346,
+                        "Id": 347,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9626,7 +9649,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 347,
+                        "Id": 348,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -9639,7 +9662,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 338,
+                    "Id": 339,
                     "Enable": true,
                     "Remark": "p3 慎用"
                   },
@@ -9671,7 +9694,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 349,
+                        "Id": 350,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -9687,7 +9710,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 350,
+                        "Id": 351,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9710,7 +9733,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 351,
+                        "Id": 352,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -9733,7 +9756,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 352,
+                        "Id": 353,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       }
@@ -9746,7 +9769,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 348,
+                    "Id": 349,
                     "Enable": true,
                     "Remark": "p4"
                   },
@@ -9778,7 +9801,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 354,
+                        "Id": 355,
                         "Enable": true,
                         "Remark": "p5天气"
                       },
@@ -9801,7 +9824,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 355,
+                        "Id": 356,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       }
@@ -9814,7 +9837,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 353,
+                    "Id": 354,
                     "Enable": true,
                     "Remark": "p5"
                   }
@@ -9873,7 +9896,7 @@
   "ExposedVars": [],
   "ExposedVarDesc": "",
   "OpenerScript": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Module;\nusing AEAssist.CombatRoutine.Module.Opener;\nusing AEAssist.Helper;\nusing AEAssist.JobApi;\nusing AEAssist.MemoryApi;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class OpenerTest : IOpener\n{\n    // 留空代表使用ACR提供的起手\n    public List<Action<Slot>> Sequence { get; } = new();\n\n    // 处理倒计时期间的行为\n    public void InitCountDown(CountDownHandler countDownHandler)\n    {\n        //起手\n        Wotou.Bard.Setting.BardSettings.Instance.Opener = 2;\n        if (Wotou.Bard.BardRotationEntry.QT.GetQt(\"爆发药\") && Wotou.Bard.Setting.BardSettings.Instance.UsePotionInOpener)\n               countDownHandler.AddAction(1000, Spell.CreatePotion);\n    }\n}",
-  "Note": "新增p4全程双目标实验性功能-287节点；目标选择器中，请勾选“有目标时不自动切换目标”！P4爆发延后到双目标，如无需延后，取消239节点",
+  "Note": "修复DD前卡爆破箭的bug；修复p4减伤；新增p4全程双目标实验性功能-300节点；P4爆发延后到双目标，如无需延后，取消239节点",
   "TerritoryTypeId": 1238,
   "TerritoryWeatherId": 0,
   "TargetAcrAuthor": "Wotou",
