@@ -1,7 +1,7 @@
 [  
   {
     "Name": "FRU-Dancer ",
-    "Version": "0319.04",
+    "Version": "0319.06",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Dancer.json",
     "UpdateInfo": "修复p2减伤；添加根据职能选择p2.5光水晶；修复p3中火无损处理 (DR/猫盒/IC三选一，不可同时开启)"
   }

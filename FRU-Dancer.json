@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 38,
   "Author": "詩超絆 & Wotou ",
-  "Name": "FRU-Dancer v0319.04",
+  "Name": "FRU-Dancer v0319.06",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -3798,19 +3798,19 @@
                             "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
                             "DisplayName": "指令/发送指令",
                             "Remark": "DR移速调整",
-                            "Command": "/pdrspeed 3"
+                            "Command": "/pdrspeed 1.6"
                           },
                           {
                             "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
                             "DisplayName": "指令/发送指令",
                             "Remark": "猫盒移速调整",
-                            "Command": "/Nsp 3"
+                            "Command": "/Nsp 1.6"
                           },
                           {
                             "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
                             "DisplayName": "指令/发送指令",
                             "Remark": "iching移速调整",
-                            "Command": "/i-ching-commander speed 2"
+                            "Command": "/i-ching-commander speed 0.6"
                           }
                         ],
                         "DisplayName": "行为",
