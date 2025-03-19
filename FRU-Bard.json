@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard v0319.04",
+  "Name": "FRU-Bard v0319.05",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -8728,11 +8728,85 @@
                         "Remark": "伶牙俐齿"
                       },
                       {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeScriptNode, AEAssist",
-                        "OnlyCheck": false,
-                        "Script": "using AEAssist;\nusing AEAssist.CombatRoutine.Module.Target;\nusing AEAssist.CombatRoutine.Trigger;\nusing AEAssist.CombatRoutine.Trigger.Node;\nusing AEAssist.Extension;\n\nnamespace ScriptTest;\n\npublic class FruP4TargetSelection: ITriggerScript\n{\n    \n    public uint StormBiteBuff = 1201;\n    public uint CausticBiteBuff = 1200;\n    \n    public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)\n    {\n        var oracleOfDarknessList = TargetMgr.Instance.Enemys.Values\n            .Where(e => e.DataId is 17835).ToList();\n        var usurperOfFrostList = TargetMgr.Instance.Enemys.Values\n            .Where(e => e.DataId is 17833).ToList();\n        \n        // 返回 true，脚本停止运行\n        // 返回 false，脚本每帧运行\n        \n        if (oracleOfDarknessList.Count != 1 || usurperOfFrostList.Count != 1)\n        {\n            return false;\n        }\n        \n        var oracleOfDarkness = oracleOfDarknessList[0];\n        var usurperOfFrost = usurperOfFrostList[0];\n        \n        // 检测 oracle of darkness 身上的 风dot 是否小于5s\n        if (oracleOfDarkness.HasLocalPlayerAura(StormBiteBuff) && !oracleOfDarkness.HasMyAuraWithTimeleft(StormBiteBuff, 5000))\n        {\n            Core.Me.SetTarget(oracleOfDarkness);\n            return false;\n        }\n        \n        // 检测 oracle of darkness 身上的 毒dot 是否小于5s\n        if (oracleOfDarkness.HasLocalPlayerAura(CausticBiteBuff) && !oracleOfDarkness.HasMyAuraWithTimeleft(CausticBiteBuff, 5000))\n        {\n            Core.Me.SetTarget(oracleOfDarkness);\n            return false;\n        }\n        \n        // 检测 usurper of frost 身上的 风dot 是否小于5s\n        if (usurperOfFrost.HasLocalPlayerAura(StormBiteBuff) && !usurperOfFrost.HasMyAuraWithTimeleft(StormBiteBuff, 5000))\n        {\n            Core.Me.SetTarget(usurperOfFrost);\n            return false;\n        }\n        \n        // 检测 usurper of frost 身上的 毒dot 是否小于5s\n        if (usurperOfFrost.HasLocalPlayerAura(CausticBiteBuff) && !usurperOfFrost.HasMyAuraWithTimeleft(CausticBiteBuff, 5000))\n        {\n            Core.Me.SetTarget(usurperOfFrost);\n            return false;\n        }\n        \n        return false;\n    }\n}",
-                        "DisplayName": "脚本节点",
-                        "GUID": "47aa3cfa-a6bb-497d-966e-0b50c9ec1398",
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeParallel, AEAssist",
+                        "DisplayName": "并行",
+                        "AnyReturn": false,
+                        "StopWhenDead": false,
+                        "Childs": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                            "DisplayName": "序列",
+                            "IgnoreNodeResult": false,
+                            "StopWhenDead": false,
+                            "Childs": [
+                              {
+                                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeScriptNode, AEAssist",
+                                "OnlyCheck": false,
+                                "Script": "using AEAssist;\nusing AEAssist.CombatRoutine.Module.Target;\nusing AEAssist.CombatRoutine.Trigger;\nusing AEAssist.CombatRoutine.Trigger.Node;\nusing AEAssist.Extension;\n\nnamespace ScriptTest;\n\npublic class FruP4TargetSelection: ITriggerScript\n{\n    \n    public uint StormBiteBuff = 1201;\n    public uint CausticBiteBuff = 1200;\n    \n    public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)\n    {\n        var oracleOfDarknessList = TargetMgr.Instance.Enemys.Values\n            .Where(e => e.DataId is 17835).ToList();\n        var usurperOfFrostList = TargetMgr.Instance.Enemys.Values\n            .Where(e => e.DataId is 17833).ToList();\n        \n        // 返回 true，脚本停止运行\n        // 返回 false，脚本每帧运行\n        \n        if (oracleOfDarknessList.Count != 1 || usurperOfFrostList.Count != 1)\n        {\n            return false;\n        }\n        \n        var oracleOfDarkness = oracleOfDarknessList[0];\n        var usurperOfFrost = usurperOfFrostList[0];\n        \n        // 检测 oracle of darkness 身上的 风dot 是否小于5s\n        if (oracleOfDarkness.HasLocalPlayerAura(StormBiteBuff) && !oracleOfDarkness.HasMyAuraWithTimeleft(StormBiteBuff, 5000))\n        {\n            Core.Me.SetTarget(oracleOfDarkness);\n            return false;\n        }\n        \n        // 检测 oracle of darkness 身上的 毒dot 是否小于5s\n        if (oracleOfDarkness.HasLocalPlayerAura(CausticBiteBuff) && !oracleOfDarkness.HasMyAuraWithTimeleft(CausticBiteBuff, 5000))\n        {\n            Core.Me.SetTarget(oracleOfDarkness);\n            return false;\n        }\n        \n        // 检测 usurper of frost 身上的 风dot 是否小于5s\n        if (usurperOfFrost.HasLocalPlayerAura(StormBiteBuff) && !usurperOfFrost.HasMyAuraWithTimeleft(StormBiteBuff, 5000))\n        {\n            Core.Me.SetTarget(usurperOfFrost);\n            return false;\n        }\n        \n        // 检测 usurper of frost 身上的 毒dot 是否小于5s\n        if (usurperOfFrost.HasLocalPlayerAura(CausticBiteBuff) && !usurperOfFrost.HasMyAuraWithTimeleft(CausticBiteBuff, 5000))\n        {\n            Core.Me.SetTarget(usurperOfFrost);\n            return false;\n        }\n        \n        return false;\n    }\n}",
+                                "DisplayName": "脚本节点",
+                                "GUID": "47aa3cfa-a6bb-497d-966e-0b50c9ec1398",
+                                "Important": false,
+                                "Color": {
+                                  "X": 1.0,
+                                  "Y": 1.0,
+                                  "Z": 0.4,
+                                  "W": 1.0
+                                },
+                                "Id": 311,
+                                "Enable": true,
+                                "Remark": "自动双目标续毒"
+                              }
+                            ],
+                            "GUID": "0400e6a7-6d7e-48fa-9fbb-a87402d3db4d",
+                            "Important": false,
+                            "Color": {
+                              "X": 1.0,
+                              "Y": 1.0,
+                              "Z": 0.4,
+                              "W": 1.0
+                            },
+                            "Id": 310,
+                            "Enable": true,
+                            "Remark": ""
+                          },
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeSequence, AEAssist",
+                            "DisplayName": "序列",
+                            "IgnoreNodeResult": false,
+                            "StopWhenDead": false,
+                            "Childs": [
+                              {
+                                "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeScriptNode, AEAssist",
+                                "OnlyCheck": false,
+                                "Script": "using AEAssist;\nusing AEAssist.CombatRoutine.Module.Target;\nusing AEAssist.CombatRoutine.Trigger;\nusing AEAssist.CombatRoutine.Trigger.Node;\nusing AEAssist.Extension;\n\nnamespace ScriptTest;\n\npublic class FruP4TargetSelection: ITriggerScript\n{\n    \n    public uint StormBiteBuff = 1201;\n    public uint CausticBiteBuff = 1200;\n    \n    public bool Check(ScriptEnv scriptEnv, ITriggerCondParams condParams)\n    {\n        var oracleOfDarknessList = TargetMgr.Instance.Enemys.Values\n            .Where(e => e.DataId is 17835).ToList();\n        var usurperOfFrostList = TargetMgr.Instance.Enemys.Values\n            .Where(e => e.DataId is 17833).ToList();\n        \n        // 返回 true，脚本停止运行\n        // 返回 false，脚本每帧运行\n        \n        if (oracleOfDarknessList.Count != 1 || usurperOfFrostList.Count != 1)\n        {\n            return false;\n        }\n        \n        var oracleOfDarkness = oracleOfDarknessList[0];\n        var usurperOfFrost = usurperOfFrostList[0];\n        \n        // 检测 oracle of darkness 身上的 风dot 是否小于5s\n        if (oracleOfDarkness.HasLocalPlayerAura(StormBiteBuff) && !oracleOfDarkness.HasMyAuraWithTimeleft(StormBiteBuff, 5000))\n        {\n            Core.Me.SetTarget(oracleOfDarkness);\n            return false;\n        }\n        \n        // 检测 oracle of darkness 身上的 毒dot 是否小于5s\n        if (oracleOfDarkness.HasLocalPlayerAura(CausticBiteBuff) && !oracleOfDarkness.HasMyAuraWithTimeleft(CausticBiteBuff, 5000))\n        {\n            Core.Me.SetTarget(oracleOfDarkness);\n            return false;\n        }\n        \n        // 检测 usurper of frost 身上的 风dot 是否小于5s\n        if (usurperOfFrost.HasLocalPlayerAura(StormBiteBuff) && !usurperOfFrost.HasMyAuraWithTimeleft(StormBiteBuff, 5000))\n        {\n            Core.Me.SetTarget(usurperOfFrost);\n            return false;\n        }\n        \n        // 检测 usurper of frost 身上的 毒dot 是否小于5s\n        if (usurperOfFrost.HasLocalPlayerAura(CausticBiteBuff) && !usurperOfFrost.HasMyAuraWithTimeleft(CausticBiteBuff, 5000))\n        {\n            Core.Me.SetTarget(usurperOfFrost);\n            return false;\n        }\n        \n        //检测血量百分比的差值\n        var hpDiff  = (oracleOfDarkness.CurrentHpPercent() - usurperOfFrost.CurrentHpPercent()) * 100;\n        \n        // 血量差 > 8% 关AOE 并且 切目标\n        if (hpDiff >= 8)\n        {\n            Core.Me.SetTarget(oracleOfDarkness);\n            // 关 AOE\n            Wotou.Bard.BardRotationEntry.QT.SetQt(\"AOE\", false);\n            return false;\n        }\n        else if (hpDiff <= -8)\n        {\n            Core.Me.SetTarget(usurperOfFrost);\n            // 关 AOE\n            Wotou.Bard.BardRotationEntry.QT.SetQt(\"AOE\", false);\n            return false;\n        }\n        \n        // 血量差 < 5% 开AOE\n        else if (hpDiff is >= -5 and <= 5)\n        {\n            // 开 AOE\n            Wotou.Bard.BardRotationEntry.QT.SetQt(\"AOE\", true);   \n        }\n        \n        \n        // 当 oracleOfDarkness 血量比 usurperOfFrost 高 1.5%，切目标\n        if (hpDiff >= 1.5)\n        {\n            Core.Me.SetTarget(oracleOfDarkness);\n            return false;\n        }\n        \n        // 当 usurperOfFrost 血量比 oracleOfDarkness 高 1.5%，切目标\n        if (hpDiff <= -1.5)\n        {\n            Core.Me.SetTarget(usurperOfFrost);\n            return false;\n        }\n        return false;\n    }\n}",
+                                "DisplayName": "脚本节点",
+                                "GUID": "47aa3cfa-a6bb-497d-966e-0b50c9ec1398",
+                                "Important": false,
+                                "Color": {
+                                  "X": 1.0,
+                                  "Y": 1.0,
+                                  "Z": 0.4,
+                                  "W": 1.0
+                                },
+                                "Id": 313,
+                                "Enable": true,
+                                "Remark": "自动强制双目标续毒修血"
+                              }
+                            ],
+                            "GUID": "64d9bfb6-d78d-45d8-bf9d-4f41e33f5535",
+                            "Important": false,
+                            "Color": {
+                              "X": 1.0,
+                              "Y": 1.0,
+                              "Z": 0.4,
+                              "W": 1.0
+                            },
+                            "Id": 312,
+                            "Enable": false,
+                            "Remark": ""
+                          }
+                        ],
+                        "GUID": "a85314cd-4941-49e2-9e21-b50cb4d17e04",
                         "Important": false,
                         "Color": {
                           "X": 1.0,
@@ -8742,7 +8816,7 @@
                         },
                         "Id": 309,
                         "Enable": true,
-                        "Remark": "自动切换双目标"
+                        "Remark": "二选一"
                       }
                     ],
                     "GUID": "f032f439-59ed-4dcf-87f8-1966ca5f94e8",
@@ -8811,7 +8885,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 311,
+                "Id": 315,
                 "Enable": true,
                 "Remark": "p5天气"
               },
@@ -8830,7 +8904,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 312,
+                "Id": 316,
                 "Enable": true,
                 "Remark": ""
               },
@@ -8855,7 +8929,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 313,
+                "Id": 317,
                 "Enable": true,
                 "Remark": "3-6-9歌轴"
               },
@@ -8949,7 +9023,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 314,
+                "Id": 318,
                 "Enable": true,
                 "Remark": "QT初始化"
               },
@@ -8973,7 +9047,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 315,
+                "Id": 319,
                 "Enable": true,
                 "Remark": "开启强对齐"
               },
@@ -9035,7 +9109,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 318,
+                        "Id": 322,
                         "Enable": true,
                         "Remark": "落地第1G"
                       },
@@ -9084,7 +9158,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 319,
+                        "Id": 323,
                         "Enable": true,
                         "Remark": "碎心箭"
                       }
@@ -9097,7 +9171,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 317,
+                    "Id": 321,
                     "Enable": true,
                     "Remark": "碎心箭"
                   },
@@ -9129,7 +9203,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 321,
+                        "Id": 325,
                         "Enable": true,
                         "Remark": "战斗之声"
                       },
@@ -9145,7 +9219,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 322,
+                        "Id": 326,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9171,7 +9245,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 323,
+                        "Id": 327,
                         "Enable": true,
                         "Remark": "战斗之声"
                       },
@@ -9187,7 +9261,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 324,
+                        "Id": 328,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9213,7 +9287,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 325,
+                        "Id": 329,
                         "Enable": true,
                         "Remark": "战斗之声"
                       },
@@ -9237,7 +9311,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 326,
+                        "Id": 330,
                         "Enable": true,
                         "Remark": "关dot"
                       }
@@ -9250,7 +9324,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 320,
+                    "Id": 324,
                     "Enable": true,
                     "Remark": "结尾关dot"
                   },
@@ -9283,7 +9357,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 328,
+                        "Id": 332,
                         "Enable": true,
                         "Remark": "挡枪"
                       },
@@ -9299,7 +9373,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 329,
+                        "Id": 333,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9349,7 +9423,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 330,
+                        "Id": 334,
                         "Enable": true,
                         "Remark": "行吟"
                       },
@@ -9376,7 +9450,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 331,
+                        "Id": 335,
                         "Enable": true,
                         "Remark": "挡枪"
                       },
@@ -9392,7 +9466,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 332,
+                        "Id": 336,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9442,7 +9516,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 333,
+                        "Id": 337,
                         "Enable": true,
                         "Remark": "行吟"
                       }
@@ -9455,7 +9529,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 327,
+                    "Id": 331,
                     "Enable": true,
                     "Remark": "p5减伤-2次挡枪"
                   }
@@ -9468,7 +9542,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 316,
+                "Id": 320,
                 "Enable": true,
                 "Remark": ""
               }
@@ -9481,7 +9555,7 @@
               "Z": 0.4,
               "W": 1.0
             },
-            "Id": 310,
+            "Id": 314,
             "Enable": true,
             "Remark": "p5"
           },
@@ -9522,7 +9596,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 337,
+                        "Id": 341,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -9545,7 +9619,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 338,
+                        "Id": 342,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -9568,7 +9642,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 339,
+                        "Id": 343,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -9584,7 +9658,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 340,
+                        "Id": 344,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -9607,7 +9681,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 341,
+                        "Id": 345,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -9620,7 +9694,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 336,
+                    "Id": 340,
                     "Enable": true,
                     "Remark": "p1"
                   },
@@ -9652,7 +9726,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 343,
+                        "Id": 347,
                         "Enable": true,
                         "Remark": "p2天气"
                       },
@@ -9675,7 +9749,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 344,
+                        "Id": 348,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -9698,7 +9772,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 345,
+                        "Id": 349,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       },
@@ -9714,7 +9788,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 346,
+                        "Id": 350,
                         "Enable": true,
                         "Remark": "p2.5"
                       },
@@ -9737,7 +9811,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 347,
+                        "Id": 351,
                         "Enable": true,
                         "Remark": "目标选择器off"
                       }
@@ -9750,7 +9824,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 342,
+                    "Id": 346,
                     "Enable": true,
                     "Remark": "p2"
                   },
@@ -9782,7 +9856,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 349,
+                        "Id": 353,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -9805,87 +9879,9 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 350,
-                        "Enable": true,
-                        "Remark": "选择当前血量最高"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                        "TriggerActions": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
-                            "DisplayName": "指令/发送指令",
-                            "Remark": "目标选择器on",
-                            "Command": "/aeTargetSelector on"
-                          }
-                        ],
-                        "DisplayName": "行为",
-                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 351,
-                        "Enable": true,
-                        "Remark": "目标选择器on"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[5.00]秒",
-                        "Delay": 5.0,
-                        "GUID": "cc653e8f-33dc-4f4b-bad6-3cc93998bd2d",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 352,
-                        "Enable": true,
-                        "Remark": ""
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                        "TriggerActions": [
-                          {
-                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
-                            "DisplayName": "指令/发送指令",
-                            "Remark": "目标选择器on",
-                            "Command": "/aeTargetSelector off"
-                          }
-                        ],
-                        "DisplayName": "行为",
-                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
-                        "Id": 353,
-                        "Enable": true,
-                        "Remark": "目标选择器off"
-                      },
-                      {
-                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[55.00]秒",
-                        "Delay": 55.0,
-                        "GUID": "8aef3b1c-ad93-41ad-9a5e-0fe21a29d7c9",
-                        "Important": false,
-                        "Color": {
-                          "X": 1.0,
-                          "Y": 1.0,
-                          "Z": 0.4,
-                          "W": 1.0
-                        },
                         "Id": 354,
                         "Enable": true,
-                        "Remark": ""
+                        "Remark": "选择当前血量最高"
                       },
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
@@ -9948,6 +9944,84 @@
                         "Id": 357,
                         "Enable": true,
                         "Remark": "目标选择器off"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[55.00]秒",
+                        "Delay": 55.0,
+                        "GUID": "8aef3b1c-ad93-41ad-9a5e-0fe21a29d7c9",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 358,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector on"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 359,
+                        "Enable": true,
+                        "Remark": "目标选择器on"
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                        "DisplayName": "延迟[5.00]秒",
+                        "Delay": 5.0,
+                        "GUID": "cc653e8f-33dc-4f4b-bad6-3cc93998bd2d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 360,
+                        "Enable": true,
+                        "Remark": ""
+                      },
+                      {
+                        "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
+                        "TriggerActions": [
+                          {
+                            "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerAction_SendCommand, AEAssist",
+                            "DisplayName": "指令/发送指令",
+                            "Remark": "目标选择器on",
+                            "Command": "/aeTargetSelector off"
+                          }
+                        ],
+                        "DisplayName": "行为",
+                        "GUID": "361dd980-bcec-4126-8cd6-11378fadf80d",
+                        "Important": false,
+                        "Color": {
+                          "X": 1.0,
+                          "Y": 1.0,
+                          "Z": 0.4,
+                          "W": 1.0
+                        },
+                        "Id": 361,
+                        "Enable": true,
+                        "Remark": "目标选择器off"
                       }
                     ],
                     "GUID": "fb21b7a1-dcc4-4343-b20f-f7b399d7be8e",
@@ -9958,7 +10032,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 348,
+                    "Id": 352,
                     "Enable": true,
                     "Remark": "p3 慎用"
                   },
@@ -9990,7 +10064,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 359,
+                        "Id": 363,
                         "Enable": true,
                         "Remark": "p3天气"
                       },
@@ -10006,7 +10080,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 360,
+                        "Id": 364,
                         "Enable": true,
                         "Remark": ""
                       },
@@ -10029,7 +10103,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 361,
+                        "Id": 365,
                         "Enable": true,
                         "Remark": "选择当前血量最高"
                       },
@@ -10052,7 +10126,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 362,
+                        "Id": 366,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       }
@@ -10065,7 +10139,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 358,
+                    "Id": 362,
                     "Enable": true,
                     "Remark": "p4"
                   },
@@ -10097,7 +10171,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 364,
+                        "Id": 368,
                         "Enable": true,
                         "Remark": "p5天气"
                       },
@@ -10120,7 +10194,7 @@
                           "Z": 0.4,
                           "W": 1.0
                         },
-                        "Id": 365,
+                        "Id": 369,
                         "Enable": true,
                         "Remark": "目标选择器on"
                       }
@@ -10133,7 +10207,7 @@
                       "Z": 0.4,
                       "W": 1.0
                     },
-                    "Id": 363,
+                    "Id": 367,
                     "Enable": true,
                     "Remark": "p5"
                   }
@@ -10146,7 +10220,7 @@
                   "Z": 0.4,
                   "W": 1.0
                 },
-                "Id": 335,
+                "Id": 339,
                 "Enable": true,
                 "Remark": ""
               }
@@ -10159,7 +10233,7 @@
               "Z": 0.4,
               "W": 1.0
             },
-            "Id": 334,
+            "Id": 338,
             "Enable": true,
             "Remark": "目标选择器"
           }
@@ -10192,7 +10266,7 @@
   "ExposedVars": [],
   "ExposedVarDesc": "",
   "OpenerScript": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Module;\nusing AEAssist.CombatRoutine.Module.Opener;\nusing AEAssist.Helper;\nusing AEAssist.JobApi;\nusing AEAssist.MemoryApi;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class OpenerTest : IOpener\n{\n    // 留空代表使用ACR提供的起手\n    public List<Action<Slot>> Sequence { get; } = new();\n\n    // 处理倒计时期间的行为\n    public void InitCountDown(CountDownHandler countDownHandler)\n    {\n        //起手\n        Wotou.Bard.Setting.BardSettings.Instance.Opener = 2;\n        if (Wotou.Bard.BardRotationEntry.QT.GetQt(\"爆发药\") && Wotou.Bard.Setting.BardSettings.Instance.UsePotionInOpener)\n               countDownHandler.AddAction(1000, Spell.CreatePotion);\n    }\n}",
-  "Note": "添加根据职能选择p2.5光水晶；p4只保留双目标续毒功能-300节点；修复p3中火无损处理 (DR/猫盒/IC三选一，不可同时开启)",
+  "Note": "添加根据职能选择p2.5光水晶；p4双目标功能-309节点；修复p3中火无损处理 (DR/猫盒/IC三选一，不可同时开启)",
   "TerritoryTypeId": 1238,
   "TerritoryWeatherId": 0,
   "TargetAcrAuthor": "Wotou",
