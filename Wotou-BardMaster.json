@@ -1,9 +1,9 @@
 [
   {
     "Name": "FRU-Bard ",
-    "Version": "0320.05",
+    "Version": "0321.01",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
-    "UpdateInfo": "添加根据职能选择p2.5光水晶；修复p3中火无损处理 (DR/猫盒/IC三选一，不可同时开启)；p4双目标功能-309节点 请进轴选择；P4爆发延后到双目标，如无需延后，取消241节点"
+    "UpdateInfo": "P4默认17y减伤防击退；添加根据职能选择p2.5光水晶；修复p3中火无损处理 (DR/猫盒/IC三选一，不可同时开启)；p4双目标功能-319节点 请进轴选择；P4爆发延后到双目标，如无需延后，取消241节点"
   },
   {
     "Name": "FRU-Bard lllllLunatic 匠心轴 ",
