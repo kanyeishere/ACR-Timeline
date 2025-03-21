@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 38,
   "Author": "詩超絆 & Wotou ",
-  "Name": "FRU-Dancer v0321.01",
+  "Name": "FRU-Dancer v0321.02",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -4393,7 +4393,7 @@
                             "SpellConfig": {
                               "Remark": "",
                               "Category": 0,
-                              "SpellId": 7405,
+                              "SpellId": 16012,
                               "CoolDowncheck": true,
                               "CoolDowncheck_time": 0.5,
                               "TargetType": 0,
@@ -4433,7 +4433,7 @@
                         },
                         "Id": 160,
                         "Enable": true,
-                        "Remark": "行吟"
+                        "Remark": "桑巴"
                       },
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
@@ -4538,7 +4538,7 @@
                             "SpellConfig": {
                               "Remark": "",
                               "Category": 0,
-                              "SpellId": 7405,
+                              "SpellId": 16012,
                               "CoolDowncheck": true,
                               "CoolDowncheck_time": 0.5,
                               "TargetType": 0,
@@ -4576,7 +4576,7 @@
                         },
                         "Id": 163,
                         "Enable": true,
-                        "Remark": "行吟"
+                        "Remark": "桑巴"
                       },
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
@@ -6219,7 +6219,7 @@
   "ExposedVars": [],
   "ExposedVarDesc": "",
   "OpenerScript": "",
-  "Note": "P4默认17y减伤防击退；添加根据职能选择p2.5光水晶；修复p3中火无损处理 (DR/猫盒/IC三选一，不可同时开启)",
+  "Note": "修复P4默认17y减伤防击退；添加根据职能选择p2.5光水晶；修复p3中火无损处理 (DR/猫盒/IC三选一，不可同时开启)",
   "TerritoryTypeId": 1238,
   "TerritoryWeatherId": 0,
   "TargetAcrAuthor": "Wotou",
