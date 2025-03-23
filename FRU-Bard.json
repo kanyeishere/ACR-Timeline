@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard v0324.02",
+  "Name": "FRU-Bard v0324.03",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -5121,7 +5121,7 @@
                           {
                             "$type": "AEAssist.CombatRoutine.Trigger.TriggerCond.TriggerCondEnemyCastSpell, AEAssist",
                             "Remark": "",
-                            "RegexNameOrId": "40179",
+                            "RegexNameOrId": "40210",
                             "NeedTargetable": false,
                             "DisplayName": "General/敌人读条使用技能"
                           }
