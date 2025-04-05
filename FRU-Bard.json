@@ -15916,7 +15916,7 @@
   ],
   "ExposedVarDesc": "默认10纷乱轴，可通过变量修改为9纷乱(10纷乱轴建议开启P2.5 1G团辅)",
   "OpenerScript": "using AEAssist;\nusing AEAssist.CombatRoutine;\nusing AEAssist.CombatRoutine.Module;\nusing AEAssist.CombatRoutine.Module.Opener;\nusing AEAssist.Helper;\nusing AEAssist.JobApi;\nusing AEAssist.MemoryApi;\nusing Wotou;\n\nnamespace ScriptTest;\n\npublic class OpenerTest : IOpener\n{\n    // 留空代表使用ACR提供的起手\n    public List<Action<Slot>> Sequence { get; } = new();\n\n    // 处理倒计时期间的行为\n    public void InitCountDown(CountDownHandler countDownHandler)\n    {\n        //起手\n        Wotou.Bard.Setting.BardSettings.Instance.Opener = 2;\n        if (Wotou.Bard.BardRotationEntry.QT.GetQt(\"爆发药\") && Wotou.Bard.Setting.BardSettings.Instance.UsePotionInOpener)\n               countDownHandler.AddAction(1000, Spell.CreatePotion);\n    }\n}",
-  "Note": "P4切双目标-392节点；P3中火移速(需DR测试码/猫盒/IC) +面向(需DR)；P2.5默认1G团辅-188节点(取消则2G团辅)；默认10纷乱，9光明神",
+  "Note": "P4切双目标463节点;P3中火移速(需DR测试码/猫盒/IC) +面向(需DR);P2.5默认1G团辅188节点;默认10纷乱9光明神;10光明神会三插,请自行评估风险使用!!",
   "TerritoryTypeId": 1238,
   "TerritoryWeatherId": 0,
   "TargetAcrAuthor": "Wotou",
