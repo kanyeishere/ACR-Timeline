@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard v0405.05",
+  "Name": "FRU-Bard v0405.06",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -8191,7 +8191,7 @@
                                   "Remark": "",
                                   "Category": 0,
                                   "SpellId": 101,
-                                  "CoolDowncheck": false,
+                                  "CoolDowncheck": true,
                                   "CoolDowncheck_time": 0.0,
                                   "TargetType": 0,
                                   "IsPartyMember": true,
