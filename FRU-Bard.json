@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard v0407.02",
+  "Name": "FRU-Bard v0407.03",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -10864,22 +10864,6 @@
                                         "StopWhenDead": false,
                                         "Childs": [
                                           {
-                                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                                            "DisplayName": "延迟[0.70]秒",
-                                            "Delay": 0.7,
-                                            "GUID": "60f957f7-8f70-4257-a573-d7fecaa9ef55",
-                                            "Important": false,
-                                            "Color": {
-                                              "X": 1.0,
-                                              "Y": 1.0,
-                                              "Z": 0.4,
-                                              "W": 1.0
-                                            },
-                                            "Id": 377,
-                                            "Enable": true,
-                                            "Remark": ""
-                                          },
-                                          {
                                             "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
                                             "CondLogicType": 0,
                                             "CheckOnce": true,
@@ -10908,9 +10892,25 @@
                                               "Z": 0.4,
                                               "W": 1.0
                                             },
-                                            "Id": 378,
+                                            "Id": 377,
                                             "Enable": true,
                                             "Remark": "旅神诗心 > 1 "
+                                          },
+                                          {
+                                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                                            "DisplayName": "延迟[0.70]秒",
+                                            "Delay": 0.7,
+                                            "GUID": "60f957f7-8f70-4257-a573-d7fecaa9ef55",
+                                            "Important": false,
+                                            "Color": {
+                                              "X": 1.0,
+                                              "Y": 1.0,
+                                              "Z": 0.4,
+                                              "W": 1.0
+                                            },
+                                            "Id": 378,
+                                            "Enable": true,
+                                            "Remark": ""
                                           },
                                           {
                                             "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
@@ -10982,8 +10982,8 @@
                                         "Childs": [
                                           {
                                             "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                                            "DisplayName": "延迟[1.15]秒",
-                                            "Delay": 1.15,
+                                            "DisplayName": "延迟[1.20]秒",
+                                            "Delay": 1.2,
                                             "GUID": "b4353f0c-3de7-4318-aa02-fe29734340d9",
                                             "Important": false,
                                             "Color": {
