@@ -3,7 +3,7 @@
   "ConfigVersion": 6,
   "TargetJob": 23,
   "Author": "Kirisu & Wotou",
-  "Name": "FRU-Bard v0406.06",
+  "Name": "FRU-Bard v0407.01",
   "TreeRoot": {
     "DisplayName": "Start",
     "Childs": [
@@ -5673,8 +5673,8 @@
                       },
                       {
                         "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                        "DisplayName": "延迟[12.20]秒",
-                        "Delay": 12.2,
+                        "DisplayName": "延迟[12.40]秒",
+                        "Delay": 12.4,
                         "GUID": "b6f3eaf0-48e2-4079-87a9-efb4a77ba3a3",
                         "Important": false,
                         "Color": {
@@ -7924,8 +7924,8 @@
                             "TriggerConds": [
                               {
                                 "$type": "Wotou.Bard.Triggers.BardRepertoireCondition, Wotou",
-                                "OperatorIndex": 4,
-                                "Repertoire": 3,
+                                "OperatorIndex": 3,
+                                "Repertoire": 2,
                                 "DisplayName": "Bard/判断诗心层数",
                                 "Remark": ""
                               },
@@ -10723,8 +10723,8 @@
                                         "Childs": [
                                           {
                                             "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                                            "DisplayName": "延迟[0.60]秒",
-                                            "Delay": 0.6,
+                                            "DisplayName": "延迟[0.70]秒",
+                                            "Delay": 0.7,
                                             "GUID": "b4353f0c-3de7-4318-aa02-fe29734340d9",
                                             "Important": false,
                                             "Color": {
@@ -10864,6 +10864,22 @@
                                         "StopWhenDead": false,
                                         "Childs": [
                                           {
+                                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
+                                            "DisplayName": "延迟[0.70]秒",
+                                            "Delay": 0.7,
+                                            "GUID": "60f957f7-8f70-4257-a573-d7fecaa9ef55",
+                                            "Important": false,
+                                            "Color": {
+                                              "X": 1.0,
+                                              "Y": 1.0,
+                                              "Z": 0.4,
+                                              "W": 1.0
+                                            },
+                                            "Id": 377,
+                                            "Enable": true,
+                                            "Remark": ""
+                                          },
+                                          {
                                             "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeCondNode, AEAssist",
                                             "CondLogicType": 0,
                                             "CheckOnce": true,
@@ -10892,31 +10908,9 @@
                                               "Z": 0.4,
                                               "W": 1.0
                                             },
-                                            "Id": 377,
-                                            "Enable": true,
-                                            "Remark": "旅神诗心 > 1 "
-                                          },
-                                          {
-                                            "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
-                                            "TriggerActions": [
-                                              {
-                                                "$type": "AEAssist.CombatRoutine.Trigger.TriggerAction.TriggerActionUsePotion, AEAssist",
-                                                "DisplayName": "General/使用爆发药",
-                                                "Remark": ""
-                                              }
-                                            ],
-                                            "DisplayName": "行为",
-                                            "GUID": "4d961c68-bb0c-4d6d-a886-c14039f9c9b4",
-                                            "Important": false,
-                                            "Color": {
-                                              "X": 1.0,
-                                              "Y": 1.0,
-                                              "Z": 0.4,
-                                              "W": 1.0
-                                            },
                                             "Id": 378,
                                             "Enable": true,
-                                            "Remark": "使用爆发药"
+                                            "Remark": "旅神诗心 > 1 "
                                           },
                                           {
                                             "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeActionNode, AEAssist",
@@ -10988,8 +10982,8 @@
                                         "Childs": [
                                           {
                                             "$type": "AEAssist.CombatRoutine.Trigger.Node.TreeDelayNode, AEAssist",
-                                            "DisplayName": "延迟[1.20]秒",
-                                            "Delay": 1.2,
+                                            "DisplayName": "延迟[1.30]秒",
+                                            "Delay": 1.3,
                                             "GUID": "b4353f0c-3de7-4318-aa02-fe29734340d9",
                                             "Important": false,
                                             "Color": {
