@@ -1,7 +1,7 @@
 [
   {
     "Name": "FRU-Bard ",
-    "Version": "0409.02",
+    "Version": "0409.03",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
     "UpdateInfo": "新增实验性功能：10光明神轴，请修改变量启用，测试中，可能会电！！10光明神轴会三插，虽然大概率不会红，但还请自行评估风险使用!!"
   },
