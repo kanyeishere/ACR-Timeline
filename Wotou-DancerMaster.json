@@ -1,7 +1,7 @@
 [  
   {
     "Name": "FRU-Dancer ",
-    "Version": "0323.01",
+    "Version": "0417.01",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Dancer.json",
     "UpdateInfo": "P4默认Y字减伤防击退；根据职能选择p2.5光水晶；p3中火移速修改(需要DR测试码/猫盒/IC三选一) +锁面向(需要DR)-135节点"
   }
