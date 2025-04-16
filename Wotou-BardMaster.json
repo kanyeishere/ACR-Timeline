@@ -1,7 +1,7 @@
 [
   {
     "Name": "FRU-Bard ",
-    "Version": "0416.01",
+    "Version": "0416.02",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
     "UpdateInfo": "10光明神轴基本完成，请修改变量启用。请注意10光明神轴会三插，虽然 Logs 大概率不会红，但还请自行评估风险使用"
   },
