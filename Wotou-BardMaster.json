@@ -7,7 +7,7 @@
   },
   {
     "Name": "FRU-Bard lllllLunatic 匠心轴 ",
-    "Version": "0320.1",
+    "Version": "0504.01",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard-lllllLunatic.json",
     "UpdateInfo": " 修复p4自动修血选错目标，p2开场驱散，默认关闭，有需要在385节点开启，如非固定队必需，最好别开,修复大部分已知问题,请配合队伍要求设置减伤和选择打法；有问题请 DC 联系 @lllllLunatic"
   },
