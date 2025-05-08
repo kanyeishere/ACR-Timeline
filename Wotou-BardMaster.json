@@ -1,9 +1,9 @@
 [
   {
     "Name": "FRU-Bard ",
-    "Version": "0430.01",
+    "Version": "0508.01",
     "DownloadUrl": "https://raw.githubusercontent.com/kanyeishere/ACR-Timeline/refs/heads/main/FRU-Bard.json",
-    "UpdateInfo": "10光明神轴完成，请修改变量启用。请注意10光明神轴会三插，Logs 网站目前不会查绝本三插，但还请自行评估风险使用"
+    "UpdateInfo": "10光明神轴完成，请修改变量启用。0508更新：尝试修复P1击杀过快时，偶然会发生的旅神与爆发延后的bug"
   },
   {
     "Name": "FRU-Bard lllllLunatic 匠心轴 ",
